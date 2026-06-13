@@ -1,0 +1,479 @@
+{
+  "examples": [
+    {
+      "operationId": "cancelOrder",
+      "summary": "Cancel Order",
+      "method": "DELETE",
+      "path": "/accounts/{accountId}/orders/{orderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "orderId": "<orderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "replaceOrder",
+      "summary": "Replace Order",
+      "method": "PUT",
+      "path": "/accounts/{accountId}/orders/{orderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "orderId": "<orderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getOrder",
+      "summary": "Get Order",
+      "method": "GET",
+      "path": "/accounts/{accountId}/orders/{orderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "orderId": "<orderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getOrdersByPath",
+      "summary": "Get Orders By Path",
+      "method": "GET",
+      "path": "/accounts/{accountId}/orders",
+      "parameters": {
+        "accountId": "<accountId>",
+        "maxResults": "<maxResults>",
+        "fromEnteredTime": "<fromEnteredTime>",
+        "toEnteredTime": "<toEnteredTime>",
+        "status": "<status>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "placeOrder",
+      "summary": "Place Order",
+      "method": "POST",
+      "path": "/accounts/{accountId}/orders",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getOrdersByQuery",
+      "summary": "Get Orders By Query",
+      "method": "GET",
+      "path": "/orders",
+      "parameters": {
+        "accountId": "<accountId>",
+        "maxResults": "<maxResults>",
+        "fromEnteredTime": "<fromEnteredTime>",
+        "toEnteredTime": "<toEnteredTime>",
+        "status": "<status>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getSavedOrdersByPath",
+      "summary": "Get Saved Orders by Path",
+      "method": "GET",
+      "path": "/accounts/{accountId}/savedorders",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "saveOrder",
+      "summary": "Create Saved Order",
+      "method": "POST",
+      "path": "/accounts/{accountId}/savedorders",
+      "parameters": {
+        "accountId": "<accountId>",
+        "orderId": "<orderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "deleteSavedOrder",
+      "summary": "Delete Saved Order",
+      "method": "DELETE",
+      "path": "/accounts/{accountId}/savedorders/{savedOrderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "savedOrderId": "<savedOrderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getSavedOrder",
+      "summary": "Get Saved Order",
+      "method": "GET",
+      "path": "/accounts/{accountId}/savedorders/{savedOrderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "savedOrderId": "<savedOrderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "replaceSavedOrder",
+      "summary": "Replace Saved Order",
+      "method": "PUT",
+      "path": "/accounts/{accountId}/savedorders/{savedOrderId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "savedOrderId": "<savedOrderId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getAccount",
+      "summary": "Get Account",
+      "method": "GET",
+      "path": "/accounts/{accountId}",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "getAccounts",
+      "summary": "Get Accounts",
+      "method": "GET",
+      "path": "/accounts",
+      "parameters": {},
+      "tags": [
+        "Accounts and Trading"
+      ]
+    },
+    {
+      "operationId": "postAccessToken",
+      "summary": "Post Access Token",
+      "method": "POST",
+      "path": "/oath2/token",
+      "parameters": {},
+      "tags": [
+        "Authentication"
+      ]
+    },
+    {
+      "operationId": "searchInstruments",
+      "summary": "Search for instrument and fundamental data",
+      "method": "GET",
+      "path": "/instruments",
+      "parameters": {
+        "apikey": "<apikey>",
+        "symbol": "<symbol>",
+        "projection": "<projection>"
+      },
+      "tags": [
+        "Instruments"
+      ]
+    },
+    {
+      "operationId": "getInstrument",
+      "summary": "Search for instrument and fundamental data",
+      "method": "GET",
+      "path": "/instruments/{accountId}",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Instruments"
+      ]
+    },
+    {
+      "operationId": "getHours",
+      "summary": "Operating hours of markets",
+      "method": "GET",
+      "path": "/marketdata/hours",
+      "parameters": {
+        "apikey": "<apikey>",
+        "markets": "<markets>",
+        "date": "<date>"
+      },
+      "tags": [
+        "Market Hours"
+      ]
+    },
+    {
+      "operationId": "getMarketHours",
+      "summary": "Operating hours of markets",
+      "method": "GET",
+      "path": "/marketdata/{market}/hours",
+      "parameters": {
+        "apikey": "<apikey>",
+        "market": "<market>",
+        "date": "<date>"
+      },
+      "tags": [
+        "Market Hours"
+      ]
+    },
+    {
+      "operationId": "getMovers",
+      "summary": "Retrieve mover information by index symbol, direction type and change",
+      "method": "GET",
+      "path": "/marketdata/{index}/movers",
+      "parameters": {
+        "apikey": "<apikey>",
+        "index": "<index>",
+        "direction": "'up' or 'down'",
+        "change": "'percent' or 'value'"
+      },
+      "tags": [
+        "Movers"
+      ]
+    },
+    {
+      "operationId": "getOptionChains",
+      "summary": "Get Option Chains for optionable symbols",
+      "method": "GET",
+      "path": "/marketdata/chains",
+      "parameters": {
+        "apikey": "<apikey>",
+        "symbol": "<symbol>",
+        "contractType": "<contractType>",
+        "strikeCount": "<strikeCount>",
+        "includeQuotes": "'TRUE' or 'FALSE'",
+        "strategy": "<strategy>"
+      },
+      "tags": [
+        "Option Chains"
+      ]
+    },
+    {
+      "operationId": "getPriceHistory",
+      "summary": "Historical price data for charts",
+      "method": "GET",
+      "path": "/marketdata/{symbol}/pricehistory",
+      "parameters": {
+        "apikey": "<apikey>",
+        "symbol": "<symbol>",
+        "periodType": "'day' or 'month' or 'year' or 'ytd'",
+        "period": "<period>",
+        "frequencyType": "<frequencyType>",
+        "frequency": "<frequency>",
+        "endDate": "<endDate>",
+        "startDate": "<startDate>",
+        "needExtendedHoursData": "x",
+        "x": "x"
+      },
+      "tags": [
+        "Price History"
+      ]
+    },
+    {
+      "operationId": "getQuote",
+      "summary": "Search for instrument and fundamental data",
+      "method": "GET",
+      "path": "/marketdata/{symbol}/quotes",
+      "parameters": {
+        "symbol": "<symbol>",
+        "apiKey": "<apiKey>"
+      },
+      "tags": [
+        "Quotes"
+      ]
+    },
+    {
+      "operationId": "getQuotes",
+      "summary": "Search for instrument and fundamental data",
+      "method": "GET",
+      "path": "/marketdata/quotes",
+      "parameters": {
+        "apiKey": "<apiKey>",
+        "symbol": "<symbol>"
+      },
+      "tags": [
+        "Quotes"
+      ]
+    },
+    {
+      "operationId": "getTransaction",
+      "summary": "APIs to access transaction history on the account",
+      "method": "GET",
+      "path": "/accounts/{accountId}/transactions/{transactionId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "transactionId": "<transactionId>"
+      },
+      "tags": [
+        "Transaction History"
+      ]
+    },
+    {
+      "operationId": "getTransactions",
+      "summary": "APIs to access transaction history on the account",
+      "method": "GET",
+      "path": "/accounts/{accountId}/transactions",
+      "parameters": {
+        "accountId": "<accountId>",
+        "type": "<type>",
+        "symbol": "<symbol>",
+        "startDate": "<startDate>",
+        "endDate": "<endDate>"
+      },
+      "tags": [
+        "Transaction History"
+      ]
+    },
+    {
+      "operationId": "getPreferences",
+      "summary": "APIs to access user-authorized accounts and their preferences",
+      "method": "GET",
+      "path": "/accounts/{accountId}/preferences",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "User Info & Preferences"
+      ]
+    },
+    {
+      "operationId": "updatePreferences",
+      "summary": "APIs to access user-authorized accounts and their preferences",
+      "method": "PUT",
+      "path": "/accounts/{accountId}/preferences",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "User Info & Preferences"
+      ]
+    },
+    {
+      "operationId": "getStreamerSubscriptionKeys",
+      "summary": "APIs to access user-authorized accounts and their preferences",
+      "method": "GET",
+      "path": "/userprincipals/streamersubscriptionkeys",
+      "parameters": {
+        "accountIds": "<accountIds>"
+      },
+      "tags": [
+        "User Info & Preferences"
+      ]
+    },
+    {
+      "operationId": "getUserPrincipals",
+      "summary": "APIs to access user-authorized accounts and their preferences",
+      "method": "GET",
+      "path": "/userprincipals",
+      "parameters": {
+        "fields": "<fields>"
+      },
+      "tags": [
+        "User Info & Preferences"
+      ]
+    },
+    {
+      "operationId": "createWatchlist",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "POST",
+      "path": "/accounts/{accountId}/watchlists",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "getWatchlistSingleAccount",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "GET",
+      "path": "/accounts/{accountId}/watchlists",
+      "parameters": {
+        "accountId": "<accountId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "deleteWatchlist",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "DELETE",
+      "path": "/accounts/{accountId}/watchlists/{watchlistId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "watchlistId": "<watchlistId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "replaceWatchlist",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "PUT",
+      "path": "/accounts/{accountId}/watchlists/{watchlistId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "watchlistId": "<watchlistId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "updateWatchlist",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "PATCH",
+      "path": "/accounts/{accountId}/watchlists/{watchlistId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "watchlistId": "<watchlistId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "getWatchlist",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "GET",
+      "path": "/accounts/{accountId}/watchlists/{watchlistId}",
+      "parameters": {
+        "accountId": "<accountId>",
+        "watchlistId": "<watchlistId>"
+      },
+      "tags": [
+        "Watchlist"
+      ]
+    },
+    {
+      "operationId": "getWatchlistMultipleAccounts",
+      "summary": "APIs to perform CRUD operations on Account Watchlist",
+      "method": "GET",
+      "path": "/accounts/watchlists",
+      "parameters": {},
+      "tags": [
+        "Watchlist"
+      ]
+    }
+  ]
+}

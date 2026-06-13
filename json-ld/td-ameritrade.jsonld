@@ -1,0 +1,388 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "td": "https://raw.githubusercontent.com/api-evangelist/td-ameritrade/main/json-ld/",
+    "openapi": "https://openapi.org/specification#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://developer.tdameritrade.com/",
+  "name": "TD Ameritrade API",
+  "description": "TD Ameritrade API",
+  "version": "3.0.1",
+  "termsOfService": "https://developer.tdameritrade.com/legal",
+  "url": "https://api.tdameritrade.com/v2",
+  "provider": {
+    "@type": "Organization",
+    "name": "TD Ameritrade",
+    "url": "https://developer.tdameritrade.com/",
+    "sameAs": "https://www.tdameritrade.com"
+  },
+  "documentation": "https://developer.tdameritrade.com/apis",
+  "endpointUrl": "https://api.tdameritrade.com/v2",
+  "offers": {
+    "@type": "Offer",
+    "category": "Financial Data / Brokerage API"
+  },
+  "potentialAction": [
+    {
+      "@type": "Action",
+      "name": "Cancel Order",
+      "description": "Cancel a specific order for a specific account. ",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "DELETE",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/orders/{orderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Replace Order",
+      "description": "Replace an existing order for an account. The existing order will be replaced by the new order. Once replaced, the old order will be canceled and a new order will be created.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "PUT",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/orders/{orderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Order",
+      "description": "Get a specific order for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/orders/{orderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Orders By Path",
+      "description": "Orders for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/orders"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Place Order",
+      "description": "Place an order for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/orders"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Orders By Query",
+      "description": "All orders for a specific account or, if account ID isn't specified, orders will be returned for all linked accounts",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/orders"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Saved Orders by Path",
+      "description": "Saved orders for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/savedorders"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Create Saved Order",
+      "description": "Save an order for a specific account. ",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/savedorders"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Delete Saved Order",
+      "description": "Delete a specific saved order for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "DELETE",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/savedorders/{savedOrderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Saved Order",
+      "description": "Specific saved order by its ID, for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/savedorders/{savedOrderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Replace Saved Order",
+      "description": "Replace an existing saved order for an account. The existing saved order will be replaced by the new order.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "PUT",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/savedorders/{savedOrderId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Account",
+      "description": "Account balances, positions, and orders for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Accounts",
+      "description": "Account balances, positions, and orders for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Post Access Token",
+      "description": "The token endpoint returns an access token along with an optional refresh token.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://api.tdameritrade.com/v2/oath2/token"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Search for instrument and fundamental data",
+      "description": "Search or retrieve instrument data, including fundamental data.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/instruments"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Search for instrument and fundamental data",
+      "description": "Search or retrieve instrument data, including fundamental data.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/instruments/{accountId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Operating hours of markets",
+      "description": "Retrieve market hours for specified markets",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/hours"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Operating hours of markets",
+      "description": "Retrieve market hours for specified single market",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/{market}/hours"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Retrieve mover information by index symbol, direction type and change",
+      "description": "Top 10 (up or down) movers by value or percent for a particular market",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/{index}/movers"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Get Option Chains for optionable symbols",
+      "description": "Get option chain for an optionable Symbol",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/chains"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Historical price data for charts",
+      "description": "Get price history for a symbol",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/{symbol}/pricehistory"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Search for instrument and fundamental data",
+      "description": "Get quote for a symbol.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/{symbol}/quotes"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Search for instrument and fundamental data",
+      "description": "Get quote for one or more symbols.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/marketdata/quotes"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access transaction history on the account",
+      "description": "Transaction for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/transactions/{transactionId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access transaction history on the account",
+      "description": "Transactions for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/transactions"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access user-authorized accounts and their preferences",
+      "description": "Preferences for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/preferences"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access user-authorized accounts and their preferences",
+      "description": "Update preferences for a specific account. Please note that the directOptionsRouting and directEquityRouting values cannot be modified via this operation",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "PUT",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/preferences"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access user-authorized accounts and their preferences",
+      "description": "SubscriptionKey for provided accounts or default accounts.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/userprincipals/streamersubscriptionkeys"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to access user-authorized accounts and their preferences",
+      "description": "User Principal details.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/userprincipals"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "Create watchlist for specific account.This method does not verify that the symbol or asset type are valid.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "POST",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "All watchlists of an account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "Delete watchlist for a specific account. This method does not verify that the symbol or asset type are valid.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "DELETE",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists/{watchlistId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "Replace watchlist for specific account. This method does not verify that the symbol or asset type are valid.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "PUT",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists/{watchlistId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "Partially update watchlist for a specific account: change watchlist name, add to the beginning/end of a watchlist, update or delete items in a watchlist. This method does not verify that the symbol or asset type are valid.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "PATCH",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists/{watchlistId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "Specific watchlist for a specific account.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/{accountId}/watchlists/{watchlistId}"
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "APIs to perform CRUD operations on Account Watchlist",
+      "description": "All watchlists for all of the user's linked accounts.",
+      "target": {
+        "@type": "EntryPoint",
+        "httpMethod": "GET",
+        "urlTemplate": "https://api.tdameritrade.com/v2/accounts/watchlists"
+      }
+    }
+  ]
+}

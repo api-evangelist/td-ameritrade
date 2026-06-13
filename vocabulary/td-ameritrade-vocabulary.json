@@ -1,0 +1,444 @@
+{
+  "title": "TD Ameritrade API Vocabulary",
+  "description": "Controlled vocabulary and terminology extracted from the TD Ameritrade OpenAPI specification.",
+  "terms": [
+    {
+      "term": "Account",
+      "type": "schema",
+      "description": "Schema definition for Account",
+      "source": "components/schemas"
+    },
+    {
+      "term": "AccountType",
+      "type": "schema",
+      "description": "Schema definition for AccountType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "AssetType",
+      "type": "schema",
+      "description": "Schema definition for AssetType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Bond",
+      "type": "schema",
+      "description": "Schema definition for Bond",
+      "source": "components/schemas"
+    },
+    {
+      "term": "CandleList",
+      "type": "schema",
+      "description": "Schema definition for CandleList",
+      "source": "components/schemas"
+    },
+    {
+      "term": "CashAccount",
+      "type": "schema",
+      "description": "Schema definition for CashAccount",
+      "source": "components/schemas"
+    },
+    {
+      "term": "CashEquivalent",
+      "type": "schema",
+      "description": "Schema definition for CashEquivalent",
+      "source": "components/schemas"
+    },
+    {
+      "term": "ComplexOrderStrategyType",
+      "type": "schema",
+      "description": "Schema definition for ComplexOrderStrategyType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "CreateWatchlist",
+      "type": "schema",
+      "description": "Schema definition for CreateWatchlist",
+      "source": "components/schemas"
+    },
+    {
+      "term": "CurrencyType",
+      "type": "schema",
+      "description": "Schema definition for CurrencyType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "DestinationExchange",
+      "type": "schema",
+      "description": "Schema definition for DestinationExchange",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Duration",
+      "type": "schema",
+      "description": "Schema definition for Duration",
+      "source": "components/schemas"
+    },
+    {
+      "term": "EASObject",
+      "type": "schema",
+      "description": "Schema definition for EASObject",
+      "source": "components/schemas"
+    },
+    {
+      "term": "ETF",
+      "type": "schema",
+      "description": "Schema definition for ETF",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Equity",
+      "type": "schema",
+      "description": "Schema definition for Equity",
+      "source": "components/schemas"
+    },
+    {
+      "term": "EquityPriceLinkType",
+      "type": "schema",
+      "description": "Schema definition for EquityPriceLinkType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Execution",
+      "type": "schema",
+      "description": "Schema definition for Execution",
+      "source": "components/schemas"
+    },
+    {
+      "term": "ExpirationDate",
+      "type": "schema",
+      "description": "Schema definition for ExpirationDate",
+      "source": "components/schemas"
+    },
+    {
+      "term": "FixedIncome",
+      "type": "schema",
+      "description": "Schema definition for FixedIncome",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Forex",
+      "type": "schema",
+      "description": "Schema definition for Forex",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Fundamental",
+      "type": "schema",
+      "description": "Schema definition for Fundamental",
+      "source": "components/schemas"
+    },
+    {
+      "term": "FundamentalData",
+      "type": "schema",
+      "description": "Schema definition for FundamentalData",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Future",
+      "type": "schema",
+      "description": "Schema definition for Future",
+      "source": "components/schemas"
+    },
+    {
+      "term": "FutureOptions",
+      "type": "schema",
+      "description": "Schema definition for FutureOptions",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Hours",
+      "type": "schema",
+      "description": "Schema definition for Hours",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Index",
+      "type": "schema",
+      "description": "Schema definition for Index",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Instruction",
+      "type": "schema",
+      "description": "Schema definition for Instruction",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Instrument",
+      "type": "schema",
+      "description": "Schema definition for Instrument",
+      "source": "components/schemas"
+    },
+    {
+      "term": "InstrumentType",
+      "type": "schema",
+      "description": "Schema definition for InstrumentType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "MarginAccount",
+      "type": "schema",
+      "description": "Schema definition for MarginAccount",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Mover",
+      "type": "schema",
+      "description": "Schema definition for Mover",
+      "source": "components/schemas"
+    },
+    {
+      "term": "MutualFund",
+      "type": "schema",
+      "description": "Schema definition for MutualFund",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Mutual_Fund",
+      "type": "schema",
+      "description": "Schema definition for Mutual_Fund",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Option",
+      "type": "schema",
+      "description": "Schema definition for Option",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OptionChain",
+      "type": "schema",
+      "description": "Schema definition for OptionChain",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OptionDeliverables",
+      "type": "schema",
+      "description": "Schema definition for OptionDeliverables",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OptionType",
+      "type": "schema",
+      "description": "Schema definition for OptionType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Order",
+      "type": "schema",
+      "description": "Schema definition for Order",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OrderCollection",
+      "type": "schema",
+      "description": "Schema definition for OrderCollection",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OrderStatus",
+      "type": "schema",
+      "description": "Schema definition for OrderStatus",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OrderStrategyType",
+      "type": "schema",
+      "description": "Schema definition for OrderStrategyType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "OrderType",
+      "type": "schema",
+      "description": "Schema definition for OrderType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "PositionEffect",
+      "type": "schema",
+      "description": "Schema definition for PositionEffect",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Preferences",
+      "type": "schema",
+      "description": "Schema definition for Preferences",
+      "source": "components/schemas"
+    },
+    {
+      "term": "PriceLinkBasis",
+      "type": "schema",
+      "description": "Schema definition for PriceLinkBasis",
+      "source": "components/schemas"
+    },
+    {
+      "term": "PriceLinkType",
+      "type": "schema",
+      "description": "Schema definition for PriceLinkType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "PutOrCall",
+      "type": "schema",
+      "description": "Schema definition for PutOrCall",
+      "source": "components/schemas"
+    },
+    {
+      "term": "QuantityType",
+      "type": "schema",
+      "description": "Schema definition for QuantityType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "SavedOrder",
+      "type": "schema",
+      "description": "Schema definition for SavedOrder",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Session",
+      "type": "schema",
+      "description": "Schema definition for Session",
+      "source": "components/schemas"
+    },
+    {
+      "term": "SpecialInstruction",
+      "type": "schema",
+      "description": "Schema definition for SpecialInstruction",
+      "source": "components/schemas"
+    },
+    {
+      "term": "StopType",
+      "type": "schema",
+      "description": "Schema definition for StopType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Strategy",
+      "type": "schema",
+      "description": "Schema definition for Strategy",
+      "source": "components/schemas"
+    },
+    {
+      "term": "StrikePriceMap",
+      "type": "schema",
+      "description": "Schema definition for StrikePriceMap",
+      "source": "components/schemas"
+    },
+    {
+      "term": "SubscriptionKey",
+      "type": "schema",
+      "description": "Schema definition for SubscriptionKey",
+      "source": "components/schemas"
+    },
+    {
+      "term": "TaxLotMethod",
+      "type": "schema",
+      "description": "Schema definition for TaxLotMethod",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Transaction",
+      "type": "schema",
+      "description": "Schema definition for Transaction",
+      "source": "components/schemas"
+    },
+    {
+      "term": "TransactionType",
+      "type": "schema",
+      "description": "Schema definition for TransactionType",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Underlying",
+      "type": "schema",
+      "description": "Schema definition for Underlying",
+      "source": "components/schemas"
+    },
+    {
+      "term": "UpdatePreferences",
+      "type": "schema",
+      "description": "Schema definition for UpdatePreferences",
+      "source": "components/schemas"
+    },
+    {
+      "term": "UpdateWatchlist",
+      "type": "schema",
+      "description": "Schema definition for UpdateWatchlist",
+      "source": "components/schemas"
+    },
+    {
+      "term": "UserPrincipal",
+      "type": "schema",
+      "description": "Schema definition for UserPrincipal",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Watchlist",
+      "type": "schema",
+      "description": "Schema definition for Watchlist",
+      "source": "components/schemas"
+    },
+    {
+      "term": "Market Hours",
+      "type": "tag",
+      "description": "API category: Market Hours",
+      "source": "operation tags"
+    },
+    {
+      "term": "Price History",
+      "type": "tag",
+      "description": "API category: Price History",
+      "source": "operation tags"
+    },
+    {
+      "term": "Transaction History",
+      "type": "tag",
+      "description": "API category: Transaction History",
+      "source": "operation tags"
+    },
+    {
+      "term": "Quotes",
+      "type": "tag",
+      "description": "API category: Quotes",
+      "source": "operation tags"
+    },
+    {
+      "term": "Option Chains",
+      "type": "tag",
+      "description": "API category: Option Chains",
+      "source": "operation tags"
+    },
+    {
+      "term": "Accounts and Trading",
+      "type": "tag",
+      "description": "API category: Accounts and Trading",
+      "source": "operation tags"
+    },
+    {
+      "term": "Instruments",
+      "type": "tag",
+      "description": "API category: Instruments",
+      "source": "operation tags"
+    },
+    {
+      "term": "User Info & Preferences",
+      "type": "tag",
+      "description": "API category: User Info & Preferences",
+      "source": "operation tags"
+    },
+    {
+      "term": "Movers",
+      "type": "tag",
+      "description": "API category: Movers",
+      "source": "operation tags"
+    },
+    {
+      "term": "Authentication",
+      "type": "tag",
+      "description": "API category: Authentication",
+      "source": "operation tags"
+    }
+  ]
+}
