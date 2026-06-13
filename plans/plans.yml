@@ -1,0 +1,54 @@
+plans:
+  - name: Individual Developer Access
+    description: >
+      Free access tier available to any TD Ameritrade US broker-dealer account
+      holder. Developers register an application on the TD Ameritrade Developer
+      Portal and receive a Consumer Key (client_id). Access is granted to all
+      REST API endpoints including accounts, orders, market data, instruments,
+      and streaming. No monthly fee is charged; a funded TD Ameritrade brokerage
+      account is the primary requirement.
+    url: https://developer.tdameritrade.com/content/getting-started
+    status: deprecated
+    pricingModel: free
+    audience: individual
+    rate:
+      limit: 120
+      unit: minute
+      scope: non-order requests
+    features:
+      - Account management endpoints
+      - Order placement and management
+      - Real-time and historical market data
+      - Options chains
+      - WebSocket streaming market data
+      - Instruments and fundamentals search
+      - Watchlists and saved orders
+      - Transaction history
+    requirements:
+      - Active TD Ameritrade US brokerage account
+      - Application registration on Developer Portal
+      - OAuth 2.0 callback URL configuration
+
+  - name: Commercial / Partner Access
+    description: >
+      Extended access for commercial applications or integrations requiring
+      higher throughput or partner-level arrangements. Applicants contacted
+      TD Ameritrade at API@TDAmeritrade.com for commercial licensing. Terms
+      varied by use case and were not publicly disclosed.
+    url: https://developer.tdameritrade.com/content/getting-started
+    status: deprecated
+    pricingModel: negotiated
+    audience: commercial
+    features:
+      - All Individual Developer Access features
+      - Higher rate limits (negotiated)
+      - Partner onboarding support
+    requirements:
+      - Business entity with executed API agreement
+      - TD Ameritrade partner approval
+
+notes: >
+  TD Ameritrade API access was shut down on May 10, 2024, following the
+  Charles Schwab acquisition. The Developer Portal no longer accepts new
+  registrations. Existing users are directed to migrate to the Schwab
+  Trader API at https://developer.schwab.com/.

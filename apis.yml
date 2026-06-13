@@ -1,0 +1,180 @@
+name: TD Ameritrade
+description: >
+  TD Ameritrade was a US retail brokerage that provided REST APIs for trading equities
+  and options, accessing streaming market data, managing brokerage accounts, and
+  retrieving historical and real-time market data. Following the Charles Schwab
+  acquisition, the TD Ameritrade API was shut down on May 10, 2024. Schwab has
+  ported much of the original functionality into the Schwab Trader API.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Brokerage
+  - Trading
+  - Finance
+  - Equities
+  - Options
+  - Market Data
+  - Streaming
+apis:
+  - name: TD Ameritrade Accounts and Trading API
+    description: >
+      Provides REST endpoints for managing TD Ameritrade brokerage accounts,
+      including retrieving account balances, positions, and transaction history.
+      Supports placing, modifying, replacing, and canceling orders for equities
+      and options. Also includes saved orders, watchlists, and user preferences.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.tdameritrade.com/account-access/apis
+    baseURL: https://api.tdameritrade.com/v1
+    tags:
+      - Accounts
+      - Orders
+      - Trading
+      - Watchlists
+      - Transactions
+    properties:
+      - type: Documentation
+        url: https://developer.tdameritrade.com/account-access/apis
+      - type: OpenAPI
+        url: https://developer.tdameritrade.com/account-access/apis
+      - type: Authentication
+        url: https://developer.tdameritrade.com/authentication/apis
+    contact:
+      - FN: TD Ameritrade Developer Support
+        email: API@TDAmeritrade.com
+        url: https://developer.tdameritrade.com/
+
+  - name: TD Ameritrade Market Data API
+    description: >
+      Provides REST endpoints for accessing real-time and historical market data.
+      Includes current quotes for single and multiple symbols, historical price
+      history for equities and ETFs, options chains with full contract details,
+      top movers by index, and market hours for equities, options, futures,
+      forex, and bond markets.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.tdameritrade.com/market-data/apis
+    baseURL: https://api.tdameritrade.com/v1
+    tags:
+      - Market Data
+      - Quotes
+      - Options Chains
+      - Price History
+      - Movers
+      - Market Hours
+    properties:
+      - type: Documentation
+        url: https://developer.tdameritrade.com/market-data/apis
+      - type: Authentication
+        url: https://developer.tdameritrade.com/authentication/apis
+    contact:
+      - FN: TD Ameritrade Developer Support
+        email: API@TDAmeritrade.com
+        url: https://developer.tdameritrade.com/
+
+  - name: TD Ameritrade Instruments API
+    description: >
+      Provides REST endpoints for searching and retrieving instrument details
+      by symbol or CUSIP. Supports searching by symbol or description and
+      retrieving fundamental data including financial ratios, earnings, and
+      dividend information for equities.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.tdameritrade.com/instruments/apis
+    baseURL: https://api.tdameritrade.com/v1
+    tags:
+      - Instruments
+      - Equities
+      - Fundamentals
+      - Securities
+    properties:
+      - type: Documentation
+        url: https://developer.tdameritrade.com/instruments/apis
+      - type: Authentication
+        url: https://developer.tdameritrade.com/authentication/apis
+    contact:
+      - FN: TD Ameritrade Developer Support
+        email: API@TDAmeritrade.com
+        url: https://developer.tdameritrade.com/
+
+  - name: TD Ameritrade Authentication API
+    description: >
+      Implements OAuth 2.0 token-based authentication as described in RFC6749
+      section 1.3.1. Applications registered on the TD Ameritrade Developer
+      Portal receive a Consumer Key (client_id). Access tokens are valid for
+      30 minutes; refresh tokens are valid for 90 days and may be used to
+      generate new access and refresh tokens.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.tdameritrade.com/authentication/apis
+    baseURL: https://api.tdameritrade.com/v1
+    tags:
+      - Authentication
+      - OAuth 2.0
+      - Access Tokens
+    properties:
+      - type: Documentation
+        url: https://developer.tdameritrade.com/authentication/apis
+      - type: GettingStarted
+        url: https://developer.tdameritrade.com/content/getting-started
+      - type: AuthenticationFAQ
+        url: https://developer.tdameritrade.com/content/authentication-faq
+    contact:
+      - FN: TD Ameritrade Developer Support
+        email: API@TDAmeritrade.com
+        url: https://developer.tdameritrade.com/
+
+  - name: TD Ameritrade Streaming Market Data API
+    description: >
+      Provides a WebSocket-based streaming API that delivers up-to-the-second
+      market data including real-time Level 1 and Level 2 quotes, time and
+      sales data for equities, options, and futures, as well as order book
+      depth data. Streaming sessions are initiated using credentials obtained
+      from the User Principals endpoint.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.tdameritrade.com/content/streaming-data
+    baseURL: wss://streamer-ws.tdameritrade.com/ws
+    tags:
+      - Streaming
+      - WebSocket
+      - Real-Time
+      - Level 2
+      - Market Data
+    properties:
+      - type: Documentation
+        url: https://developer.tdameritrade.com/content/streaming-data
+      - type: Authentication
+        url: https://developer.tdameritrade.com/authentication/apis
+    contact:
+      - FN: TD Ameritrade Developer Support
+        email: API@TDAmeritrade.com
+        url: https://developer.tdameritrade.com/
+
+common:
+  - type: Portal
+    url: https://developer.tdameritrade.com/
+  - type: GettingStarted
+    url: https://developer.tdameritrade.com/content/getting-started
+  - type: Documentation
+    url: https://developer.tdameritrade.com/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: AuthenticationFAQ
+    url: https://developer.tdameritrade.com/content/authentication-faq
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/finops/finops.yml
+  - type: TermsOfService
+    url: https://developer.tdameritrade.com/content/td-ameritrade-api-terms-use
+  - type: StatusPage
+    url: https://developer.tdameritrade.com/content/getting-started
+  - type: DeprecationNotice
+    url: https://blog.pickmytrade.trade/td-ameritrade-have-api-2025/
+  - type: MigrationGuide
+    url: https://developer.schwab.com/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://www.apievangelist.com

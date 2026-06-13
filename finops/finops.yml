@@ -1,0 +1,56 @@
+finops:
+  model: free-with-account
+  description: >
+    TD Ameritrade provided API access at no direct cost to account holders.
+    There were no API subscription fees, per-call charges, or data licensing
+    fees for personal use. Revenue was generated through the underlying
+    brokerage relationship — commissions (until the 2019 commission-free
+    switch), payment for order flow, margin interest, and cash sweep income.
+    Commercial partners negotiated separate licensing agreements with terms
+    not publicly disclosed.
+
+  cost-to-consumer:
+    api-subscription: $0
+    per-call: $0
+    data-licensing: $0
+    notes: >
+      Free for any TD Ameritrade account holder. A funded brokerage account
+      was the prerequisite; no API-specific fees applied.
+
+  revenue-model:
+    primary:
+      - type: Payment for Order Flow (PFOF)
+        description: >
+          TD Ameritrade earned revenue by routing retail orders to market
+          makers who paid for the privilege of executing those orders.
+      - type: Net Interest Income
+        description: >
+          Interest earned on cash balances in client accounts and on margin
+          loan balances.
+      - type: Commission Revenue (historical)
+        description: >
+          Prior to October 2019, TD Ameritrade charged per-trade commissions
+          ($6.95 per equity trade). Commissions were eliminated in October 2019
+          to compete with commission-free brokers.
+    secondary:
+      - type: Options Contract Fees
+        description: >
+          Options trades carried a per-contract fee of $0.65 even after
+          equity commissions were removed.
+      - type: Managed Products and Advisory Fees
+        description: >
+          Revenue from TD Ameritrade managed portfolios, robo-advisory
+          (Essential Portfolios), and advisor-referred accounts.
+
+  sunset:
+    date: '2024-05-10'
+    reason: >
+      Charles Schwab completed its acquisition of TD Ameritrade and
+      migrated all client accounts. The TD Ameritrade API was decommissioned
+      on May 10, 2024. API users are directed to migrate to the Schwab
+      Trader API.
+    migration: https://developer.schwab.com/
+
+notes: >
+  All financial data reflects the TD Ameritrade API program prior to its
+  May 2024 shutdown. No new commercial or individual API access is available.

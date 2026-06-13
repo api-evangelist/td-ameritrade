@@ -1,0 +1,46 @@
+rate-limits:
+  - name: Standard Non-Order Request Throttle
+    description: >
+      All non-order-based requests from personal use non-commercial applications
+      are throttled to 120 requests per minute. Exceeding this limit returns
+      HTTP 429 (Too Many Requests). The Accounts and Trading (order placement,
+      cancellation, replacement) endpoints are explicitly excluded from this
+      throttle.
+    url: https://developer.tdameritrade.com/content/getting-started
+    limit: 120
+    unit: minute
+    scope: non-order REST API requests
+    errorCode: 429
+    enforcement: per application / consumer key
+    exemptions:
+      - Order placement (POST /accounts/{accountId}/orders)
+      - Order cancellation (DELETE /accounts/{accountId}/orders/{orderId})
+      - Order replacement (PUT /accounts/{accountId}/orders/{orderId})
+      - Saved order operations
+
+  - name: Token Expiry — Access Token
+    description: >
+      OAuth 2.0 access tokens expire 30 minutes after issuance. Applications
+      must use the refresh token to obtain a new access token before the 30-minute
+      window elapses or handle 401 responses by refreshing proactively.
+    url: https://developer.tdameritrade.com/content/authentication-faq
+    limit: 1
+    unit: 30 minutes
+    scope: OAuth 2.0 access token lifetime
+    enforcement: per token
+
+  - name: Token Expiry — Refresh Token
+    description: >
+      OAuth 2.0 refresh tokens expire after 90 days. After expiry, the user
+      must re-authenticate via the full OAuth 2.0 authorization code flow to
+      obtain a new refresh token. Each refresh token use issues a new refresh
+      token, resetting the 90-day window.
+    url: https://developer.tdameritrade.com/content/authentication-faq
+    limit: 1
+    unit: 90 days
+    scope: OAuth 2.0 refresh token lifetime
+    enforcement: per token
+
+notes: >
+  TD Ameritrade API was shut down on May 10, 2024. These rate limits reflect
+  the documented constraints that were in place prior to shutdown.
