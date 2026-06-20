@@ -6,7 +6,7 @@ description: 'TD Ameritrade was a US retail brokerage that provided REST APIs fo
   has ported much of the original functionality into the Schwab Trader API.
 
   '
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-06-13'
@@ -27,7 +27,7 @@ apis:
     Also includes saved orders, watchlists, and user preferences.
 
     '
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/account-access/apis
   baseURL: https://api.tdameritrade.com/v1
   tags:
@@ -57,7 +57,7 @@ apis:
     markets.
 
     '
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/market-data/apis
   baseURL: https://api.tdameritrade.com/v1
   tags:
@@ -83,7 +83,7 @@ apis:
     for equities.
 
     '
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/instruments/apis
   baseURL: https://api.tdameritrade.com/v1
   tags:
@@ -107,7 +107,7 @@ apis:
     are valid for 90 days and may be used to generate new access and refresh tokens.
 
     '
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/authentication/apis
   baseURL: https://api.tdameritrade.com/v1
   tags:
@@ -132,7 +132,7 @@ apis:
     sessions are initiated using credentials obtained from the User Principals endpoint.
 
     '
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/content/streaming-data
   baseURL: wss://streamer-ws.tdameritrade.com/ws
   tags:
