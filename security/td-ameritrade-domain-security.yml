@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: developer.tdameritrade.com
+  https: false
+- host: api.tdameritrade.com
+  https: false
+- host: streamer-ws.tdameritrade.com
+  https: false
+domains:
+- domain: tdameritrade.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
