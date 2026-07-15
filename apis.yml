@@ -151,6 +151,8 @@ apis:
     email: API@TDAmeritrade.com
     url: https://developer.tdameritrade.com/
 common:
+- type: AgenticAccess
+  url: agentic-access/td-ameritrade-agentic-access.yml
 - type: DomainSecurity
   url: security/td-ameritrade-domain-security.yml
 - type: Authentication
