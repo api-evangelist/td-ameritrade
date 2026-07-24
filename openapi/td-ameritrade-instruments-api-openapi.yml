@@ -1,0 +1,485 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Instruments API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Instruments
+paths:
+  /instruments:
+    get:
+      tags:
+      - Instruments
+      summary: Search for instrument and fundamental data
+      description: Search or retrieve instrument data, including fundamental data.
+      operationId: searchInstruments
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: symbol
+        in: query
+        description: Value to pass to the search. See projection description for more information.
+        required: true
+        schema:
+          type: string
+      - name: projection
+        in: query
+        description: "The type of request:symbol-search: Retrieve instrument data of a specific symbol or cusip\nsymbol-regex: Retrieve instrument data for all symbols matching regex. Example: symbol=XYZ.* will return all symbols beginning with XYZ\ndesc-search: Retrieve instrument data for instruments whose description contains the word supplied. Example: symbol=FakeCompany will return all instruments with FakeCompany in the description.\ndesc-regex: Search description with full regex support. Example: symbol=XYZ.[A-C] returns all instruments whose descriptions contain a word beginning with XYZ followed by a character A through C. \nfundamental: Returns fundamental data for a single instrument specified by exact symbol."
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                  - properties:
+                      Bond:
+                        $ref: '#/components/schemas/Bond'
+                  - properties:
+                      FundamentalData:
+                        $ref: '#/components/schemas/FundamentalData'
+                  - properties:
+                      FundamentalData:
+                        $ref: '#/components/schemas/FundamentalData'
+                  - properties:
+                      Fundamental:
+                        $ref: '#/components/schemas/Fundamental'
+                  - properties:
+                      Instrument:
+                        $ref: '#/components/schemas/Instrument'
+        '400':
+          description: An error message indicating the caller must pass a non null value in the parameter.
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: An error message indicating the instrument for the symbol/cusip was not found.
+        '406':
+          description: An error message indicating an issue in the symbol regex, or number of symbols searched is over the maximum.
+      security:
+      - Bearer: []
+  /instruments/{accountId}:
+    get:
+      tags:
+      - Instruments
+      summary: Search for instrument and fundamental data
+      description: Search or retrieve instrument data, including fundamental data.
+      operationId: getInstrument
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                  - properties:
+                      Bond:
+                        $ref: '#/components/schemas/Bond'
+                  - properties:
+                      FundamentalData:
+                        $ref: '#/components/schemas/FundamentalData'
+                  - properties:
+                      FundamentalData:
+                        $ref: '#/components/schemas/FundamentalData'
+                  - properties:
+                      Fundamental:
+                        $ref: '#/components/schemas/Fundamental'
+                  - properties:
+                      Instrument:
+                        $ref: '#/components/schemas/Instrument'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: An error message indicating the instrument for the symbol/cusip was not found.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Instrument:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        exchange:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    FundamentalData:
+      properties:
+        beta:
+          example: 0
+          type: number
+        bookValuePerShare:
+          example: 0
+          type: number
+        currentRatio:
+          example: 0
+          type: number
+        divGrowthRate3Year:
+          example: 0
+          type: number
+        dividendAmount:
+          example: 0
+          type: number
+        dividendDate:
+          example: string
+          type: string
+        dividendPayAmount:
+          example: 0
+          type: number
+        dividendPayDate:
+          example: string
+          type: string
+        dividendYield:
+          example: 0
+          type: number
+        epsChange:
+          example: 0
+          type: number
+        epsChangePercentTTM:
+          example: 0
+          type: number
+        epsChangeYear:
+          example: 0
+          type: number
+        epsTTM:
+          example: 0
+          type: number
+        grossMarginMRQ:
+          example: 0
+          type: number
+        grossMarginTTM:
+          example: 0
+          type: number
+        high52:
+          example: 0
+          type: number
+        interestCoverage:
+          example: 0
+          type: number
+        low52:
+          example: 0
+          type: number
+        ltDebtToEquity:
+          example: 0
+          type: number
+        marketCap:
+          example: 0
+          type: number
+        marketCapFloat:
+          example: 0
+          type: number
+        netProfitMarginMRQ:
+          example: 0
+          type: number
+        netProfitMarginTTM:
+          example: 0
+          type: number
+        operatingMarginMRQ:
+          example: 0
+          type: number
+        operatingMarginTTM:
+          example: 0
+          type: number
+        pbRatio:
+          example: 0
+          type: number
+        pcfRatio:
+          example: 0
+          type: number
+        peRatio:
+          example: 0
+          type: number
+        pegRatio:
+          example: 0
+          type: number
+        prRatio:
+          example: 0
+          type: number
+        quickRatio:
+          example: 0
+          type: number
+        returnOnAssets:
+          example: 0
+          type: number
+        returnOnEquity:
+          example: 0
+          type: number
+        returnOnInvestment:
+          example: 0
+          type: number
+        revChangeIn:
+          example: 0
+          type: number
+        revChangeTTM:
+          example: 0
+          type: number
+        revChangeYear:
+          example: 0
+          type: number
+        sharesOutstanding:
+          example: 0
+          type: number
+        shortIntDayToCover:
+          example: 0
+          type: number
+        shortIntToFloat:
+          example: 0
+          type: number
+        symbol:
+          example: string
+          type: string
+        totalDebtToCapital:
+          example: 0
+          type: number
+        totalDebtToEquity:
+          example: 0
+          type: number
+        vol10DayAvg:
+          example: 0
+          type: number
+        vol1DayAvg:
+          example: 0
+          type: number
+        vol3MonthAvg:
+          example: 0
+          type: number
+      type: object
+    Fundamental:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        exchange:
+          example: string
+          type: string
+        fundamental:
+          properties:
+            beta:
+              example: 0
+              type: number
+            bookValuePerShare:
+              example: 0
+              type: number
+            currentRatio:
+              example: 0
+              type: number
+            divGrowthRate3Year:
+              example: 0
+              type: number
+            dividendAmount:
+              example: 0
+              type: number
+            dividendDate:
+              example: string
+              type: string
+            dividendPayAmount:
+              example: 0
+              type: number
+            dividendPayDate:
+              example: string
+              type: string
+            dividendYield:
+              example: 0
+              type: number
+            epsChange:
+              example: 0
+              type: number
+            epsChangePercentTTM:
+              example: 0
+              type: number
+            epsChangeYear:
+              example: 0
+              type: number
+            epsTTM:
+              example: 0
+              type: number
+            grossMarginMRQ:
+              example: 0
+              type: number
+            grossMarginTTM:
+              example: 0
+              type: number
+            high52:
+              example: 0
+              type: number
+            interestCoverage:
+              example: 0
+              type: number
+            low52:
+              example: 0
+              type: number
+            ltDebtToEquity:
+              example: 0
+              type: number
+            marketCap:
+              example: 0
+              type: number
+            marketCapFloat:
+              example: 0
+              type: number
+            netProfitMarginMRQ:
+              example: 0
+              type: number
+            netProfitMarginTTM:
+              example: 0
+              type: number
+            operatingMarginMRQ:
+              example: 0
+              type: number
+            operatingMarginTTM:
+              example: 0
+              type: number
+            pbRatio:
+              example: 0
+              type: number
+            pcfRatio:
+              example: 0
+              type: number
+            peRatio:
+              example: 0
+              type: number
+            pegRatio:
+              example: 0
+              type: number
+            prRatio:
+              example: 0
+              type: number
+            quickRatio:
+              example: 0
+              type: number
+            returnOnAssets:
+              example: 0
+              type: number
+            returnOnEquity:
+              example: 0
+              type: number
+            returnOnInvestment:
+              example: 0
+              type: number
+            revChangeIn:
+              example: 0
+              type: number
+            revChangeTTM:
+              example: 0
+              type: number
+            revChangeYear:
+              example: 0
+              type: number
+            sharesOutstanding:
+              example: 0
+              type: number
+            shortIntDayToCover:
+              example: 0
+              type: number
+            shortIntToFloat:
+              example: 0
+              type: number
+            symbol:
+              example: string
+              type: string
+            totalDebtToCapital:
+              example: 0
+              type: number
+            totalDebtToEquity:
+              example: 0
+              type: number
+            vol10DayAvg:
+              example: 0
+              type: number
+            vol1DayAvg:
+              example: 0
+              type: number
+            vol3MonthAvg:
+              example: 0
+              type: number
+          type: object
+        symbol:
+          example: string
+          type: string
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    Bond:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        bondPrice:
+          example: 0
+          type: number
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        exchange:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

@@ -1,0 +1,419 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Option Chains API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Option Chains
+paths:
+  /marketdata/chains:
+    get:
+      tags:
+      - Option Chains
+      summary: Get Option Chains for optionable symbols
+      description: Get option chain for an optionable Symbol
+      operationId: getOptionChains
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: symbol
+        in: query
+        description: Enter one symbol
+        required: true
+        schema:
+          type: string
+      - name: contractType
+        in: query
+        description: Type of contracts to return in the chain. Can be CALL, PUT, or ALL. Default is ALL.
+        required: true
+        schema:
+          $ref: '#/components/schemas/PutOrCall'
+      - name: strikeCount
+        in: query
+        description: The number of strikes to return above and below the at-the-money price.
+        required: true
+        schema:
+          type: string
+      - name: includeQuotes
+        in: query
+        description: Include quotes for options in the option chain. Can be TRUE or FALSE. Default is FALSE.
+        required: true
+        schema:
+          type: string
+          example: '''TRUE'' or ''FALSE'''
+      - name: strategy
+        in: query
+        description: Passing a value returns a Strategy Chain. Possible values are SINGLE, ANALYTICAL (allows use of the volatility, underlyingPrice, interestRate, and daysToExpiration params to calculate theoretical values), COVERED, VERTICAL, CALENDAR, STRANGLE, STRADDLE, BUTTERFLY, CONDOR, DIAGONAL, COLLAR, or ROLL. Default is SINGLE.
+        required: true
+        schema:
+          $ref: '#/components/schemas/Strategy'
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                  - properties:
+                      OptionChain:
+                        $ref: '#/components/schemas/OptionChain'
+                  - properties:
+                      StrikePriceMap:
+                        $ref: '#/components/schemas/StrikePriceMap'
+                  - properties:
+                      Option:
+                        $ref: '#/components/schemas/Option'
+                  - properties:
+                      Underlying:
+                        $ref: '#/components/schemas/Underlying'
+                  - properties:
+                      ExpirationDate:
+                        $ref: '#/components/schemas/ExpirationDate'
+                  - properties:
+                      OptionDeliverables:
+                        $ref: '#/components/schemas/OptionDeliverables'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: An error message indicating internal error in the service.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Underlying:
+      properties:
+        ask:
+          example: 0
+          type: number
+        askSize:
+          example: 0
+          type: number
+        bid:
+          example: 0
+          type: number
+        bidSize:
+          example: 0
+          type: number
+        change:
+          example: 0
+          type: number
+        close:
+          example: 0
+          type: number
+        delayed:
+          type: boolean
+        description:
+          example: string
+          type: string
+        exchangeName:
+          example: '''IND'' or ''ASE'' or ''NYS'' or ''NAS'' or ''NAP'' or ''PAC'' or ''OPR'' or ''BATS'''
+          type: string
+        fiftyTwoWeekHigh:
+          example: 0
+          type: number
+        fiftyTwoWeekLow:
+          example: 0
+          type: number
+        highPrice:
+          example: 0
+          type: number
+        last:
+          example: 0
+          type: number
+        lowPrice:
+          example: 0
+          type: number
+        mark:
+          example: 0
+          type: number
+        markChange:
+          example: 0
+          type: number
+        markPercentChange:
+          example: 0
+          type: number
+        openPrice:
+          example: 0
+          type: number
+        percentChange:
+          example: 0
+          type: number
+        quoteTime:
+          example: 0
+          type: number
+        symbol:
+          example: string
+          type: string
+        totalVolume:
+          example: 0
+          type: number
+        tradeTime:
+          example: 0
+          type: number
+      type: object
+    OrderStatus:
+      enum:
+      - AWAITING_PARENT_ORDER
+      - AWAITING_CONDITION
+      - AWAITING_MANUAL_REVIEW
+      - ACCEPTED
+      - AWAITING_UR_OUT
+      - PENDING_ACTIVATION
+      - WORKING
+      - REJECTED
+      - QUEUED
+      - PENDING_CANCEL
+      - CANCELED
+      - PENDING_REPLACE
+      - REPLACED
+      - FILLED
+      - EXPIRED
+      example: '''AWAITING_PARENT_ORDER'' or ''AWAITING_CONDITION'' or ''AWAITING_MANUAL_REVIEW'' or ''ACCEPTED'' or ''AWAITING_UR_OUT'' or ''PENDING_ACTIVATION'' or ''QUEUED'' or ''WORKING'' or ''REJECTED'' or ''PENDING_CANCEL'' or ''CANCELED'' or ''PENDING_REPLACE'' or ''REPLACED'' or ''FILLED'' or ''EXPIRED'''
+      type: string
+    StrikePriceMap:
+      type: object
+    ExpirationDate:
+      properties:
+        date:
+          example: string
+          type: string
+      type: object
+    Strategy:
+      enum:
+      - SINGLE
+      - ANALYTICAL
+      - COVERED
+      - VERTICAL
+      - CALENDAR
+      - STRANGLE
+      - STRADDLE
+      - BUTTERFLY
+      - CONDOR
+      - DIAGONAL
+      - COLLAR
+      - ROLL
+      example: '''SINGLE'' or ''ANALYTICAL'' or ''COVERED'' or ''VERTICAL'' or ''CALENDAR'' or ''STRANGLE'' or ''STRADDLE'' or ''BUTTERFLY'' or ''CONDOR'' or ''DIAGONAL'' or ''COLLAR'' or ''ROLL'''
+      type: string
+    OptionDeliverables:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        currencyType:
+          $ref: '#/components/schemas/CurrencyType'
+        deliverableUnits:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    OptionChain:
+      properties:
+        callExpDateMap:
+          example: object
+          type: string
+        daysToExpiration:
+          example: 0
+          type: number
+        interestRate:
+          example: 0
+          type: number
+        interval:
+          example: 0
+          type: number
+        isDelayed:
+          type: boolean
+        isIndex:
+          type: boolean
+        putExpDateMap:
+          example: object
+          type: string
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        strategy:
+          $ref: '#/components/schemas/Strategy'
+        symbol:
+          example: string
+          type: string
+        underlying:
+          properties:
+            ask:
+              example: 0
+              type: number
+            askSize:
+              example: 0
+              type: number
+            bid:
+              example: 0
+              type: number
+            bidSize:
+              example: 0
+              type: number
+            change:
+              example: 0
+              type: number
+            close:
+              example: 0
+              type: number
+            delayed:
+              type: boolean
+            description:
+              example: string
+              type: string
+            exchangeName:
+              example: string
+              type: string
+            fiftyTwoWeekHigh:
+              example: 0
+              type: number
+            fiftyTwoWeekLow:
+              example: 0
+              type: number
+            highPrice:
+              example: 0
+              type: number
+            last:
+              example: 0
+              type: number
+            lowPrice:
+              example: 0
+              type: number
+            mark:
+              example: 0
+              type: number
+            markChange:
+              example: 0
+              type: number
+            markPercentChange:
+              example: 0
+              type: number
+            openPrice:
+              example: 0
+              type: number
+            percentChange:
+              example: 0
+              type: number
+            quoteTime:
+              example: 0
+              type: number
+            symbol:
+              example: string
+              type: string
+            totalVolume:
+              example: 0
+              type: number
+            tradeTime:
+              example: 0
+              type: number
+          type: object
+        underlyingPrice:
+          example: 0
+          type: number
+        volatility:
+          example: 0
+          type: number
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    CurrencyType:
+      enum:
+      - USD
+      - CAD
+      - EUR
+      - JPY
+      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
+      type: string
+    Option:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        optionDeliverables:
+          items:
+            properties:
+              assetType:
+                $ref: '#/components/schemas/AssetType'
+              currencyType:
+                $ref: '#/components/schemas/CurrencyType'
+              deliverableUnits:
+                example: 0
+                type: number
+              symbol:
+                example: string
+                type: string
+            type: object
+          type: array
+        optionMultiplier:
+          example: 0
+          type: number
+        putCall:
+          $ref: '#/components/schemas/PutOrCall'
+        symbol:
+          example: string
+          type: string
+        type:
+          $ref: '#/components/schemas/OptionType'
+        underlyingSymbol:
+          example: string
+          type: string
+      type: object
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+    OptionType:
+      enum:
+      - VANILLA
+      - BINARY
+      - BARRIER
+      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

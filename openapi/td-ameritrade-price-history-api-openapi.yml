@@ -1,0 +1,190 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Price History API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Price History
+paths:
+  /marketdata/{symbol}/pricehistory:
+    get:
+      tags:
+      - Price History
+      summary: Historical price data for charts
+      description: Get price history for a symbol
+      operationId: getPriceHistory
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: symbol
+        in: path
+        description: Enter one symbol
+        required: true
+        schema:
+          type: string
+      - name: periodType
+        in: query
+        description: The type of period to show. Valid values are day, month, year, or ytd (year to date). Default is day.
+        required: true
+        schema:
+          type: string
+          example: '''day'' or ''month'' or ''year'' or ''ytd'''
+      - name: period
+        in: query
+        description: 'The number of periods to show.
+
+
+          Example: For a 2 day / 1 min chart, the values would be:
+
+          period: 2
+
+          periodType: day
+
+          frequency: 1
+
+          frequencyType: min
+
+          Valid periods by periodType (defaults marked with an asterisk):
+
+          day: 1, 2, 3, 4, 5, 10*
+
+          month: 1*, 2, 3, 6
+
+          year: 1*, 2, 3, 5, 10, 15, 20
+
+          ytd: 1*'
+        required: true
+        schema:
+          type: integer
+      - name: frequencyType
+        in: query
+        description: 'The type of frequency with which a new candle is formed.
+
+
+          Valid frequencyTypes by periodType (defaults marked with an asterisk):
+
+
+          day: minute*
+
+          month: daily, weekly*
+
+          year: daily, weekly, monthly*
+
+          ytd: daily, weekly*
+
+          '
+        required: true
+        schema:
+          type: string
+      - name: frequency
+        in: query
+        description: 'The number of the frequencyType to be included in each candle.
+
+
+          Valid frequencies by frequencyType (defaults marked with an asterisk):
+
+
+          minute: 1*, 5, 10, 15, 30
+
+          daily: 1*
+
+          weekly: 1*
+
+          monthly: 1*
+
+          '
+        required: true
+        schema:
+          type: integer
+      - name: endDate
+        in: query
+        description: End date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided. Default is previous trading day.
+        required: true
+        schema:
+          type: string
+      - name: startDate
+        in: query
+        description: Start date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided.
+        required: true
+        schema:
+          type: string
+      - name: needExtendedHoursData
+        in: query
+        description: true to return extended hours data, false for regular market hours only. Default is true
+        required: true
+        schema:
+          type: boolean
+          example: x
+      - name: x
+        in: query
+        description: x
+        required: true
+        schema:
+          type: string
+          example: x
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandleList'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: Not Found
+      security:
+      - Bearer: []
+components:
+  schemas:
+    CandleList:
+      properties:
+        candles:
+          items:
+            properties:
+              close:
+                example: 0
+                type: number
+              datetime:
+                example: 0
+                type: number
+              high:
+                example: 0
+                type: number
+              low:
+                example: 0
+                type: number
+              open:
+                example: 0
+                type: number
+              volume:
+                example: 0
+                type: number
+            type: object
+          type: array
+        empty:
+          type: boolean
+        symbol:
+          example: string
+          type: string
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

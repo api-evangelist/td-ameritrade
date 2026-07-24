@@ -1,0 +1,77 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Authentication API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Authentication
+paths:
+  /oath2/token:
+    post:
+      tags:
+      - Authentication
+      summary: Post Access Token
+      description: The token endpoint returns an access token along with an optional refresh token.
+      operationId: postAccessToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EASObject'
+        description: The access token.
+      responses:
+        '200':
+          description: A EASObject Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EASObject'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller is forbidden from accessing this page.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    EASObject:
+      properties:
+        access_token:
+          example: string
+          type: string
+        expires_in:
+          example: 0
+          type: number
+        refresh_token:
+          example: string
+          type: string
+        refresh_token_expires_in:
+          example: 0
+          type: number
+        scope:
+          example: string
+          type: string
+        token_type:
+          example: string
+          type: string
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

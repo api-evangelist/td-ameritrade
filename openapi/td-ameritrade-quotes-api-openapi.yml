@@ -1,0 +1,545 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Quotes API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Quotes
+paths:
+  /marketdata/{symbol}/quotes:
+    get:
+      tags:
+      - Quotes
+      summary: Search for instrument and fundamental data
+      description: Get quote for a symbol.
+      operationId: getQuote
+      parameters:
+      - name: symbol
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: apiKey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                  - properties:
+                      MutualFund:
+                        $ref: '#/components/schemas/MutualFund'
+                  - properties:
+                      FutureOptions:
+                        $ref: '#/components/schemas/FutureOptions'
+                  - properties:
+                      Option:
+                        $ref: '#/components/schemas/Option'
+                  - properties:
+                      Forex:
+                        $ref: '#/components/schemas/Forex'
+                  - properties:
+                      ETF:
+                        $ref: '#/components/schemas/ETF'
+                  - properties:
+                      Equity:
+                        $ref: '#/components/schemas/Equity'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller is forbidden from accessing this page.
+        '404':
+          description: An error message indicating the instrument for the symbol/cusip was not found.
+      security:
+      - Bearer: []
+  /marketdata/quotes:
+    get:
+      tags:
+      - Quotes
+      summary: Search for instrument and fundamental data
+      description: Get quote for one or more symbols.
+      operationId: getQuotes
+      parameters:
+      - name: apiKey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: symbol
+        in: query
+        description: Symbol to search for
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                  - properties:
+                      MutualFund:
+                        $ref: '#/components/schemas/MutualFund'
+                  - properties:
+                      FutureOptions:
+                        $ref: '#/components/schemas/FutureOptions'
+                  - properties:
+                      Option:
+                        $ref: '#/components/schemas/Option'
+                  - properties:
+                      Forex:
+                        $ref: '#/components/schemas/Forex'
+                  - properties:
+                      ETF:
+                        $ref: '#/components/schemas/ETF'
+                  - properties:
+                      Equity:
+                        $ref: '#/components/schemas/Equity'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller is forbidden from accessing this page.
+        '404':
+          description: An error message indicating the instrument for the symbol/cusip was not found.
+        '406':
+          description: An error message indicating an issue in the symbol regex, or number of symbols searched is over the maximum.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    ETF:
+      properties:
+        52WkHigh:
+          example: 0
+          type: number
+        52WkLow:
+          example: 0
+          type: number
+        askId:
+          example: string
+          type: string
+        askPrice:
+          example: 0
+          type: number
+        askSize:
+          example: 0
+          type: number
+        bidId:
+          example: string
+          type: string
+        bidPrice:
+          example: 0
+          type: number
+        bidSize:
+          example: 0
+          type: number
+        closePrice:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        digits:
+          example: 0
+          type: number
+        divAmount:
+          example: 0
+          type: number
+        divDate:
+          example: string
+          type: string
+        divYield:
+          example: 0
+          type: number
+        exchange:
+          example: string
+          type: string
+        exchangeName:
+          example: string
+          type: string
+        highPrice:
+          example: 0
+          type: number
+        lastId:
+          example: string
+          type: string
+        lastPrice:
+          example: 0
+          type: number
+        lastSize:
+          example: 0
+          type: number
+        lowPrice:
+          example: 0
+          type: number
+        marginable:
+          type: boolean
+        mark:
+          example: 0
+          type: number
+        netChange:
+          example: 0
+          type: number
+        openPrice:
+          example: 0
+          type: number
+        peRatio:
+          example: 0
+          type: number
+        quoteTimeInLong:
+          example: 0
+          type: number
+        regularMarketLastPrice:
+          example: 0
+          type: number
+        regularMarketLastSize:
+          example: 0
+          type: number
+        regularMarketNetChange:
+          example: 0
+          type: number
+        regularMarketTradeTimeInLong:
+          example: 0
+          type: number
+        securityStatus:
+          example: string
+          type: string
+        shortable:
+          type: boolean
+        symbol:
+          example: string
+          type: string
+        totalVolume:
+          example: 0
+          type: number
+        tradeTimeInLong:
+          example: 0
+          type: number
+        volatility:
+          example: 0
+          type: number
+      type: object
+    MutualFund:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+        type:
+          example: '''NOT_APPLICABLE'' or ''OPEN_END_NON_TAXABLE'' or ''OPEN_END_TAXABLE'' or ''NO_LOAD_NON_TAXABLE'' or ''NO_LOAD_TAXABLE'''
+          type: string
+      type: object
+    Equity:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    FutureOptions:
+      properties:
+        askPriceInDouble:
+          example: 0
+          type: number
+        bidPriceInDouble:
+          example: 0
+          type: number
+        closePriceInDouble:
+          example: 0
+          type: number
+        contractType:
+          $ref: '#/components/schemas/PutOrCall'
+        deltaInDouble:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        digits:
+          example: 0
+          type: number
+        exchangeName:
+          example: string
+          type: string
+        exerciseType:
+          example: string
+          type: string
+        expirationType:
+          example: string
+          type: string
+        futureExpirationDate:
+          example: 0
+          type: number
+        futureIsActive:
+          type: boolean
+        futureIsTradable:
+          type: boolean
+        futurePercentChange:
+          example: 0
+          type: number
+        futureTradingHours:
+          example: string
+          type: string
+        gammaInDouble:
+          example: 0
+          type: number
+        highPriceInDouble:
+          example: 0
+          type: number
+        inTheMoney:
+          type: boolean
+        lastPriceInDouble:
+          example: 0
+          type: number
+        lowPriceInDouble:
+          example: 0
+          type: number
+        mark:
+          example: 0
+          type: number
+        moneyIntrinsicValueInDouble:
+          example: 0
+          type: number
+        multiplierInDouble:
+          example: 0
+          type: number
+        netChangeInDouble:
+          example: 0
+          type: number
+        openInterest:
+          example: 0
+          type: number
+        openPriceInDouble:
+          example: 0
+          type: number
+        rhoInDouble:
+          example: 0
+          type: number
+        securityStatus:
+          example: string
+          type: string
+        strikePriceInDouble:
+          example: 0
+          type: number
+        symbol:
+          example: string
+          type: string
+        thetaInDouble:
+          example: 0
+          type: number
+        tick:
+          example: 0
+          type: number
+        tickAmount:
+          example: 0
+          type: number
+        timeValueInDouble:
+          example: 0
+          type: number
+        underlying:
+          example: string
+          type: string
+        vegaInDouble:
+          example: 0
+          type: number
+        volatility:
+          example: 0
+          type: number
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    CurrencyType:
+      enum:
+      - USD
+      - CAD
+      - EUR
+      - JPY
+      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
+      type: string
+    Option:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        optionDeliverables:
+          items:
+            properties:
+              assetType:
+                $ref: '#/components/schemas/AssetType'
+              currencyType:
+                $ref: '#/components/schemas/CurrencyType'
+              deliverableUnits:
+                example: 0
+                type: number
+              symbol:
+                example: string
+                type: string
+            type: object
+          type: array
+        optionMultiplier:
+          example: 0
+          type: number
+        putCall:
+          $ref: '#/components/schemas/PutOrCall'
+        symbol:
+          example: string
+          type: string
+        type:
+          $ref: '#/components/schemas/OptionType'
+        underlyingSymbol:
+          example: string
+          type: string
+      type: object
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+    Forex:
+      properties:
+        52WkHighInDouble:
+          example: 0
+          type: number
+        52WkLowInDouble:
+          example: 0
+          type: number
+        askPriceInDouble:
+          example: 0
+          type: number
+        bidPriceInDouble:
+          example: 0
+          type: number
+        changeInDouble:
+          example: 0
+          type: number
+        closePriceInDouble:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        digits:
+          example: 0
+          type: number
+        exchange:
+          example: string
+          type: string
+        exchangeName:
+          example: string
+          type: string
+        highPriceInDouble:
+          example: 0
+          type: number
+        isTradable:
+          type: boolean
+        lastPriceInDouble:
+          example: 0
+          type: number
+        lowPriceInDouble:
+          example: 0
+          type: number
+        mark:
+          example: 0
+          type: number
+        marketMaker:
+          example: string
+          type: string
+        openPriceInDouble:
+          example: 0
+          type: number
+        percentChange:
+          example: 0
+          type: number
+        product:
+          example: string
+          type: string
+        securityStatus:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+        tick:
+          example: 0
+          type: number
+        tickAmount:
+          example: 0
+          type: number
+        tradingHours:
+          example: string
+          type: string
+      type: object
+    OptionType:
+      enum:
+      - VANILLA
+      - BINARY
+      - BARRIER
+      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

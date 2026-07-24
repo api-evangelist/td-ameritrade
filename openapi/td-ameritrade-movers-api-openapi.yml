@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Movers API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Movers
+paths:
+  /marketdata/{index}/movers:
+    get:
+      tags:
+      - Movers
+      summary: Retrieve mover information by index symbol, direction type and change
+      description: Top 10 (up or down) movers by value or percent for a particular market
+      operationId: getMovers
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: index
+        in: path
+        description: The index symbol to get movers from.
+        required: true
+        schema:
+          type: string
+      - name: direction
+        in: query
+        description: To return movers with the specified directions of up or down.
+        required: true
+        schema:
+          type: string
+          example: '''up'' or ''down'''
+      - name: change
+        in: query
+        description: To return movers with the specified change types of percent or value.
+        required: true
+        schema:
+          type: string
+          example: '''percent'' or ''value'''
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mover'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Mover:
+      properties:
+        change:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        direction:
+          example: '''up'' or ''down'''
+          type: string
+        last:
+          example: 0
+          type: number
+        symbol:
+          example: string
+          type: string
+        totalVolume:
+          example: 0
+          type: number
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

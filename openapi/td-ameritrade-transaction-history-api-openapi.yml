@@ -1,0 +1,291 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Transaction History API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Transaction History
+paths:
+  /accounts/{accountId}/transactions/{transactionId}:
+    get:
+      tags:
+      - Transaction History
+      summary: APIs to access transaction history on the account
+      description: Transaction for a specific account.
+      operationId: getTransaction
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: transactionId
+        in: path
+        description: Transaction ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller doesn't have access to the account in the request.
+        '404':
+          description: An error message indicating the specified transaction could not be found.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+  /accounts/{accountId}/transactions:
+    get:
+      tags:
+      - Transaction History
+      summary: APIs to access transaction history on the account
+      description: Transactions for a specific account.
+      operationId: getTransactions
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: Only transactions with the specified type will be returned.
+        required: true
+        schema:
+          $ref: '#/components/schemas/TransactionType'
+      - name: symbol
+        in: query
+        description: Only transactions with the specified symbol will be returned.
+        required: true
+        schema:
+          type: string
+      - name: startDate
+        in: query
+        description: 'Only transactions after the Start Date will be returned. Note: The maximum date range is one year. Valid ISO-8601 formats are: yyyy-MM-dd.'
+        required: true
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        description: 'Only transactions before the End Date will be returned. Note: The maximum date range is one year. Valid ISO-8601 formats are: yyyy-MM-dd.'
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller doesn't have access to the account in the request.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Transaction:
+      properties:
+        accruedInterest:
+          example: 0
+          type: number
+        achStatus:
+          example: '''Approved'' or ''Rejected'' or ''Cancel'' or ''Error'''
+          type: string
+        cashBalanceEffectFlag:
+          type: boolean
+        clearingReferenceNumber:
+          example: string
+          type: string
+        dayTradeBuyingPowerEffect:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        fees:
+          example: object
+          type: string
+        netAmount:
+          example: 0
+          type: number
+        orderDate:
+          example: string
+          type: string
+        orderId:
+          example: string
+          type: string
+        requirementReallocationAmount:
+          example: 0
+          type: number
+        settlementDate:
+          example: string
+          type: string
+        sma:
+          example: 0
+          type: number
+        subAccount:
+          example: string
+          type: string
+        transactionDate:
+          example: string
+          type: string
+        transactionId:
+          example: 0
+          type: number
+        transactionItem:
+          properties:
+            accountId:
+              example: 0
+              type: number
+            amount:
+              example: 0
+              type: number
+            cost:
+              example: 0
+              type: number
+            instruction:
+              $ref: '#/components/schemas/Instruction'
+            instrument:
+              properties:
+                assetType:
+                  $ref: '#/components/schemas/AssetType'
+                bondInterestRate:
+                  example: 0
+                  type: number
+                bondMaturityDate:
+                  example: string
+                  type: string
+                cusip:
+                  example: string
+                  type: string
+                description:
+                  example: string
+                  type: string
+                optionExpirationDate:
+                  example: string
+                  type: string
+                optionStrikePrice:
+                  example: 0
+                  type: number
+                putCall:
+                  $ref: '#/components/schemas/PutOrCall'
+                symbol:
+                  example: string
+                  type: string
+                underlyingSymbol:
+                  example: string
+                  type: string
+              type: object
+            parentChildIndicator:
+              example: string
+              type: string
+            parentOrderKey:
+              example: 0
+              type: number
+            positionEffect:
+              $ref: '#/components/schemas/PositionEffect'
+            price:
+              example: 0
+              type: number
+          type: object
+        transactionSubType:
+          example: string
+          type: string
+        type:
+          example: '''TRADE'' or ''RECEIVE_AND_DELIVER'' or ''DIVIDEND_OR_INTEREST'' or ''ACH_RECEIPT'' or ''ACH_DISBURSEMENT'' or ''CASH_RECEIPT'' or ''CASH_DISBURSEMENT'' or ''ELECTRONIC_FUND'' or ''WIRE_OUT'' or ''WIRE_IN'' or ''JOURNAL'' or ''MEMORANDUM'' or ''MARGIN_CALL'' or ''MONEY_MARKET'' or ''SMA_ADJUSTMENT'''
+          type: string
+      type: object
+    PositionEffect:
+      enum:
+      - OPENING
+      - CLOSING
+      - AUTOMATIC
+      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
+      type: string
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    Instruction:
+      enum:
+      - BUY
+      - SELL
+      - BUY_TO_COVER
+      - BUY_TO_OPEN
+      - BUY_TO_CLOSE
+      - SELL_TO_OPEN
+      - SELL_TO_CLOSE
+      - EXCHANGE
+      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
+      type: string
+    TransactionType:
+      enum:
+      - ALL
+      - TRADE
+      - BUY_ONLY
+      - SELL_ONLY
+      - CASH_IN_OR_CASH_OUT
+      - CHECKING
+      - DIVIDEND
+      - INTEREST
+      - OTHER
+      - ADVISOR_FEES
+      example: '''ALL'' or ''TRADE'' or ''BUY_ONLY'' or ''SELL_ONLY'' or ''CASH_IN_OR_CASH_OUT'' or ''CHECKING'' or ''DIVIDEND'' or ''INTEREST'' or ''OTHER'' or ''ADVISOR_FEES'''
+      type: string
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

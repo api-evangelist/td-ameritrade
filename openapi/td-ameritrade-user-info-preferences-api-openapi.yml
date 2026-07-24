@@ -1,0 +1,466 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading User Info & Preferences API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: User Info & Preferences
+paths:
+  /accounts/{accountId}/preferences:
+    get:
+      tags:
+      - User Info & Preferences
+      summary: APIs to access user-authorized accounts and their preferences
+      description: Preferences for a specific account.
+      operationId: getPreferences
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Preferences
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Preferences'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - User Info & Preferences
+      summary: APIs to access user-authorized accounts and their preferences
+      description: Update preferences for a specific account. Please note that the directOptionsRouting and directEquityRouting values cannot be modified via this operation
+      operationId: updatePreferences
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePreferences'
+      responses:
+        '200':
+          description: Preferences
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Preferences'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '403':
+          description: An error message indicating the caller is forbidden from accessing this resource.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+  /userprincipals/streamersubscriptionkeys:
+    get:
+      tags:
+      - User Info & Preferences
+      summary: APIs to access user-authorized accounts and their preferences
+      description: SubscriptionKey for provided accounts or default accounts.
+      operationId: getStreamerSubscriptionKeys
+      parameters:
+      - name: accountIds
+        in: query
+        description: Account IDs
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Preferences
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionKey'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+  /userprincipals:
+    get:
+      tags:
+      - User Info & Preferences
+      summary: APIs to access user-authorized accounts and their preferences
+      description: User Principal details.
+      operationId: getUserPrincipals
+      parameters:
+      - name: fields
+        in: query
+        description: 'A comma separated String which allows one to specify additional fields to return. None of these fields are returned by default. Possible values in this String can be: streamerSubscriptionKeys,
+
+          streamerConnectionInfo,
+
+          preferences,
+
+          surrogateIds'
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            example: fields=streamerSubscriptionKeys,streamerConnectionInfo
+      responses:
+        '200':
+          description: Preferences
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPrincipal'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+        '503':
+          description: An error message indicating there is a temporary problem responding.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    UpdatePreferences:
+      properties:
+        authTokenTimeout:
+          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
+          type: string
+        defaultAdvancedToolLaunch:
+          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
+          type: string
+        defaultEquityOrderDuration:
+          $ref: '#/components/schemas/Duration'
+        defaultEquityOrderLegInstruction:
+          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
+          type: string
+        defaultEquityOrderMarketSession:
+          $ref: '#/components/schemas/Session'
+        defaultEquityOrderPriceLinkType:
+          $ref: '#/components/schemas/EquityPriceLinkType'
+        defaultEquityOrderType:
+          $ref: '#/components/schemas/OrderType'
+        defaultEquityQuantity:
+          example: 0
+          format: int32
+          type: integer
+        directEquityRouting:
+          type: boolean
+        directOptionsRouting:
+          type: boolean
+        equityTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        expressTrading:
+          type: boolean
+        mutualFundTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        optionTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+      type: object
+    EquityPriceLinkType:
+      enum:
+      - VALUE
+      - PERCENT
+      example: '''VALUE'' or ''PERCENT'''
+      type: string
+    SubscriptionKey:
+      properties:
+        keys:
+          items:
+            properties:
+              key:
+                example: string
+                type: string
+            type: object
+          type: array
+      type: object
+    UserPrincipal:
+      properties:
+        accessLevel:
+          example: string
+          type: string
+        accounts:
+          items:
+            properties:
+              accountCdDomainId:
+                example: string
+                type: string
+              accountId:
+                example: string
+                type: string
+              acl:
+                example: string
+                type: string
+              authorizations:
+                properties:
+                  advancedMargin:
+                    type: boolean
+                  apex:
+                    type: boolean
+                  levelTwoQuotes:
+                    type: boolean
+                  marginTrading:
+                    type: boolean
+                  optionTradingLevel:
+                    example: '''COVERED'' or ''FULL'' or ''LONG'' or ''SPREAD'' or ''NONE'''
+                    type: string
+                  scottradeAccount:
+                    type: boolean
+                  stockTrading:
+                    type: boolean
+                  streamerAccess:
+                    type: boolean
+                  streamingNews:
+                    type: boolean
+                type: object
+              company:
+                example: string
+                type: string
+              description:
+                example: string
+                type: string
+              displayName:
+                example: string
+                type: string
+              preferences:
+                properties:
+                  authTokenTimeout:
+                    example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
+                    type: string
+                  defaultAdvancedToolLaunch:
+                    example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
+                    type: string
+                  defaultEquityOrderDuration:
+                    $ref: '#/components/schemas/Duration'
+                  defaultEquityOrderLegInstruction:
+                    example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
+                    type: string
+                  defaultEquityOrderMarketSession:
+                    $ref: '#/components/schemas/Session'
+                  defaultEquityOrderPriceLinkType:
+                    $ref: '#/components/schemas/EquityPriceLinkType'
+                  defaultEquityOrderType:
+                    $ref: '#/components/schemas/OrderType'
+                  defaultEquityQuantity:
+                    example: 0
+                    type: number
+                  directEquityRouting:
+                    type: boolean
+                  directOptionsRouting:
+                    type: boolean
+                  equityTaxLotMethod:
+                    $ref: '#/components/schemas/TaxLotMethod'
+                  expressTrading:
+                    type: boolean
+                  mutualFundTaxLotMethod:
+                    $ref: '#/components/schemas/TaxLotMethod'
+                  optionTaxLotMethod:
+                    $ref: '#/components/schemas/TaxLotMethod'
+                type: object
+              segment:
+                example: string
+                type: string
+              surrogateIds:
+                example: object
+                type: string
+            type: object
+          type: array
+        authToken:
+          example: string
+          type: string
+        lastLoginTime:
+          example: string
+          type: string
+        loginTime:
+          example: string
+          type: string
+        primaryAccountId:
+          example: string
+          type: string
+        professionalStatus:
+          example: '''PROFESSIONAL'' or ''NON_PROFESSIONAL'' or ''UNKNOWN_STATUS'''
+          type: string
+        quotes:
+          properties:
+            isAmexDelayed:
+              type: boolean
+            isCmeDelayed:
+              type: boolean
+            isForexDelayed:
+              type: boolean
+            isIceDelayed:
+              type: boolean
+            isNasdaqDelayed:
+              type: boolean
+            isNyseDelayed:
+              type: boolean
+            isOpraDelayed:
+              type: boolean
+          type: object
+        stalePassword:
+          type: boolean
+        streamerInfo:
+          properties:
+            accessLevel:
+              example: string
+              type: string
+            acl:
+              example: string
+              type: string
+            appId:
+              example: string
+              type: string
+            streamerBinaryUrl:
+              example: string
+              type: string
+            streamerSocketUrl:
+              example: string
+              type: string
+            token:
+              example: string
+              type: string
+            tokenTimestamp:
+              example: string
+              type: string
+            userGroup:
+              example: string
+              type: string
+          type: object
+        streamerSubscriptionKeys:
+          properties:
+            keys:
+              items:
+                properties:
+                  key:
+                    example: string
+                    type: string
+                type: object
+              type: array
+          type: object
+        tokenExpirationTime:
+          example: string
+          type: string
+        userCdDomainId:
+          example: string
+          type: string
+        userId:
+          example: string
+          type: string
+      type: object
+    TaxLotMethod:
+      enum:
+      - FIFO
+      - LIFO
+      - HIGH_COST
+      - LOW_COST
+      - AVERAGE_COST
+      - SPECIFIC_LOT
+      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
+      type: string
+    Duration:
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      - FILL_OR_KILL
+      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
+      type: string
+    Session:
+      enum:
+      - NORMAL
+      - SEAMLESS
+      - AM
+      - PM
+      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      type: string
+    OrderType:
+      enum:
+      - MARKET
+      - LIMIT
+      - STOP
+      - STOP_LIMIT
+      - TRAILING_STOP
+      - MARKET_ON_CLOSE
+      - EXERCISE
+      - TRAILING_STOP_LIMIT
+      - NET_DEBIT
+      - NET_CREDIT
+      - NET_ZERO
+      example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
+      type: string
+    Preferences:
+      properties:
+        authTokenTimeout:
+          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
+          type: string
+        defaultAdvancedToolLaunch:
+          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
+          type: string
+        defaultEquityOrderDuration:
+          $ref: '#/components/schemas/Duration'
+        defaultEquityOrderLegInstruction:
+          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
+          type: string
+        defaultEquityOrderMarketSession:
+          $ref: '#/components/schemas/Session'
+        defaultEquityOrderPriceLinkType:
+          $ref: '#/components/schemas/EquityPriceLinkType'
+        defaultEquityOrderType:
+          $ref: '#/components/schemas/OrderType'
+        defaultEquityQuantity:
+          example: 0
+          type: number
+        directEquityRouting:
+          type: boolean
+        directOptionsRouting:
+          type: boolean
+        equityTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        expressTrading:
+          type: boolean
+        mutualFundTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        optionTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Market Hours API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Market Hours
+paths:
+  /marketdata/hours:
+    get:
+      tags:
+      - Market Hours
+      summary: Operating hours of markets
+      description: Retrieve market hours for specified markets
+      operationId: getHours
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: markets
+        in: query
+        description: The markets for which you're requesting market hours, comma-separated. Valid markets are EQUITY, OPTION, FUTURE, BOND, or FOREX.
+        required: true
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: 'The date for which market hours information is requested. Valid ISO-8601 formats are : yyyy-MM-dd and yyyy-MM-dd''T''HH:mm:ssz.'
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hours'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '404':
+          description: Not Found
+      security:
+      - Bearer: []
+  /marketdata/{market}/hours:
+    get:
+      tags:
+      - Market Hours
+      summary: Operating hours of markets
+      description: Retrieve market hours for specified single market
+      operationId: getMarketHours
+      parameters:
+      - name: apikey
+        in: query
+        description: API Key
+        required: true
+        schema:
+          type: string
+      - name: market
+        in: path
+        description: The markets for which you're requesting market hours, comma-separated. Valid markets are EQUITY, OPTION, FUTURE, BOND, or FOREX.
+        required: true
+        schema:
+          type: string
+      - name: date
+        in: query
+        description: 'The date for which market hours information is requested. Valid ISO-8601 formats are : yyyy-MM-dd and yyyy-MM-dd''T''HH:mm:ssz.'
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Instruments List
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hours'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '404':
+          description: Not Found
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Hours:
+      properties:
+        category:
+          example: string
+          type: string
+        date:
+          example: string
+          type: string
+        exchange:
+          example: string
+          type: string
+        isOpen:
+          type: boolean
+        marketType:
+          example: '''BOND'' or ''EQUITY'' or ''ETF'' or ''FOREX'' or ''FUTURE'' or ''FUTURE_OPTION'' or ''INDEX'' or ''INDICATOR'' or ''MUTUAL_FUND'' or ''OPTION'' or ''UNKNOWN'''
+          type: string
+        product:
+          example: string
+          type: string
+        productName:
+          example: string
+          type: string
+        sessionHours:
+          example: object
+          type: string
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io

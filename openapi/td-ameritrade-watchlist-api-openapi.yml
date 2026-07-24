@@ -1,0 +1,390 @@
+openapi: 3.0.0
+info:
+  description: TD Ameritrade API
+  version: 3.0.1
+  title: TD Ameritrade Accounts and Trading Watchlist API
+  termsOfService: https://developer.tdameritrade.com/legal
+  contact:
+    email: austin.millan@protonmail.com
+servers:
+- url: https://api.tdameritrade.com/v2
+- url: http://api.tdameritrade.com/v2
+tags:
+- name: Watchlist
+paths:
+  /accounts/{accountId}/watchlists:
+    post:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: Create watchlist for specific account.This method does not verify that the symbol or asset type are valid.
+      operationId: createWatchlist
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWatchlist'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+    get:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: All watchlists of an account.
+      operationId: getWatchlistSingleAccount
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Watchlist'
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+  /accounts/{accountId}/watchlists/{watchlistId}:
+    delete:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: Delete watchlist for a specific account. This method does not verify that the symbol or asset type are valid.
+      operationId: deleteWatchlist
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: watchlistId
+        in: path
+        description: Watchlist ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: Watchlist deleted.
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+    put:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: Replace watchlist for specific account. This method does not verify that the symbol or asset type are valid.
+      operationId: replaceWatchlist
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: watchlistId
+        in: path
+        description: Watchlist ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWatchlist'
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: Watchlist updated.
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: 'Partially update watchlist for a specific account: change watchlist name, add to the beginning/end of a watchlist, update or delete items in a watchlist. This method does not verify that the symbol or asset type are valid.'
+      operationId: updateWatchlist
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: watchlistId
+        in: path
+        description: Watchlist ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWatchlist'
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: Watchlist updated.
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+    get:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: Specific watchlist for a specific account.
+      operationId: getWatchlist
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: string
+      - name: watchlistId
+        in: path
+        description: Watchlist ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Watchlist'
+        '400':
+          description: An error message indicating the validation problem with the request.
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '404':
+          description: An error message indicating the account or the watchlist ID does not exist.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+  /accounts/watchlists:
+    get:
+      tags:
+      - Watchlist
+      summary: APIs to perform CRUD operations on Account Watchlist
+      description: All watchlists for all of the user's linked accounts.
+      operationId: getWatchlistMultipleAccounts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Watchlist'
+        '401':
+          description: An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.
+        '500':
+          description: An error message indicating there was an unexpected server error.
+      security:
+      - Bearer: []
+components:
+  schemas:
+    Watchlist:
+      properties:
+        accountId:
+          example: string
+          type: string
+        name:
+          example: string
+          type: string
+        status:
+          example: '''UNCHANGED'' or ''CREATED'' or ''UPDATED'' or ''DELETED'''
+          type: string
+        watchlistId:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                type: number
+              commission:
+                example: 0
+                type: number
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  description:
+                    example: string
+                    type: string
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                type: number
+              sequenceId:
+                example: 0
+                type: number
+              status:
+                example: '''UNCHANGED'' or ''CREATED'' or ''UPDATED'' or ''DELETED'''
+                type: string
+            type: object
+          type: array
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    UpdateWatchlist:
+      properties:
+        name:
+          example: string
+          type: string
+        watchlistId:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                format: int32
+                type: integer
+              commission:
+                example: 0
+                format: int32
+                type: integer
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                format: int32
+                type: integer
+              sequenceId:
+                example: 0
+                format: int32
+                type: integer
+            type: object
+          type: array
+      type: object
+    CreateWatchlist:
+      properties:
+        name:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                format: int32
+                type: integer
+              commission:
+                example: 0
+                format: int32
+                type: integer
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                format: int32
+                type: integer
+            type: object
+          type: array
+      type: object
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
