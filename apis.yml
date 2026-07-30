@@ -6,7 +6,20 @@ description: 'TD Ameritrade was a US retail brokerage that provided REST APIs fo
   has ported much of the original functionality into the Schwab Trader API.
 
   '
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/td-ameritrade.png
 url: https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-06-13'
@@ -20,43 +33,12 @@ tags:
 - Market Data
 - Streaming
 apis:
-- name: TD Ameritrade Accounts and Trading API
-  description: 'Provides REST endpoints for managing TD Ameritrade brokerage accounts,
-    including retrieving account balances, positions, and transaction history. Supports
-    placing, modifying, replacing, and canceling orders for equities and options.
-    Also includes saved orders, watchlists, and user preferences.
-
-    '
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://developer.tdameritrade.com/account-access/apis
-  baseURL: https://api.tdameritrade.com/v1
-  tags:
-  - Accounts
-  - Orders
-  - Trading
-  - Watchlists
-  - Transactions
-  properties:
-  - type: Documentation
-    url: https://developer.tdameritrade.com/account-access/apis
-  - type: OpenAPI
-    url: https://developer.tdameritrade.com/account-access/apis
-  - type: Authentication
-    url: https://developer.tdameritrade.com/authentication/apis
-  - url: graphql/td-ameritrade-graphql.md
-    type: GraphQL
-  contact:
-  - FN: TD Ameritrade Developer Support
-    email: API@TDAmeritrade.com
-    url: https://developer.tdameritrade.com/
 - name: TD Ameritrade Market Data API
-  description: 'Provides REST endpoints for accessing real-time and historical market
-    data. Includes current quotes for single and multiple symbols, historical price
-    history for equities and ETFs, options chains with full contract details, top
-    movers by index, and market hours for equities, options, futures, forex, and bond
-    markets.
-
-    '
+  description: >
+    Provides REST endpoints for accessing real-time and historical market data. Includes current quotes
+    for single and multiple symbols, historical price history for equities and ETFs, options chains with
+    full contract details, top movers by index, and market hours for equities, options, futures, forex,
+    and bond markets.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/market-data/apis
   baseURL: https://api.tdameritrade.com/v1
@@ -77,12 +59,10 @@ apis:
     email: API@TDAmeritrade.com
     url: https://developer.tdameritrade.com/
 - name: TD Ameritrade Instruments API
-  description: 'Provides REST endpoints for searching and retrieving instrument details
-    by symbol or CUSIP. Supports searching by symbol or description and retrieving
-    fundamental data including financial ratios, earnings, and dividend information
-    for equities.
-
-    '
+  description: >
+    Provides REST endpoints for searching and retrieving instrument details by symbol or CUSIP. Supports
+    searching by symbol or description and retrieving fundamental data including financial ratios, earnings,
+    and dividend information for equities.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/instruments/apis
   baseURL: https://api.tdameritrade.com/v1
@@ -101,12 +81,11 @@ apis:
     email: API@TDAmeritrade.com
     url: https://developer.tdameritrade.com/
 - name: TD Ameritrade Authentication API
-  description: 'Implements OAuth 2.0 token-based authentication as described in RFC6749
-    section 1.3.1. Applications registered on the TD Ameritrade Developer Portal receive
-    a Consumer Key (client_id). Access tokens are valid for 30 minutes; refresh tokens
-    are valid for 90 days and may be used to generate new access and refresh tokens.
-
-    '
+  description: >
+    Implements OAuth 2.0 token-based authentication as described in RFC6749 section 1.3.1. Applications
+    registered on the TD Ameritrade Developer Portal receive a Consumer Key (client_id). Access tokens
+    are valid for 30 minutes; refresh tokens are valid for 90 days and may be used to generate new access
+    and refresh tokens.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/authentication/apis
   baseURL: https://api.tdameritrade.com/v1
@@ -126,12 +105,11 @@ apis:
     email: API@TDAmeritrade.com
     url: https://developer.tdameritrade.com/
 - name: TD Ameritrade Streaming Market Data API
-  description: 'Provides a WebSocket-based streaming API that delivers up-to-the-second
-    market data including real-time Level 1 and Level 2 quotes, time and sales data
-    for equities, options, and futures, as well as order book depth data. Streaming
-    sessions are initiated using credentials obtained from the User Principals endpoint.
-
-    '
+  description: >
+    Provides a WebSocket-based streaming API that delivers up-to-the-second market data including real-time
+    Level 1 and Level 2 quotes, time and sales data for equities, options, and futures, as well as order
+    book depth data. Streaming sessions are initiated using credentials obtained from the User Principals
+    endpoint.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.tdameritrade.com/content/streaming-data
   baseURL: wss://streamer-ws.tdameritrade.com/ws
@@ -150,6 +128,184 @@ apis:
   - FN: TD Ameritrade Developer Support
     email: API@TDAmeritrade.com
     url: https://developer.tdameritrade.com/
+- aid: td-ameritrade:td-ameritrade-accounts-and-trading-api
+  name: TD Ameritrade Accounts and Trading API
+  description: >-
+    The Accounts and Trading API from TD Ameritrade — 7 operation(s) for accounts and trading.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Accounts and Trading
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-accounts-and-trading-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-authentication-api
+  name: TD Ameritrade Authentication API
+  description: The Authentication API from TD Ameritrade — 1 operation(s) for authentication.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-instruments-api
+  name: TD Ameritrade Instruments API
+  description: The Instruments API from TD Ameritrade — 2 operation(s) for instruments.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Instruments
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-instruments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-market-hours-api
+  name: TD Ameritrade Market Hours API
+  description: The Market Hours API from TD Ameritrade — 2 operation(s) for market hours.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Market Hours
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-market-hours-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-movers-api
+  name: TD Ameritrade Movers API
+  description: The Movers API from TD Ameritrade — 1 operation(s) for movers.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Movers
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-movers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-option-chains-api
+  name: TD Ameritrade Option Chains API
+  description: The Option Chains API from TD Ameritrade — 1 operation(s) for option chains.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Option Chains
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-option-chains-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-price-history-api
+  name: TD Ameritrade Price History API
+  description: The Price History API from TD Ameritrade — 1 operation(s) for price history.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Price History
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-price-history-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-quotes-api
+  name: TD Ameritrade Quotes API
+  description: The Quotes API from TD Ameritrade — 2 operation(s) for quotes.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Quotes
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-quotes-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-transaction-history-api
+  name: TD Ameritrade Transaction History API
+  description: The Transaction History API from TD Ameritrade — 2 operation(s) for transaction history.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Transaction History
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-transaction-history-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-user-info-preferences-api
+  name: TD Ameritrade User Info & Preferences API
+  description: >-
+    The User Info & Preferences API from TD Ameritrade — 3 operation(s) for user info & preferences.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - User Info & Preferences
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-user-info-preferences-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
+- aid: td-ameritrade:td-ameritrade-watchlist-api
+  name: TD Ameritrade Watchlist API
+  description: The Watchlist API from TD Ameritrade — 3 operation(s) for watchlist.
+  humanURL: https://developer.tdameritrade.com/account-access/apis
+  baseURL: https://api.tdameritrade.com/v1
+  tags:
+  - Watchlist
+  properties:
+  - type: OpenAPI
+    url: openapi/td-ameritrade-watchlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.tdameritrade.com/account-access/apis
+  - type: Authentication
+    url: https://developer.tdameritrade.com/authentication/apis
+  - type: GraphQL
+    url: graphql/td-ameritrade-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/td-ameritrade-agentic-access.yml
