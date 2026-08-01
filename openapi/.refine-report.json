@@ -1,0 +1,34 @@
+{
+  "provider": "td-ameritrade",
+  "sources": [
+    "td-ameritrade-accounts-and-trading-api-openapi.yml",
+    "td-ameritrade-authentication-api-openapi.yml",
+    "td-ameritrade-instruments-api-openapi.yml",
+    "td-ameritrade-market-hours-api-openapi.yml",
+    "td-ameritrade-movers-api-openapi.yml",
+    "td-ameritrade-option-chains-api-openapi.yml",
+    "td-ameritrade-price-history-api-openapi.yml",
+    "td-ameritrade-quotes-api-openapi.yml",
+    "td-ameritrade-transaction-history-api-openapi.yml",
+    "td-ameritrade-user-info-preferences-api-openapi.yml",
+    "td-ameritrade-watchlist-api-openapi.yml"
+  ],
+  "outputs": [
+    "td-ameritrade-accounts-and-trading-api-openapi.yml",
+    "td-ameritrade-authentication-api-openapi.yml",
+    "td-ameritrade-instruments-api-openapi.yml",
+    "td-ameritrade-market-hours-api-openapi.yml",
+    "td-ameritrade-movers-api-openapi.yml",
+    "td-ameritrade-option-chains-api-openapi.yml",
+    "td-ameritrade-price-history-api-openapi.yml",
+    "td-ameritrade-quotes-api-openapi.yml",
+    "td-ameritrade-transaction-history-api-openapi.yml",
+    "td-ameritrade-user-info-preferences-api-openapi.yml",
+    "td-ameritrade-watchlist-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
