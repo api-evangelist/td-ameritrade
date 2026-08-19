@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Market Hours API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Market Hours",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Operating hours of markets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/hours",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "markets",
+                "value": "",
+                "type": "query",
+                "description": "The markets for which you're requesting market hours, comma-separated. Valid markets are EQUITY, OPTION, FUTURE, BOND, or FOREX."
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The date for which market hours information is requested. Valid ISO-8601 formats are : yyyy-MM-dd and yyyy-MM-dd'T'HH:mm:ssz."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve market hours for specified markets"
+        },
+        {
+          "info": {
+            "name": "Operating hours of markets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/:market/hours",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "market",
+                "value": "",
+                "type": "path",
+                "description": "The markets for which you're requesting market hours, comma-separated. Valid markets are EQUITY, OPTION, FUTURE, BOND, or FOREX."
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The date for which market hours information is requested. Valid ISO-8601 formats are : yyyy-MM-dd and yyyy-MM-dd'T'HH:mm:ssz."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve market hours for specified single market"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

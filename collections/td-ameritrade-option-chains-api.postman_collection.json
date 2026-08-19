@@ -1,0 +1,515 @@
+{
+  "item": [
+    {
+      "id": "e40506a4-5bcf-410c-a986-95dfd7d7d406",
+      "name": "Option Chains",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e1d7d1d1-dbf3-4ec1-86c9-43ac81c9a280",
+          "name": "Get Option Chains for optionable symbols",
+          "request": {
+            "name": "Get Option Chains for optionable symbols",
+            "description": {
+              "content": "Get option chain for an optionable Symbol",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "marketdata",
+                "chains"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API Key"
+                },
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Enter one symbol"
+                },
+                {
+                  "disabled": false,
+                  "key": "contractType",
+                  "value": "<string>",
+                  "description": "(Required) Type of contracts to return in the chain. Can be CALL, PUT, or ALL. Default is ALL."
+                },
+                {
+                  "disabled": false,
+                  "key": "strikeCount",
+                  "value": "<string>",
+                  "description": "(Required) The number of strikes to return above and below the at-the-money price."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeQuotes",
+                  "value": "<string>",
+                  "description": "(Required) Include quotes for options in the option chain. Can be TRUE or FALSE. Default is FALSE."
+                },
+                {
+                  "disabled": false,
+                  "key": "strategy",
+                  "value": "<string>",
+                  "description": "(Required) Passing a value returns a Strategy Chain. Possible values are SINGLE, ANALYTICAL (allows use of the volatility, underlyingPrice, interestRate, and daysToExpiration params to calculate theoretical values), COVERED, VERTICAL, CALENDAR, STRANGLE, STRADDLE, BUTTERFLY, CONDOR, DIAGONAL, COLLAR, or ROLL. Default is SINGLE."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1bb2295a-43a4-47b5-9a3e-f840b7b20bfd",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"OptionChain\": {\n      \"callExpDateMap\": \"object\",\n      \"daysToExpiration\": 0,\n      \"interestRate\": 0,\n      \"interval\": 0,\n      \"isDelayed\": false,\n      \"isIndex\": false,\n      \"putExpDateMap\": \"object\",\n      \"status\": \"AWAITING_PARENT_ORDER\",\n      \"strategy\": \"<string>\",\n      \"symbol\": \"string\",\n      \"underlying\": {\n        \"ask\": 0,\n        \"askSize\": 0,\n        \"bid\": 0,\n        \"bidSize\": 0,\n        \"change\": 0,\n        \"close\": 0,\n        \"delayed\": true,\n        \"description\": \"string\",\n        \"exchangeName\": \"string\",\n        \"fiftyTwoWeekHigh\": 0,\n        \"fiftyTwoWeekLow\": 0,\n        \"highPrice\": 0,\n        \"last\": 0,\n        \"lowPrice\": 0,\n        \"mark\": 0,\n        \"markChange\": 0,\n        \"markPercentChange\": 0,\n        \"openPrice\": 0,\n        \"percentChange\": 0,\n        \"quoteTime\": 0,\n        \"symbol\": \"string\",\n        \"totalVolume\": 0,\n        \"tradeTime\": 0\n      },\n      \"underlyingPrice\": 0,\n      \"volatility\": 0\n    },\n    \"StrikePriceMap\": {},\n    \"Option\": {\n      \"assetType\": \"ETF\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"CASH_EQUIVALENT\",\n          \"currencyType\": \"EUR\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"BOND\",\n          \"currencyType\": \"CAD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"<string>\",\n      \"symbol\": \"string\",\n      \"type\": \"BARRIER\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Underlying\": {\n      \"ask\": 0,\n      \"askSize\": 0,\n      \"bid\": 0,\n      \"bidSize\": 0,\n      \"change\": 0,\n      \"close\": 0,\n      \"delayed\": true,\n      \"description\": \"string\",\n      \"exchangeName\": \"'IND' or 'ASE' or 'NYS' or 'NAS' or 'NAP' or 'PAC' or 'OPR' or 'BATS'\",\n      \"fiftyTwoWeekHigh\": 0,\n      \"fiftyTwoWeekLow\": 0,\n      \"highPrice\": 0,\n      \"last\": 0,\n      \"lowPrice\": 0,\n      \"mark\": 0,\n      \"markChange\": 0,\n      \"markPercentChange\": 0,\n      \"openPrice\": 0,\n      \"percentChange\": 0,\n      \"quoteTime\": 0,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTime\": 0\n    },\n    \"ExpirationDate\": {\n      \"date\": \"string\"\n    },\n    \"OptionDeliverables\": {\n      \"assetType\": \"OPTION\",\n      \"currencyType\": \"JPY\",\n      \"deliverableUnits\": \"string\",\n      \"symbol\": \"string\"\n    }\n  },\n  {\n    \"OptionChain\": {\n      \"callExpDateMap\": \"object\",\n      \"daysToExpiration\": 0,\n      \"interestRate\": 0,\n      \"interval\": 0,\n      \"isDelayed\": true,\n      \"isIndex\": false,\n      \"putExpDateMap\": \"object\",\n      \"status\": \"REPLACED\",\n      \"strategy\": \"<string>\",\n      \"symbol\": \"string\",\n      \"underlying\": {\n        \"ask\": 0,\n        \"askSize\": 0,\n        \"bid\": 0,\n        \"bidSize\": 0,\n        \"change\": 0,\n        \"close\": 0,\n        \"delayed\": true,\n        \"description\": \"string\",\n        \"exchangeName\": \"string\",\n        \"fiftyTwoWeekHigh\": 0,\n        \"fiftyTwoWeekLow\": 0,\n        \"highPrice\": 0,\n        \"last\": 0,\n        \"lowPrice\": 0,\n        \"mark\": 0,\n        \"markChange\": 0,\n        \"markPercentChange\": 0,\n        \"openPrice\": 0,\n        \"percentChange\": 0,\n        \"quoteTime\": 0,\n        \"symbol\": \"string\",\n        \"totalVolume\": 0,\n        \"tradeTime\": 0\n      },\n      \"underlyingPrice\": 0,\n      \"volatility\": 0\n    },\n    \"StrikePriceMap\": {},\n    \"Option\": {\n      \"assetType\": \"OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"BOND\",\n          \"currencyType\": \"JPY\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"INDEX\",\n          \"currencyType\": \"CAD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"<string>\",\n      \"symbol\": \"string\",\n      \"type\": \"BINARY\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Underlying\": {\n      \"ask\": 0,\n      \"askSize\": 0,\n      \"bid\": 0,\n      \"bidSize\": 0,\n      \"change\": 0,\n      \"close\": 0,\n      \"delayed\": false,\n      \"description\": \"string\",\n      \"exchangeName\": \"'IND' or 'ASE' or 'NYS' or 'NAS' or 'NAP' or 'PAC' or 'OPR' or 'BATS'\",\n      \"fiftyTwoWeekHigh\": 0,\n      \"fiftyTwoWeekLow\": 0,\n      \"highPrice\": 0,\n      \"last\": 0,\n      \"lowPrice\": 0,\n      \"mark\": 0,\n      \"markChange\": 0,\n      \"markPercentChange\": 0,\n      \"openPrice\": 0,\n      \"percentChange\": 0,\n      \"quoteTime\": 0,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTime\": 0\n    },\n    \"ExpirationDate\": {\n      \"date\": \"string\"\n    },\n    \"OptionDeliverables\": {\n      \"assetType\": \"ETF\",\n      \"currencyType\": \"CAD\",\n      \"deliverableUnits\": \"string\",\n      \"symbol\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "890a3086-ba56-43d4-9f1b-cb3d566a7231",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b567854-04ac-4c9d-bac6-b72283c87526",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b72212c5-844d-424b-8347-eb0396a2f043",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c08dfba5-af31-46bf-a2d3-ecdb59cf0b0e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0460ecce-a01f-4e5a-af96-937dfeda4fe3",
+              "name": "An error message indicating internal error in the service.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "chains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "strikeCount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeQuotes",
+                      "value": "'TRUE' or 'FALSE'"
+                    },
+                    {
+                      "key": "strategy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8c411ea8-910d-4ef6-a8cd-e21282dbbe5f",
+    "name": "TD Ameritrade Accounts and Trading Option Chains API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}

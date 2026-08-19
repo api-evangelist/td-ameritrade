@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Quotes API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quotes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for instrument and fundamental data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/:symbol/quotes",
+            "params": [
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              },
+              {
+                "name": "apiKey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get quote for a symbol."
+        },
+        {
+          "info": {
+            "name": "Search for instrument and fundamental data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/quotes",
+            "params": [
+              {
+                "name": "apiKey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Symbol to search for"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get quote for one or more symbols."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

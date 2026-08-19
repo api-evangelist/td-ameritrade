@@ -1,0 +1,221 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Watchlist API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Watchlist",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "All watchlists of an account."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create watchlist for specific account.This method does not verify that the symbol or asset type are valid."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists/:watchlistId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              },
+              {
+                "name": "watchlistId",
+                "value": "",
+                "type": "path",
+                "description": "Watchlist ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Specific watchlist for a specific account."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists/:watchlistId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              },
+              {
+                "name": "watchlistId",
+                "value": "",
+                "type": "path",
+                "description": "Watchlist ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Replace watchlist for specific account. This method does not verify that the symbol or asset type are valid."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists/:watchlistId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              },
+              {
+                "name": "watchlistId",
+                "value": "",
+                "type": "path",
+                "description": "Watchlist ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Partially update watchlist for a specific account: change watchlist name, add to the beginning/end of a watchlist, update or delete items in a watchlist. This method does not verify that the symbol or asset type are valid."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/watchlists/:watchlistId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              },
+              {
+                "name": "watchlistId",
+                "value": "",
+                "type": "path",
+                "description": "Watchlist ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete watchlist for a specific account. This method does not verify that the symbol or asset type are valid."
+        },
+        {
+          "info": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/accounts/watchlists",
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "All watchlists for all of the user's linked accounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

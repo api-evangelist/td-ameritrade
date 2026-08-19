@@ -1,0 +1,737 @@
+{
+  "item": [
+    {
+      "id": "3280881b-151c-44cb-b263-1926ceedc52f",
+      "name": "Quotes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "877eca65-2a87-4194-9b5a-fbc2519b1e71",
+          "name": "Search for instrument and fundamental data",
+          "request": {
+            "name": "Search for instrument and fundamental data",
+            "description": {
+              "content": "Get quote for a symbol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "marketdata",
+                ":symbol",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<string>",
+                  "description": "(Required) API Key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6d513d42-f07d-4d08-bbd2-c70d91af1891",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"MutualFund\": {\n      \"assetType\": \"BOND\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\",\n      \"type\": \"'NOT_APPLICABLE' or 'OPEN_END_NON_TAXABLE' or 'OPEN_END_TAXABLE' or 'NO_LOAD_NON_TAXABLE' or 'NO_LOAD_TAXABLE'\"\n    },\n    \"FutureOptions\": {\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"contractType\": \"PUT\",\n      \"deltaInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchangeName\": \"string\",\n      \"exerciseType\": \"string\",\n      \"expirationType\": \"string\",\n      \"futureExpirationDate\": 0,\n      \"futureIsActive\": true,\n      \"futureIsTradable\": true,\n      \"futurePercentChange\": 0,\n      \"futureTradingHours\": \"string\",\n      \"gammaInDouble\": 0,\n      \"highPriceInDouble\": 0,\n      \"inTheMoney\": false,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"moneyIntrinsicValueInDouble\": 0,\n      \"multiplierInDouble\": 0,\n      \"netChangeInDouble\": 0,\n      \"openInterest\": 0,\n      \"openPriceInDouble\": 0,\n      \"rhoInDouble\": 0,\n      \"securityStatus\": \"string\",\n      \"strikePriceInDouble\": 0,\n      \"symbol\": \"string\",\n      \"thetaInDouble\": 0,\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"timeValueInDouble\": 0,\n      \"underlying\": \"string\",\n      \"vegaInDouble\": 0,\n      \"volatility\": 0\n    },\n    \"Option\": {\n      \"assetType\": \"FIXED_INCOME\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"BOND\",\n          \"currencyType\": \"CAD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"FIXED_INCOME\",\n          \"currencyType\": \"USD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"ALL\",\n      \"symbol\": \"string\",\n      \"type\": \"BARRIER\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Forex\": {\n      \"52WkHighInDouble\": 0,\n      \"52WkLowInDouble\": 0,\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"changeInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPriceInDouble\": 0,\n      \"isTradable\": true,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"marketMaker\": \"string\",\n      \"openPriceInDouble\": 0,\n      \"percentChange\": 0,\n      \"product\": \"string\",\n      \"securityStatus\": \"string\",\n      \"symbol\": \"string\",\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"tradingHours\": \"string\"\n    },\n    \"ETF\": {\n      \"52WkHigh\": 0,\n      \"52WkLow\": 0,\n      \"askId\": \"string\",\n      \"askPrice\": 0,\n      \"askSize\": 0,\n      \"bidId\": \"string\",\n      \"bidPrice\": 0,\n      \"bidSize\": 0,\n      \"closePrice\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"divAmount\": 0,\n      \"divDate\": \"string\",\n      \"divYield\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPrice\": 0,\n      \"lastId\": \"string\",\n      \"lastPrice\": 0,\n      \"lastSize\": 0,\n      \"lowPrice\": 0,\n      \"marginable\": false,\n      \"mark\": 0,\n      \"netChange\": 0,\n      \"openPrice\": 0,\n      \"peRatio\": 0,\n      \"quoteTimeInLong\": 0,\n      \"regularMarketLastPrice\": 0,\n      \"regularMarketLastSize\": 0,\n      \"regularMarketNetChange\": 0,\n      \"regularMarketTradeTimeInLong\": 0,\n      \"securityStatus\": \"string\",\n      \"shortable\": false,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTimeInLong\": 0,\n      \"volatility\": 0\n    },\n    \"Equity\": {\n      \"assetType\": \"ETF\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\"\n    }\n  },\n  {\n    \"MutualFund\": {\n      \"assetType\": \"CURRENCY\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\",\n      \"type\": \"'NOT_APPLICABLE' or 'OPEN_END_NON_TAXABLE' or 'OPEN_END_TAXABLE' or 'NO_LOAD_NON_TAXABLE' or 'NO_LOAD_TAXABLE'\"\n    },\n    \"FutureOptions\": {\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"contractType\": \"ALL\",\n      \"deltaInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchangeName\": \"string\",\n      \"exerciseType\": \"string\",\n      \"expirationType\": \"string\",\n      \"futureExpirationDate\": 0,\n      \"futureIsActive\": true,\n      \"futureIsTradable\": true,\n      \"futurePercentChange\": 0,\n      \"futureTradingHours\": \"string\",\n      \"gammaInDouble\": 0,\n      \"highPriceInDouble\": 0,\n      \"inTheMoney\": true,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"moneyIntrinsicValueInDouble\": 0,\n      \"multiplierInDouble\": 0,\n      \"netChangeInDouble\": 0,\n      \"openInterest\": 0,\n      \"openPriceInDouble\": 0,\n      \"rhoInDouble\": 0,\n      \"securityStatus\": \"string\",\n      \"strikePriceInDouble\": 0,\n      \"symbol\": \"string\",\n      \"thetaInDouble\": 0,\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"timeValueInDouble\": 0,\n      \"underlying\": \"string\",\n      \"vegaInDouble\": 0,\n      \"volatility\": 0\n    },\n    \"Option\": {\n      \"assetType\": \"EQUITY\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"FUTURE_OPTION\",\n          \"currencyType\": \"CAD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"FIXED_INCOME\",\n          \"currencyType\": \"JPY\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"PUT\",\n      \"symbol\": \"string\",\n      \"type\": \"BINARY\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Forex\": {\n      \"52WkHighInDouble\": 0,\n      \"52WkLowInDouble\": 0,\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"changeInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPriceInDouble\": 0,\n      \"isTradable\": false,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"marketMaker\": \"string\",\n      \"openPriceInDouble\": 0,\n      \"percentChange\": 0,\n      \"product\": \"string\",\n      \"securityStatus\": \"string\",\n      \"symbol\": \"string\",\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"tradingHours\": \"string\"\n    },\n    \"ETF\": {\n      \"52WkHigh\": 0,\n      \"52WkLow\": 0,\n      \"askId\": \"string\",\n      \"askPrice\": 0,\n      \"askSize\": 0,\n      \"bidId\": \"string\",\n      \"bidPrice\": 0,\n      \"bidSize\": 0,\n      \"closePrice\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"divAmount\": 0,\n      \"divDate\": \"string\",\n      \"divYield\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPrice\": 0,\n      \"lastId\": \"string\",\n      \"lastPrice\": 0,\n      \"lastSize\": 0,\n      \"lowPrice\": 0,\n      \"marginable\": true,\n      \"mark\": 0,\n      \"netChange\": 0,\n      \"openPrice\": 0,\n      \"peRatio\": 0,\n      \"quoteTimeInLong\": 0,\n      \"regularMarketLastPrice\": 0,\n      \"regularMarketLastSize\": 0,\n      \"regularMarketNetChange\": 0,\n      \"regularMarketTradeTimeInLong\": 0,\n      \"securityStatus\": \"string\",\n      \"shortable\": true,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTimeInLong\": 0,\n      \"volatility\": 0\n    },\n    \"Equity\": {\n      \"assetType\": \"INDEX\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b39aa266-b4be-4ca8-8fdc-6c2e51430604",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c98b5d80-ccdf-428f-b22b-e9a936838b20",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27a45299-4c64-4e84-9283-b18ec9a00a89",
+              "name": "An error message indicating the caller is forbidden from accessing this page.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e10dea1e-215c-45b9-ac90-eb938291d04f",
+              "name": "An error message indicating the instrument for the symbol/cusip was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd769d03-469b-4685-b162-7f9222205666",
+          "name": "Search for instrument and fundamental data",
+          "request": {
+            "name": "Search for instrument and fundamental data",
+            "description": {
+              "content": "Get quote for one or more symbols.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "marketdata",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<string>",
+                  "description": "(Required) API Key"
+                },
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Symbol to search for"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "94634ad6-91d1-4505-b76c-8ff452c641e4",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"MutualFund\": {\n      \"assetType\": \"INDEX\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\",\n      \"type\": \"'NOT_APPLICABLE' or 'OPEN_END_NON_TAXABLE' or 'OPEN_END_TAXABLE' or 'NO_LOAD_NON_TAXABLE' or 'NO_LOAD_TAXABLE'\"\n    },\n    \"FutureOptions\": {\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"contractType\": \"PUT\",\n      \"deltaInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchangeName\": \"string\",\n      \"exerciseType\": \"string\",\n      \"expirationType\": \"string\",\n      \"futureExpirationDate\": 0,\n      \"futureIsActive\": false,\n      \"futureIsTradable\": true,\n      \"futurePercentChange\": 0,\n      \"futureTradingHours\": \"string\",\n      \"gammaInDouble\": 0,\n      \"highPriceInDouble\": 0,\n      \"inTheMoney\": false,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"moneyIntrinsicValueInDouble\": 0,\n      \"multiplierInDouble\": 0,\n      \"netChangeInDouble\": 0,\n      \"openInterest\": 0,\n      \"openPriceInDouble\": 0,\n      \"rhoInDouble\": 0,\n      \"securityStatus\": \"string\",\n      \"strikePriceInDouble\": 0,\n      \"symbol\": \"string\",\n      \"thetaInDouble\": 0,\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"timeValueInDouble\": 0,\n      \"underlying\": \"string\",\n      \"vegaInDouble\": 0,\n      \"volatility\": 0\n    },\n    \"Option\": {\n      \"assetType\": \"FUTURE_OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"FUTURE_OPTION\",\n          \"currencyType\": \"JPY\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"CURRENCY\",\n          \"currencyType\": \"USD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"ALL\",\n      \"symbol\": \"string\",\n      \"type\": \"BARRIER\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Forex\": {\n      \"52WkHighInDouble\": 0,\n      \"52WkLowInDouble\": 0,\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"changeInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPriceInDouble\": 0,\n      \"isTradable\": false,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"marketMaker\": \"string\",\n      \"openPriceInDouble\": 0,\n      \"percentChange\": 0,\n      \"product\": \"string\",\n      \"securityStatus\": \"string\",\n      \"symbol\": \"string\",\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"tradingHours\": \"string\"\n    },\n    \"ETF\": {\n      \"52WkHigh\": 0,\n      \"52WkLow\": 0,\n      \"askId\": \"string\",\n      \"askPrice\": 0,\n      \"askSize\": 0,\n      \"bidId\": \"string\",\n      \"bidPrice\": 0,\n      \"bidSize\": 0,\n      \"closePrice\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"divAmount\": 0,\n      \"divDate\": \"string\",\n      \"divYield\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPrice\": 0,\n      \"lastId\": \"string\",\n      \"lastPrice\": 0,\n      \"lastSize\": 0,\n      \"lowPrice\": 0,\n      \"marginable\": false,\n      \"mark\": 0,\n      \"netChange\": 0,\n      \"openPrice\": 0,\n      \"peRatio\": 0,\n      \"quoteTimeInLong\": 0,\n      \"regularMarketLastPrice\": 0,\n      \"regularMarketLastSize\": 0,\n      \"regularMarketNetChange\": 0,\n      \"regularMarketTradeTimeInLong\": 0,\n      \"securityStatus\": \"string\",\n      \"shortable\": false,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTimeInLong\": 0,\n      \"volatility\": 0\n    },\n    \"Equity\": {\n      \"assetType\": \"MUTUAL_FUND\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\"\n    }\n  },\n  {\n    \"MutualFund\": {\n      \"assetType\": \"FUTURE_OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\",\n      \"type\": \"'NOT_APPLICABLE' or 'OPEN_END_NON_TAXABLE' or 'OPEN_END_TAXABLE' or 'NO_LOAD_NON_TAXABLE' or 'NO_LOAD_TAXABLE'\"\n    },\n    \"FutureOptions\": {\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"contractType\": \"PUT\",\n      \"deltaInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchangeName\": \"string\",\n      \"exerciseType\": \"string\",\n      \"expirationType\": \"string\",\n      \"futureExpirationDate\": 0,\n      \"futureIsActive\": false,\n      \"futureIsTradable\": false,\n      \"futurePercentChange\": 0,\n      \"futureTradingHours\": \"string\",\n      \"gammaInDouble\": 0,\n      \"highPriceInDouble\": 0,\n      \"inTheMoney\": true,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"moneyIntrinsicValueInDouble\": 0,\n      \"multiplierInDouble\": 0,\n      \"netChangeInDouble\": 0,\n      \"openInterest\": 0,\n      \"openPriceInDouble\": 0,\n      \"rhoInDouble\": 0,\n      \"securityStatus\": \"string\",\n      \"strikePriceInDouble\": 0,\n      \"symbol\": \"string\",\n      \"thetaInDouble\": 0,\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"timeValueInDouble\": 0,\n      \"underlying\": \"string\",\n      \"vegaInDouble\": 0,\n      \"volatility\": 0\n    },\n    \"Option\": {\n      \"assetType\": \"OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"optionDeliverables\": [\n        {\n          \"assetType\": \"FOREX\",\n          \"currencyType\": \"USD\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        },\n        {\n          \"assetType\": \"ETF\",\n          \"currencyType\": \"JPY\",\n          \"deliverableUnits\": 0,\n          \"symbol\": \"string\"\n        }\n      ],\n      \"optionMultiplier\": 0,\n      \"putCall\": \"PUT\",\n      \"symbol\": \"string\",\n      \"type\": \"BINARY\",\n      \"underlyingSymbol\": \"string\"\n    },\n    \"Forex\": {\n      \"52WkHighInDouble\": 0,\n      \"52WkLowInDouble\": 0,\n      \"askPriceInDouble\": 0,\n      \"bidPriceInDouble\": 0,\n      \"changeInDouble\": 0,\n      \"closePriceInDouble\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPriceInDouble\": 0,\n      \"isTradable\": true,\n      \"lastPriceInDouble\": 0,\n      \"lowPriceInDouble\": 0,\n      \"mark\": 0,\n      \"marketMaker\": \"string\",\n      \"openPriceInDouble\": 0,\n      \"percentChange\": 0,\n      \"product\": \"string\",\n      \"securityStatus\": \"string\",\n      \"symbol\": \"string\",\n      \"tick\": 0,\n      \"tickAmount\": 0,\n      \"tradingHours\": \"string\"\n    },\n    \"ETF\": {\n      \"52WkHigh\": 0,\n      \"52WkLow\": 0,\n      \"askId\": \"string\",\n      \"askPrice\": 0,\n      \"askSize\": 0,\n      \"bidId\": \"string\",\n      \"bidPrice\": 0,\n      \"bidSize\": 0,\n      \"closePrice\": 0,\n      \"description\": \"string\",\n      \"digits\": 0,\n      \"divAmount\": 0,\n      \"divDate\": \"string\",\n      \"divYield\": 0,\n      \"exchange\": \"string\",\n      \"exchangeName\": \"string\",\n      \"highPrice\": 0,\n      \"lastId\": \"string\",\n      \"lastPrice\": 0,\n      \"lastSize\": 0,\n      \"lowPrice\": 0,\n      \"marginable\": false,\n      \"mark\": 0,\n      \"netChange\": 0,\n      \"openPrice\": 0,\n      \"peRatio\": 0,\n      \"quoteTimeInLong\": 0,\n      \"regularMarketLastPrice\": 0,\n      \"regularMarketLastSize\": 0,\n      \"regularMarketNetChange\": 0,\n      \"regularMarketTradeTimeInLong\": 0,\n      \"securityStatus\": \"string\",\n      \"shortable\": false,\n      \"symbol\": \"string\",\n      \"totalVolume\": 0,\n      \"tradeTimeInLong\": 0,\n      \"volatility\": 0\n    },\n    \"Equity\": {\n      \"assetType\": \"INDICATOR\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"symbol\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "147b764b-93e9-4720-b659-c36d77956066",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6356b55f-a5dd-4e19-ab7d-b418dd50a0e9",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "79a8f37c-34e3-42ce-88da-f6947a242409",
+              "name": "An error message indicating the caller is forbidden from accessing this page.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ba981f45-c22f-41ba-80f8-d1cb63eeecb1",
+              "name": "An error message indicating the instrument for the symbol/cusip was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c6ceddfd-692e-4f72-9c69-69bbd88a20c4",
+              "name": "An error message indicating an issue in the symbol regex, or number of symbols searched is over the maximum.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apiKey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "37395f03-7449-4289-9c2e-5ffd18cc527b",
+    "name": "TD Ameritrade Accounts and Trading Quotes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}

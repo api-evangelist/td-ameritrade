@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Price History API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Price History",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Historical price data for charts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/:symbol/pricehistory",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "path",
+                "description": "Enter one symbol"
+              },
+              {
+                "name": "periodType",
+                "value": "",
+                "type": "query",
+                "description": "The type of period to show. Valid values are day, month, year, or ytd (year to date). Default is day."
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query",
+                "description": "The number of periods to show.\n\nExample: For a 2 day / 1 min chart, the values would be:\nperiod: 2\nperiodType: day\nfrequency: 1\nfrequencyType: min\nValid periods by periodType (defaults marked with an asterisk):\nday: 1, 2, 3, 4, 5, 10*\nmonth: 1*, 2, 3, 6\nyear: 1*, 2, 3, 5, 10, 15, 20\nytd: 1*"
+              },
+              {
+                "name": "frequencyType",
+                "value": "",
+                "type": "query",
+                "description": "The type of frequency with which a new candle is formed.\n\nValid frequencyTypes by periodType (defaults marked with an asterisk):\n\nday: minute*\nmonth: daily, weekly*\nyear: daily, weekly, monthly*\nytd: daily, weekly*\n"
+              },
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "The number of the frequencyType to be included in each candle.\n\nValid frequencies by frequencyType (defaults marked with an asterisk):\n\nminute: 1*, 5, 10, 15, 30\ndaily: 1*\nweekly: 1*\nmonthly: 1*\n"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided. Default is previous trading day."
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided."
+              },
+              {
+                "name": "needExtendedHoursData",
+                "value": "",
+                "type": "query",
+                "description": "true to return extended hours data, false for regular market hours only. Default is true"
+              },
+              {
+                "name": "x",
+                "value": "",
+                "type": "query",
+                "description": "x"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get price history for a symbol"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

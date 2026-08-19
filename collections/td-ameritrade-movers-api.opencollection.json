@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Movers API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Movers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve mover information by index symbol, direction type and change",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/:index/movers",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "index",
+                "value": "",
+                "type": "path",
+                "description": "The index symbol to get movers from."
+              },
+              {
+                "name": "direction",
+                "value": "",
+                "type": "query",
+                "description": "To return movers with the specified directions of up or down."
+              },
+              {
+                "name": "change",
+                "value": "",
+                "type": "query",
+                "description": "To return movers with the specified change types of percent or value."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Top 10 (up or down) movers by value or percent for a particular market"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

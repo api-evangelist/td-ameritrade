@@ -1,0 +1,674 @@
+{
+  "item": [
+    {
+      "id": "b19c99f7-4769-4fdc-a326-a9985b672894",
+      "name": "Instruments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5c0d79f4-954a-4d58-a115-76482944f5e4",
+          "name": "Search for instrument and fundamental data",
+          "request": {
+            "name": "Search for instrument and fundamental data",
+            "description": {
+              "content": "Search or retrieve instrument data, including fundamental data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instruments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API Key"
+                },
+                {
+                  "disabled": false,
+                  "key": "symbol",
+                  "value": "<string>",
+                  "description": "(Required) Value to pass to the search. See projection description for more information."
+                },
+                {
+                  "disabled": false,
+                  "key": "projection",
+                  "value": "<string>",
+                  "description": "(Required) The type of request:symbol-search: Retrieve instrument data of a specific symbol or cusip\nsymbol-regex: Retrieve instrument data for all symbols matching regex. Example: symbol=XYZ.* will return all symbols beginning with XYZ\ndesc-search: Retrieve instrument data for instruments whose description contains the word supplied. Example: symbol=FakeCompany will return all instruments with FakeCompany in the description.\ndesc-regex: Search description with full regex support. Example: symbol=XYZ.[A-C] returns all instruments whose descriptions contain a word beginning with XYZ followed by a character A through C. \nfundamental: Returns fundamental data for a single instrument specified by exact symbol."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "957d0824-a16c-45b2-bffe-e5bf5897863e",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Bond\": {\n      \"assetType\": \"CASH_EQUIVALENT\",\n      \"bondPrice\": 0,\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    },\n    \"FundamentalData\": {\n      \"beta\": 0,\n      \"bookValuePerShare\": 0,\n      \"currentRatio\": 0,\n      \"divGrowthRate3Year\": 0,\n      \"dividendAmount\": 0,\n      \"dividendDate\": \"string\",\n      \"dividendPayAmount\": 0,\n      \"dividendPayDate\": \"string\",\n      \"dividendYield\": 0,\n      \"epsChange\": 0,\n      \"epsChangePercentTTM\": 0,\n      \"epsChangeYear\": 0,\n      \"epsTTM\": 0,\n      \"grossMarginMRQ\": 0,\n      \"grossMarginTTM\": 0,\n      \"high52\": 0,\n      \"interestCoverage\": 0,\n      \"low52\": 0,\n      \"ltDebtToEquity\": 0,\n      \"marketCap\": 0,\n      \"marketCapFloat\": 0,\n      \"netProfitMarginMRQ\": 0,\n      \"netProfitMarginTTM\": 0,\n      \"operatingMarginMRQ\": 0,\n      \"operatingMarginTTM\": 0,\n      \"pbRatio\": 0,\n      \"pcfRatio\": 0,\n      \"peRatio\": 0,\n      \"pegRatio\": 0,\n      \"prRatio\": 0,\n      \"quickRatio\": 0,\n      \"returnOnAssets\": 0,\n      \"returnOnEquity\": 0,\n      \"returnOnInvestment\": 0,\n      \"revChangeIn\": 0,\n      \"revChangeTTM\": 0,\n      \"revChangeYear\": 0,\n      \"sharesOutstanding\": 0,\n      \"shortIntDayToCover\": 0,\n      \"shortIntToFloat\": 0,\n      \"symbol\": \"string\",\n      \"totalDebtToCapital\": 0,\n      \"totalDebtToEquity\": 0,\n      \"vol10DayAvg\": 0,\n      \"vol1DayAvg\": 0,\n      \"vol3MonthAvg\": 0\n    },\n    \"Fundamental\": {\n      \"assetType\": \"FUTURE_OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"fundamental\": {\n        \"beta\": 0,\n        \"bookValuePerShare\": 0,\n        \"currentRatio\": 0,\n        \"divGrowthRate3Year\": 0,\n        \"dividendAmount\": 0,\n        \"dividendDate\": \"string\",\n        \"dividendPayAmount\": 0,\n        \"dividendPayDate\": \"string\",\n        \"dividendYield\": 0,\n        \"epsChange\": 0,\n        \"epsChangePercentTTM\": 0,\n        \"epsChangeYear\": 0,\n        \"epsTTM\": 0,\n        \"grossMarginMRQ\": 0,\n        \"grossMarginTTM\": 0,\n        \"high52\": 0,\n        \"interestCoverage\": 0,\n        \"low52\": 0,\n        \"ltDebtToEquity\": 0,\n        \"marketCap\": 0,\n        \"marketCapFloat\": 0,\n        \"netProfitMarginMRQ\": 0,\n        \"netProfitMarginTTM\": 0,\n        \"operatingMarginMRQ\": 0,\n        \"operatingMarginTTM\": 0,\n        \"pbRatio\": 0,\n        \"pcfRatio\": 0,\n        \"peRatio\": 0,\n        \"pegRatio\": 0,\n        \"prRatio\": 0,\n        \"quickRatio\": 0,\n        \"returnOnAssets\": 0,\n        \"returnOnEquity\": 0,\n        \"returnOnInvestment\": 0,\n        \"revChangeIn\": 0,\n        \"revChangeTTM\": 0,\n        \"revChangeYear\": 0,\n        \"sharesOutstanding\": 0,\n        \"shortIntDayToCover\": 0,\n        \"shortIntToFloat\": 0,\n        \"symbol\": \"string\",\n        \"totalDebtToCapital\": 0,\n        \"totalDebtToEquity\": 0,\n        \"vol10DayAvg\": 0,\n        \"vol1DayAvg\": 0,\n        \"vol3MonthAvg\": 0\n      },\n      \"symbol\": \"string\"\n    },\n    \"Instrument\": {\n      \"assetType\": \"UNKNOWN\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    }\n  },\n  {\n    \"Bond\": {\n      \"assetType\": \"INDEX\",\n      \"bondPrice\": 0,\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    },\n    \"FundamentalData\": {\n      \"beta\": 0,\n      \"bookValuePerShare\": 0,\n      \"currentRatio\": 0,\n      \"divGrowthRate3Year\": 0,\n      \"dividendAmount\": 0,\n      \"dividendDate\": \"string\",\n      \"dividendPayAmount\": 0,\n      \"dividendPayDate\": \"string\",\n      \"dividendYield\": 0,\n      \"epsChange\": 0,\n      \"epsChangePercentTTM\": 0,\n      \"epsChangeYear\": 0,\n      \"epsTTM\": 0,\n      \"grossMarginMRQ\": 0,\n      \"grossMarginTTM\": 0,\n      \"high52\": 0,\n      \"interestCoverage\": 0,\n      \"low52\": 0,\n      \"ltDebtToEquity\": 0,\n      \"marketCap\": 0,\n      \"marketCapFloat\": 0,\n      \"netProfitMarginMRQ\": 0,\n      \"netProfitMarginTTM\": 0,\n      \"operatingMarginMRQ\": 0,\n      \"operatingMarginTTM\": 0,\n      \"pbRatio\": 0,\n      \"pcfRatio\": 0,\n      \"peRatio\": 0,\n      \"pegRatio\": 0,\n      \"prRatio\": 0,\n      \"quickRatio\": 0,\n      \"returnOnAssets\": 0,\n      \"returnOnEquity\": 0,\n      \"returnOnInvestment\": 0,\n      \"revChangeIn\": 0,\n      \"revChangeTTM\": 0,\n      \"revChangeYear\": 0,\n      \"sharesOutstanding\": 0,\n      \"shortIntDayToCover\": 0,\n      \"shortIntToFloat\": 0,\n      \"symbol\": \"string\",\n      \"totalDebtToCapital\": 0,\n      \"totalDebtToEquity\": 0,\n      \"vol10DayAvg\": 0,\n      \"vol1DayAvg\": 0,\n      \"vol3MonthAvg\": 0\n    },\n    \"Fundamental\": {\n      \"assetType\": \"CASH_EQUIVALENT\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"fundamental\": {\n        \"beta\": 0,\n        \"bookValuePerShare\": 0,\n        \"currentRatio\": 0,\n        \"divGrowthRate3Year\": 0,\n        \"dividendAmount\": 0,\n        \"dividendDate\": \"string\",\n        \"dividendPayAmount\": 0,\n        \"dividendPayDate\": \"string\",\n        \"dividendYield\": 0,\n        \"epsChange\": 0,\n        \"epsChangePercentTTM\": 0,\n        \"epsChangeYear\": 0,\n        \"epsTTM\": 0,\n        \"grossMarginMRQ\": 0,\n        \"grossMarginTTM\": 0,\n        \"high52\": 0,\n        \"interestCoverage\": 0,\n        \"low52\": 0,\n        \"ltDebtToEquity\": 0,\n        \"marketCap\": 0,\n        \"marketCapFloat\": 0,\n        \"netProfitMarginMRQ\": 0,\n        \"netProfitMarginTTM\": 0,\n        \"operatingMarginMRQ\": 0,\n        \"operatingMarginTTM\": 0,\n        \"pbRatio\": 0,\n        \"pcfRatio\": 0,\n        \"peRatio\": 0,\n        \"pegRatio\": 0,\n        \"prRatio\": 0,\n        \"quickRatio\": 0,\n        \"returnOnAssets\": 0,\n        \"returnOnEquity\": 0,\n        \"returnOnInvestment\": 0,\n        \"revChangeIn\": 0,\n        \"revChangeTTM\": 0,\n        \"revChangeYear\": 0,\n        \"sharesOutstanding\": 0,\n        \"shortIntDayToCover\": 0,\n        \"shortIntToFloat\": 0,\n        \"symbol\": \"string\",\n        \"totalDebtToCapital\": 0,\n        \"totalDebtToEquity\": 0,\n        \"vol10DayAvg\": 0,\n        \"vol1DayAvg\": 0,\n        \"vol3MonthAvg\": 0\n      },\n      \"symbol\": \"string\"\n    },\n    \"Instrument\": {\n      \"assetType\": \"EQUITY\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "331609e7-7893-4c35-9bed-875e2e80e6d6",
+              "name": "An error message indicating the caller must pass a non null value in the parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d649ba96-ea1c-445a-b0f8-38d4f6747204",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a404988-6242-43da-800b-71359b92f18f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "30b9003b-fd22-4001-b16f-f0b13c4bfb88",
+              "name": "An error message indicating the instrument for the symbol/cusip was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df64db9a-44be-471a-ba10-b17ffeffc9b4",
+              "name": "An error message indicating an issue in the symbol regex, or number of symbols searched is over the maximum.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7b5ada0-4ce5-43a7-9b66-d3a89d4274e1",
+          "name": "Search for instrument and fundamental data",
+          "request": {
+            "name": "Search for instrument and fundamental data",
+            "description": {
+              "content": "Search or retrieve instrument data, including fundamental data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "instruments",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7f067485-3553-4f30-9a82-573713018ec4",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Bond\": {\n      \"assetType\": \"CASH_EQUIVALENT\",\n      \"bondPrice\": 0,\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    },\n    \"FundamentalData\": {\n      \"beta\": 0,\n      \"bookValuePerShare\": 0,\n      \"currentRatio\": 0,\n      \"divGrowthRate3Year\": 0,\n      \"dividendAmount\": 0,\n      \"dividendDate\": \"string\",\n      \"dividendPayAmount\": 0,\n      \"dividendPayDate\": \"string\",\n      \"dividendYield\": 0,\n      \"epsChange\": 0,\n      \"epsChangePercentTTM\": 0,\n      \"epsChangeYear\": 0,\n      \"epsTTM\": 0,\n      \"grossMarginMRQ\": 0,\n      \"grossMarginTTM\": 0,\n      \"high52\": 0,\n      \"interestCoverage\": 0,\n      \"low52\": 0,\n      \"ltDebtToEquity\": 0,\n      \"marketCap\": 0,\n      \"marketCapFloat\": 0,\n      \"netProfitMarginMRQ\": 0,\n      \"netProfitMarginTTM\": 0,\n      \"operatingMarginMRQ\": 0,\n      \"operatingMarginTTM\": 0,\n      \"pbRatio\": 0,\n      \"pcfRatio\": 0,\n      \"peRatio\": 0,\n      \"pegRatio\": 0,\n      \"prRatio\": 0,\n      \"quickRatio\": 0,\n      \"returnOnAssets\": 0,\n      \"returnOnEquity\": 0,\n      \"returnOnInvestment\": 0,\n      \"revChangeIn\": 0,\n      \"revChangeTTM\": 0,\n      \"revChangeYear\": 0,\n      \"sharesOutstanding\": 0,\n      \"shortIntDayToCover\": 0,\n      \"shortIntToFloat\": 0,\n      \"symbol\": \"string\",\n      \"totalDebtToCapital\": 0,\n      \"totalDebtToEquity\": 0,\n      \"vol10DayAvg\": 0,\n      \"vol1DayAvg\": 0,\n      \"vol3MonthAvg\": 0\n    },\n    \"Fundamental\": {\n      \"assetType\": \"FUTURE_OPTION\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"fundamental\": {\n        \"beta\": 0,\n        \"bookValuePerShare\": 0,\n        \"currentRatio\": 0,\n        \"divGrowthRate3Year\": 0,\n        \"dividendAmount\": 0,\n        \"dividendDate\": \"string\",\n        \"dividendPayAmount\": 0,\n        \"dividendPayDate\": \"string\",\n        \"dividendYield\": 0,\n        \"epsChange\": 0,\n        \"epsChangePercentTTM\": 0,\n        \"epsChangeYear\": 0,\n        \"epsTTM\": 0,\n        \"grossMarginMRQ\": 0,\n        \"grossMarginTTM\": 0,\n        \"high52\": 0,\n        \"interestCoverage\": 0,\n        \"low52\": 0,\n        \"ltDebtToEquity\": 0,\n        \"marketCap\": 0,\n        \"marketCapFloat\": 0,\n        \"netProfitMarginMRQ\": 0,\n        \"netProfitMarginTTM\": 0,\n        \"operatingMarginMRQ\": 0,\n        \"operatingMarginTTM\": 0,\n        \"pbRatio\": 0,\n        \"pcfRatio\": 0,\n        \"peRatio\": 0,\n        \"pegRatio\": 0,\n        \"prRatio\": 0,\n        \"quickRatio\": 0,\n        \"returnOnAssets\": 0,\n        \"returnOnEquity\": 0,\n        \"returnOnInvestment\": 0,\n        \"revChangeIn\": 0,\n        \"revChangeTTM\": 0,\n        \"revChangeYear\": 0,\n        \"sharesOutstanding\": 0,\n        \"shortIntDayToCover\": 0,\n        \"shortIntToFloat\": 0,\n        \"symbol\": \"string\",\n        \"totalDebtToCapital\": 0,\n        \"totalDebtToEquity\": 0,\n        \"vol10DayAvg\": 0,\n        \"vol1DayAvg\": 0,\n        \"vol3MonthAvg\": 0\n      },\n      \"symbol\": \"string\"\n    },\n    \"Instrument\": {\n      \"assetType\": \"UNKNOWN\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    }\n  },\n  {\n    \"Bond\": {\n      \"assetType\": \"INDEX\",\n      \"bondPrice\": 0,\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    },\n    \"FundamentalData\": {\n      \"beta\": 0,\n      \"bookValuePerShare\": 0,\n      \"currentRatio\": 0,\n      \"divGrowthRate3Year\": 0,\n      \"dividendAmount\": 0,\n      \"dividendDate\": \"string\",\n      \"dividendPayAmount\": 0,\n      \"dividendPayDate\": \"string\",\n      \"dividendYield\": 0,\n      \"epsChange\": 0,\n      \"epsChangePercentTTM\": 0,\n      \"epsChangeYear\": 0,\n      \"epsTTM\": 0,\n      \"grossMarginMRQ\": 0,\n      \"grossMarginTTM\": 0,\n      \"high52\": 0,\n      \"interestCoverage\": 0,\n      \"low52\": 0,\n      \"ltDebtToEquity\": 0,\n      \"marketCap\": 0,\n      \"marketCapFloat\": 0,\n      \"netProfitMarginMRQ\": 0,\n      \"netProfitMarginTTM\": 0,\n      \"operatingMarginMRQ\": 0,\n      \"operatingMarginTTM\": 0,\n      \"pbRatio\": 0,\n      \"pcfRatio\": 0,\n      \"peRatio\": 0,\n      \"pegRatio\": 0,\n      \"prRatio\": 0,\n      \"quickRatio\": 0,\n      \"returnOnAssets\": 0,\n      \"returnOnEquity\": 0,\n      \"returnOnInvestment\": 0,\n      \"revChangeIn\": 0,\n      \"revChangeTTM\": 0,\n      \"revChangeYear\": 0,\n      \"sharesOutstanding\": 0,\n      \"shortIntDayToCover\": 0,\n      \"shortIntToFloat\": 0,\n      \"symbol\": \"string\",\n      \"totalDebtToCapital\": 0,\n      \"totalDebtToEquity\": 0,\n      \"vol10DayAvg\": 0,\n      \"vol1DayAvg\": 0,\n      \"vol3MonthAvg\": 0\n    },\n    \"Fundamental\": {\n      \"assetType\": \"CASH_EQUIVALENT\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"fundamental\": {\n        \"beta\": 0,\n        \"bookValuePerShare\": 0,\n        \"currentRatio\": 0,\n        \"divGrowthRate3Year\": 0,\n        \"dividendAmount\": 0,\n        \"dividendDate\": \"string\",\n        \"dividendPayAmount\": 0,\n        \"dividendPayDate\": \"string\",\n        \"dividendYield\": 0,\n        \"epsChange\": 0,\n        \"epsChangePercentTTM\": 0,\n        \"epsChangeYear\": 0,\n        \"epsTTM\": 0,\n        \"grossMarginMRQ\": 0,\n        \"grossMarginTTM\": 0,\n        \"high52\": 0,\n        \"interestCoverage\": 0,\n        \"low52\": 0,\n        \"ltDebtToEquity\": 0,\n        \"marketCap\": 0,\n        \"marketCapFloat\": 0,\n        \"netProfitMarginMRQ\": 0,\n        \"netProfitMarginTTM\": 0,\n        \"operatingMarginMRQ\": 0,\n        \"operatingMarginTTM\": 0,\n        \"pbRatio\": 0,\n        \"pcfRatio\": 0,\n        \"peRatio\": 0,\n        \"pegRatio\": 0,\n        \"prRatio\": 0,\n        \"quickRatio\": 0,\n        \"returnOnAssets\": 0,\n        \"returnOnEquity\": 0,\n        \"returnOnInvestment\": 0,\n        \"revChangeIn\": 0,\n        \"revChangeTTM\": 0,\n        \"revChangeYear\": 0,\n        \"sharesOutstanding\": 0,\n        \"shortIntDayToCover\": 0,\n        \"shortIntToFloat\": 0,\n        \"symbol\": \"string\",\n        \"totalDebtToCapital\": 0,\n        \"totalDebtToEquity\": 0,\n        \"vol10DayAvg\": 0,\n        \"vol1DayAvg\": 0,\n        \"vol3MonthAvg\": 0\n      },\n      \"symbol\": \"string\"\n    },\n    \"Instrument\": {\n      \"assetType\": \"EQUITY\",\n      \"cusip\": \"string\",\n      \"description\": \"string\",\n      \"exchange\": \"string\",\n      \"symbol\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f7f5a0b-7d3e-4b5a-93e8-b033cb25d496",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9239db69-9517-47b6-962a-9c23bdaf61af",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3984b4e8-1b5a-41d9-8497-af65d12a32c9",
+              "name": "An error message indicating the instrument for the symbol/cusip was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "instruments",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "40f6468c-d818-41c8-8a6c-7d3372f9e640",
+    "name": "TD Ameritrade Accounts and Trading Instruments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}

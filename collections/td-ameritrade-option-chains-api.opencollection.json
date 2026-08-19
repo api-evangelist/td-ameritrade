@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading Option Chains API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Option Chains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Option Chains for optionable symbols",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/marketdata/chains",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "API Key"
+              },
+              {
+                "name": "symbol",
+                "value": "",
+                "type": "query",
+                "description": "Enter one symbol"
+              },
+              {
+                "name": "contractType",
+                "value": "",
+                "type": "query",
+                "description": "Type of contracts to return in the chain. Can be CALL, PUT, or ALL. Default is ALL."
+              },
+              {
+                "name": "strikeCount",
+                "value": "",
+                "type": "query",
+                "description": "The number of strikes to return above and below the at-the-money price."
+              },
+              {
+                "name": "includeQuotes",
+                "value": "",
+                "type": "query",
+                "description": "Include quotes for options in the option chain. Can be TRUE or FALSE. Default is FALSE."
+              },
+              {
+                "name": "strategy",
+                "value": "",
+                "type": "query",
+                "description": "Passing a value returns a Strategy Chain. Possible values are SINGLE, ANALYTICAL (allows use of the volatility, underlyingPrice, interestRate, and daysToExpiration params to calculate theoretical values), COVERED, VERTICAL, CALENDAR, STRANGLE, STRADDLE, BUTTERFLY, CONDOR, DIAGONAL, COLLAR, or ROLL. Default is SINGLE."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get option chain for an optionable Symbol"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

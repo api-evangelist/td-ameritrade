@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TD Ameritrade Accounts and Trading User Info & Preferences API",
+    "version": "3.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User Info & Preferences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/preferences",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Preferences for a specific account."
+        },
+        {
+          "info": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tdameritrade.com/v2/accounts/:accountId/preferences",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path",
+                "description": "Account ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update preferences for a specific account. Please note that the directOptionsRouting and directEquityRouting values cannot be modified via this operation"
+        },
+        {
+          "info": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/userprincipals/streamersubscriptionkeys",
+            "params": [
+              {
+                "name": "accountIds",
+                "value": "",
+                "type": "query",
+                "description": "Account IDs"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "SubscriptionKey for provided accounts or default accounts."
+        },
+        {
+          "info": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tdameritrade.com/v2/userprincipals",
+            "params": [
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated String which allows one to specify additional fields to return. None of these fields are returned by default. Possible values in this String can be: streamerSubscriptionKeys,\nstreamerConnectionInfo,\npreferences,\nsurrogateIds"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "User Principal details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

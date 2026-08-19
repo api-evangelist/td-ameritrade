@@ -1,0 +1,496 @@
+{
+  "item": [
+    {
+      "id": "0764e9e1-b5be-40d0-8776-eaf71dc1b92b",
+      "name": "Price History",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "62df3685-8216-4fde-9a3b-80f6104b3a33",
+          "name": "Historical price data for charts",
+          "request": {
+            "name": "Historical price data for charts",
+            "description": {
+              "content": "Get price history for a symbol",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "marketdata",
+                ":symbol",
+                "pricehistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) API Key"
+                },
+                {
+                  "disabled": false,
+                  "key": "periodType",
+                  "value": "<string>",
+                  "description": "(Required) The type of period to show. Valid values are day, month, year, or ytd (year to date). Default is day."
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<integer>",
+                  "description": "(Required) The number of periods to show.\n\nExample: For a 2 day / 1 min chart, the values would be:\nperiod: 2\nperiodType: day\nfrequency: 1\nfrequencyType: min\nValid periods by periodType (defaults marked with an asterisk):\nday: 1, 2, 3, 4, 5, 10*\nmonth: 1*, 2, 3, 6\nyear: 1*, 2, 3, 5, 10, 15, 20\nytd: 1*"
+                },
+                {
+                  "disabled": false,
+                  "key": "frequencyType",
+                  "value": "<string>",
+                  "description": "(Required) The type of frequency with which a new candle is formed.\n\nValid frequencyTypes by periodType (defaults marked with an asterisk):\n\nday: minute*\nmonth: daily, weekly*\nyear: daily, weekly, monthly*\nytd: daily, weekly*\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<integer>",
+                  "description": "(Required) The number of the frequencyType to be included in each candle.\n\nValid frequencies by frequencyType (defaults marked with an asterisk):\n\nminute: 1*, 5, 10, 15, 30\ndaily: 1*\nweekly: 1*\nmonthly: 1*\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<string>",
+                  "description": "(Required) End date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided. Default is previous trading day."
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<string>",
+                  "description": "(Required) Start date as milliseconds since epoch. If startDate and endDate are provided, period should not be provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "needExtendedHoursData",
+                  "value": "<boolean>",
+                  "description": "(Required) true to return extended hours data, false for regular market hours only. Default is true"
+                },
+                {
+                  "disabled": false,
+                  "key": "x",
+                  "value": "<string>",
+                  "description": "(Required) x"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) Enter one symbol"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9ad0afed-7d74-46d5-8cd9-a3f75bc7c1cb",
+              "name": "Instruments List",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "pricehistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "periodType",
+                      "value": "'day' or 'month' or 'year' or 'ytd'"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "frequencyType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "frequency",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "needExtendedHoursData",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "x",
+                      "value": "x"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Enter one symbol"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"candles\": [\n    {\n      \"close\": 0,\n      \"datetime\": 0,\n      \"high\": 0,\n      \"low\": 0,\n      \"open\": 0,\n      \"volume\": 0\n    },\n    {\n      \"close\": 0,\n      \"datetime\": 0,\n      \"high\": 0,\n      \"low\": 0,\n      \"open\": 0,\n      \"volume\": 0\n    }\n  ],\n  \"empty\": false,\n  \"symbol\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d467be8e-9d71-46b9-abc4-a8824e49979d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "pricehistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "periodType",
+                      "value": "'day' or 'month' or 'year' or 'ytd'"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "frequencyType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "frequency",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "needExtendedHoursData",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "x",
+                      "value": "x"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Enter one symbol"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b0b70f6-c0d8-4a94-ae35-fd69fa1b8946",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "pricehistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "periodType",
+                      "value": "'day' or 'month' or 'year' or 'ytd'"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "frequencyType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "frequency",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "needExtendedHoursData",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "x",
+                      "value": "x"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Enter one symbol"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b553e0e9-ec19-41f0-b204-5effaf6f3356",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "marketdata",
+                    ":symbol",
+                    "pricehistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "periodType",
+                      "value": "'day' or 'month' or 'year' or 'ytd'"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "frequencyType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "frequency",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "needExtendedHoursData",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "x",
+                      "value": "x"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "symbol",
+                      "description": "(Required) Enter one symbol"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "97ece1b7-ab54-4df3-ae6b-aeba8a9a7a2b",
+    "name": "TD Ameritrade Accounts and Trading Price History API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,2230 @@
+{
+  "item": [
+    {
+      "id": "1ed768d8-f400-4959-9545-e05cc4d40f80",
+      "name": "Watchlist",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec70d2e6-66af-43f7-a171-754375902b6d",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "Create watchlist for specific account.This method does not verify that the symbol or asset type are valid.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "359b318e-9fd4-412a-bffc-1ee1103105cc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06fbba7c-0a71-409c-9f68-75d99921ca4d",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1a6f360c-f4fa-4afc-8b57-94043ffb3d90",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71830c76-5a89-4cd1-9539-87b7acb5fc28",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7ae7563-686e-4d10-ae15-f49978fd9420",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "All watchlists of an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "412200e6-b1c5-4205-a76f-d0b6df1636b5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  },\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9360520f-77e9-4bc2-b77a-08c6dc70e021",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa5b3bb3-dd30-42c9-9eaa-5b90a7a3d600",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48050f92-17e6-4945-ab88-95dd8cc43cf1",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "Delete watchlist for a specific account. This method does not verify that the symbol or asset type are valid.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists",
+                ":watchlistId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "watchlistId",
+                  "description": "(Required) Watchlist ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9c48938e-7fea-4db6-b5c1-9308a1daed96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "349bdb6c-e216-474a-bf26-dc6f2e4ca578",
+              "name": "Watchlist deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "622cd1b0-f5fd-4102-b106-60fbef9f933f",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ea7e858-14a1-4d02-82a9-d8a2678f53ec",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e167884b-ed97-4f21-8cce-655891185d7f",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fab061f6-82a6-4ead-8705-19a7f307a5c6",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "Replace watchlist for specific account. This method does not verify that the symbol or asset type are valid.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists",
+                ":watchlistId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "watchlistId",
+                  "description": "(Required) Watchlist ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"watchlistId\": \"<string>\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"sequenceId\": \"<integer>\"\n    },\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"sequenceId\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac2e5731-bdd5-48f7-b83a-44565bc2eb73",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d65b7fda-f1d5-4185-a89a-45bd119fb5ce",
+              "name": "Watchlist updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d82d664-7f17-48e9-b299-21ec1b018200",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "36520225-fc60-4510-8322-dfd70a0e5c03",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4337de7b-85a1-42bd-8d9e-237bbd2aa27a",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bec3a52a-13b5-49fd-91ac-57fc4888ffe1",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "Partially update watchlist for a specific account: change watchlist name, add to the beginning/end of a watchlist, update or delete items in a watchlist. This method does not verify that the symbol or asset type are valid.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists",
+                ":watchlistId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "watchlistId",
+                  "description": "(Required) Watchlist ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"watchlistId\": \"<string>\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"sequenceId\": \"<integer>\"\n    },\n    {\n      \"averagePrice\": \"<integer>\",\n      \"commission\": \"<integer>\",\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"<string>\"\n      },\n      \"purchasedDate\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"sequenceId\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4f11115-7418-47a3-a74e-5271b554c96e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "14e7c072-7314-4d5e-9679-82d55fb945c2",
+              "name": "Watchlist updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26feb1aa-a574-4ed4-9ce0-d814c21a0b48",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd764a07-8c8e-4d51-8c6a-9557143f8ba0",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "650270d2-6c01-4874-a983-6de9ae1fbd29",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"string\",\n  \"watchlistId\": \"string\",\n  \"watchlistItems\": [\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    },\n    {\n      \"averagePrice\": 0,\n      \"commission\": 0,\n      \"instrument\": {\n        \"assetType\": \"<string>\",\n        \"symbol\": \"string\"\n      },\n      \"purchasedDate\": \"DateParam\",\n      \"quantity\": 0,\n      \"sequenceId\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7569a1e-25c7-4b1f-95fa-f2254d5c4051",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "Specific watchlist for a specific account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "watchlists",
+                ":watchlistId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "watchlistId",
+                  "description": "(Required) Watchlist ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c66ba654-20da-4a84-98f3-22736d705120",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  },\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82cb9059-ac9b-454d-aced-06c4d8d47d24",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "80b6023c-dd5e-411b-8c79-2cc729498d3a",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b77df22-b99f-441a-808a-502389109098",
+              "name": "An error message indicating the account or the watchlist ID does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5cb0938f-2a9b-480b-a83c-884693861ea5",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "watchlists",
+                    ":watchlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "watchlistId",
+                      "description": "(Required) Watchlist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98cbc035-6ffd-43cd-9764-08bc0f4b5806",
+          "name": "APIs to perform CRUD operations on Account Watchlist",
+          "request": {
+            "name": "APIs to perform CRUD operations on Account Watchlist",
+            "description": {
+              "content": "All watchlists for all of the user's linked accounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                "watchlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8242cf79-f8ee-47a6-9347-924b85bb56db",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  },\n  {\n    \"accountId\": \"string\",\n    \"name\": \"string\",\n    \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\",\n    \"watchlistId\": \"string\",\n    \"watchlistItems\": [\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      },\n      {\n        \"averagePrice\": 0,\n        \"commission\": 0,\n        \"instrument\": {\n          \"assetType\": \"<string>\",\n          \"description\": \"string\",\n          \"symbol\": \"string\"\n        },\n        \"purchasedDate\": \"DateParam\",\n        \"quantity\": 0,\n        \"sequenceId\": 0,\n        \"status\": \"'UNCHANGED' or 'CREATED' or 'UPDATED' or 'DELETED'\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "278e145f-fd5c-403b-be62-d7b68e4df726",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7902c4b1-065e-412f-9761-dc5fbf02714b",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "watchlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d477b54e-7442-490b-91bf-22b2c9d86b40",
+    "name": "TD Ameritrade Accounts and Trading Watchlist API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,1384 @@
+{
+  "item": [
+    {
+      "id": "bb46a160-e1be-424d-8cb5-5a45ef1f40c5",
+      "name": "User Info & Preferences",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "43ac1543-eb2d-4e40-b633-7512c94918fa",
+          "name": "APIs to access user-authorized accounts and their preferences",
+          "request": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "description": {
+              "content": "Preferences for a specific account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "preferences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "654180ae-e72a-49e4-83a6-f5b8ba29eb90",
+              "name": "Preferences",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"FILL_OR_KILL\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"NORMAL\",\n  \"defaultEquityOrderPriceLinkType\": \"PERCENT\",\n  \"defaultEquityOrderType\": \"STOP_LIMIT\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": false,\n  \"directOptionsRouting\": true,\n  \"equityTaxLotMethod\": \"HIGH_COST\",\n  \"expressTrading\": false,\n  \"mutualFundTaxLotMethod\": \"LIFO\",\n  \"optionTaxLotMethod\": \"LOW_COST\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "330b4919-94e7-46bc-92fb-b50999f15965",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e27b280-6987-468a-8ad6-4106d1b05ff1",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1e940c24-b0be-45d5-a08b-031905a13289",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2e20fbee-07ad-4d3c-8c19-ca712da8d8fe",
+              "name": "An error message indicating there is a temporary problem responding.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b419819c-c936-4e32-8660-edc836415615",
+          "name": "APIs to access user-authorized accounts and their preferences",
+          "request": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "description": {
+              "content": "Update preferences for a specific account. Please note that the directOptionsRouting and directEquityRouting values cannot be modified via this operation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "preferences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) Account ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authTokenTimeout\": \"<string>\",\n  \"defaultAdvancedToolLaunch\": \"<string>\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"<string>\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": \"<integer>\",\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "037aa6f7-6674-4614-a25d-67a2db01223c",
+              "name": "Preferences",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": false,\n  \"directOptionsRouting\": false,\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": true,\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb4645e5-b073-48ee-abc5-f5abb4fd7f25",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a841a7e7-5e82-469d-9a4f-7580aa16e8ac",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a390efcd-b978-4cd3-a3ae-d591776acea6",
+              "name": "An error message indicating the caller is forbidden from accessing this resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98e25361-1889-4a70-93e6-b7763ba0ce07",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a49ffbd7-5bce-410a-8e3d-428241e210b7",
+              "name": "An error message indicating there is a temporary problem responding.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "preferences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) Account ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n  \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n  \"defaultEquityOrderDuration\": \"<string>\",\n  \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n  \"defaultEquityOrderMarketSession\": \"<string>\",\n  \"defaultEquityOrderPriceLinkType\": \"<string>\",\n  \"defaultEquityOrderType\": \"<string>\",\n  \"defaultEquityQuantity\": 0,\n  \"directEquityRouting\": \"<boolean>\",\n  \"directOptionsRouting\": \"<boolean>\",\n  \"equityTaxLotMethod\": \"<string>\",\n  \"expressTrading\": \"<boolean>\",\n  \"mutualFundTaxLotMethod\": \"<string>\",\n  \"optionTaxLotMethod\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6759bd23-da47-4b26-9848-4517f11dc667",
+          "name": "APIs to access user-authorized accounts and their preferences",
+          "request": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "description": {
+              "content": "SubscriptionKey for provided accounts or default accounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "userprincipals",
+                "streamersubscriptionkeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountIds",
+                  "value": "<string>",
+                  "description": "(Required) Account IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountIds",
+                  "value": "<string>",
+                  "description": "(Required) Account IDs"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fa1f1ba1-9f8e-472f-ad34-a3d3f10c176e",
+              "name": "Preferences",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals",
+                    "streamersubscriptionkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"keys\": [\n    {\n      \"key\": \"string\"\n    },\n    {\n      \"key\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8ba5bd9-542f-4464-b415-c28a4cb81a32",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals",
+                    "streamersubscriptionkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86ee7801-10d0-48f5-86d5-361dcc903e47",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals",
+                    "streamersubscriptionkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64c5cccf-dcd3-4525-82da-189105efdc47",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals",
+                    "streamersubscriptionkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c6e995ef-b29c-430e-9c64-a78580c16cc7",
+              "name": "An error message indicating there is a temporary problem responding.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals",
+                    "streamersubscriptionkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b474f11-271d-4dc6-95e7-48d161d59d49",
+          "name": "APIs to access user-authorized accounts and their preferences",
+          "request": {
+            "name": "APIs to access user-authorized accounts and their preferences",
+            "description": {
+              "content": "User Principal details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "userprincipals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "(Required) A comma separated String which allows one to specify additional fields to return. None of these fields are returned by default. Possible values in this String can be: streamerSubscriptionKeys,\nstreamerConnectionInfo,\npreferences,\nsurrogateIds"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "(Required) A comma separated String which allows one to specify additional fields to return. None of these fields are returned by default. Possible values in this String can be: streamerSubscriptionKeys,\nstreamerConnectionInfo,\npreferences,\nsurrogateIds"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ade7240e-bfa8-4f49-8ad1-59a2d9ff79b7",
+              "name": "Preferences",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accessLevel\": \"string\",\n  \"accounts\": [\n    {\n      \"accountCdDomainId\": \"string\",\n      \"accountId\": \"string\",\n      \"acl\": \"string\",\n      \"authorizations\": {\n        \"advancedMargin\": false,\n        \"apex\": false,\n        \"levelTwoQuotes\": true,\n        \"marginTrading\": false,\n        \"optionTradingLevel\": \"'COVERED' or 'FULL' or 'LONG' or 'SPREAD' or 'NONE'\",\n        \"scottradeAccount\": false,\n        \"stockTrading\": true,\n        \"streamerAccess\": false,\n        \"streamingNews\": true\n      },\n      \"company\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"preferences\": {\n        \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n        \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n        \"defaultEquityOrderDuration\": \"<string>\",\n        \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n        \"defaultEquityOrderMarketSession\": \"<string>\",\n        \"defaultEquityOrderPriceLinkType\": \"<string>\",\n        \"defaultEquityOrderType\": \"<string>\",\n        \"defaultEquityQuantity\": 0,\n        \"directEquityRouting\": true,\n        \"directOptionsRouting\": false,\n        \"equityTaxLotMethod\": \"<string>\",\n        \"expressTrading\": true,\n        \"mutualFundTaxLotMethod\": \"<string>\",\n        \"optionTaxLotMethod\": \"<string>\"\n      },\n      \"segment\": \"string\",\n      \"surrogateIds\": \"object\"\n    },\n    {\n      \"accountCdDomainId\": \"string\",\n      \"accountId\": \"string\",\n      \"acl\": \"string\",\n      \"authorizations\": {\n        \"advancedMargin\": true,\n        \"apex\": false,\n        \"levelTwoQuotes\": true,\n        \"marginTrading\": false,\n        \"optionTradingLevel\": \"'COVERED' or 'FULL' or 'LONG' or 'SPREAD' or 'NONE'\",\n        \"scottradeAccount\": true,\n        \"stockTrading\": false,\n        \"streamerAccess\": false,\n        \"streamingNews\": true\n      },\n      \"company\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"preferences\": {\n        \"authTokenTimeout\": \"'FIFTY_FIVE_MINUTES' or 'TWO_HOURS' or 'FOUR_HOURS' or 'EIGHT_HOURS'\",\n        \"defaultAdvancedToolLaunch\": \"'TA' or 'N' or 'Y' or 'TOS' or 'NONE' or 'CC2'\",\n        \"defaultEquityOrderDuration\": \"<string>\",\n        \"defaultEquityOrderLegInstruction\": \"'BUY' or 'SELL' or 'BUY_TO_COVER' or 'SELL_SHORT' or 'NONE'\",\n        \"defaultEquityOrderMarketSession\": \"<string>\",\n        \"defaultEquityOrderPriceLinkType\": \"<string>\",\n        \"defaultEquityOrderType\": \"<string>\",\n        \"defaultEquityQuantity\": 0,\n        \"directEquityRouting\": true,\n        \"directOptionsRouting\": false,\n        \"equityTaxLotMethod\": \"<string>\",\n        \"expressTrading\": true,\n        \"mutualFundTaxLotMethod\": \"<string>\",\n        \"optionTaxLotMethod\": \"<string>\"\n      },\n      \"segment\": \"string\",\n      \"surrogateIds\": \"object\"\n    }\n  ],\n  \"authToken\": \"string\",\n  \"lastLoginTime\": \"string\",\n  \"loginTime\": \"string\",\n  \"primaryAccountId\": \"string\",\n  \"professionalStatus\": \"'PROFESSIONAL' or 'NON_PROFESSIONAL' or 'UNKNOWN_STATUS'\",\n  \"quotes\": {\n    \"isAmexDelayed\": false,\n    \"isCmeDelayed\": true,\n    \"isForexDelayed\": true,\n    \"isIceDelayed\": true,\n    \"isNasdaqDelayed\": false,\n    \"isNyseDelayed\": false,\n    \"isOpraDelayed\": true\n  },\n  \"stalePassword\": true,\n  \"streamerInfo\": {\n    \"accessLevel\": \"string\",\n    \"acl\": \"string\",\n    \"appId\": \"string\",\n    \"streamerBinaryUrl\": \"string\",\n    \"streamerSocketUrl\": \"string\",\n    \"token\": \"string\",\n    \"tokenTimestamp\": \"string\",\n    \"userGroup\": \"string\"\n  },\n  \"streamerSubscriptionKeys\": {\n    \"keys\": [\n      {\n        \"key\": \"string\"\n      },\n      {\n        \"key\": \"string\"\n      }\n    ]\n  },\n  \"tokenExpirationTime\": \"string\",\n  \"userCdDomainId\": \"string\",\n  \"userId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d4e6371-5e64-4c1a-a08b-e739202d6390",
+              "name": "An error message indicating the validation problem with the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "80e8c70c-1b63-4225-97cd-26df549ce1c1",
+              "name": "An error message indicating the caller must pass a valid AuthToken in the HTTP authorization request header.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "89b3ca4b-5b91-4208-b0e4-b564f8683b1d",
+              "name": "An error message indicating there was an unexpected server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f67aa28e-ab38-49f8-a1cf-acecf9c217df",
+              "name": "An error message indicating there is a temporary problem responding.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "userprincipals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "fields=streamerSubscriptionKeys,streamerConnectionInfo"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.tdameritrade.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e81705f6-90bd-469a-85a6-98beee3e9217",
+    "name": "TD Ameritrade Accounts and Trading User Info & Preferences API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "TD Ameritrade API\n\nContact Support:\n Email: austin.millan@protonmail.com",
+      "type": "text/plain"
+    }
+  }
+}
