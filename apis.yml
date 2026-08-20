@@ -91,6 +91,9 @@ apis:
   baseURL: https://api.tdameritrade.com/v1
   tags:
   - Authentication
+  - Access Tokens
+  tags_raw:
+  - Authentication
   - OAuth 2.0
   - Access Tokens
   properties:
