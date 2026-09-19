@@ -40,6 +40,14 @@ tags:
 - Brokerage
 - Trading
 - Finance
+- Stocks
+- Options
+- Market Data
+- Streaming
+tags_raw:
+- Brokerage
+- Trading
+- Finance
 - Equities
 - Options
 - Market Data
@@ -81,6 +89,11 @@ apis:
   humanURL: https://developer.tdameritrade.com/instruments/apis
   baseURL: https://api.tdameritrade.com/v1
   tags:
+  - Instruments
+  - Stocks
+  - Fundamentals
+  - Securities
+  tags_raw:
   - Instruments
   - Equities
   - Fundamentals
