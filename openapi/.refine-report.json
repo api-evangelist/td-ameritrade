@@ -1,17 +1,7 @@
 {
   "provider": "td-ameritrade",
   "sources": [
-    "td-ameritrade-accounts-and-trading-api-openapi.yml",
-    "td-ameritrade-authentication-api-openapi.yml",
-    "td-ameritrade-instruments-api-openapi.yml",
-    "td-ameritrade-market-hours-api-openapi.yml",
-    "td-ameritrade-movers-api-openapi.yml",
-    "td-ameritrade-option-chains-api-openapi.yml",
-    "td-ameritrade-price-history-api-openapi.yml",
-    "td-ameritrade-quotes-api-openapi.yml",
-    "td-ameritrade-transaction-history-api-openapi.yml",
-    "td-ameritrade-user-info-preferences-api-openapi.yml",
-    "td-ameritrade-watchlist-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "td-ameritrade-accounts-and-trading-api-openapi.yml",
@@ -29,6 +19,33 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "openapi.yml: declared missing tag: Accounts and Trading",
+    "openapi.yml: declared missing tag: Authentication",
+    "openapi.yml: declared missing tag: Instruments",
+    "openapi.yml: declared missing tag: Market Hours",
+    "openapi.yml: declared missing tag: Movers",
+    "openapi.yml: declared missing tag: Option Chains",
+    "openapi.yml: declared missing tag: Price History",
+    "openapi.yml: declared missing tag: Quotes",
+    "openapi.yml: declared missing tag: Transaction History",
+    "openapi.yml: declared missing tag: User Info & Preferences",
+    "openapi.yml: declared missing tag: Watchlist",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "td-ameritrade-accounts-and-trading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-instruments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-market-hours-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-movers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-option-chains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-price-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-quotes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-transaction-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-user-info-preferences-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "td-ameritrade-watchlist-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

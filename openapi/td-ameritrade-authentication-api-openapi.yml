@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: TD Ameritrade API
   version: 3.0.1
-  title: TD Ameritrade Accounts and Trading Authentication API
+  title: TD Ameritrade Authentication API
   termsOfService: https://developer.tdameritrade.com/legal
   contact:
     email: austin.millan@protonmail.com

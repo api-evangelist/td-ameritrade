@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: TD Ameritrade API
   version: 3.0.1
-  title: TD Ameritrade Accounts and Trading Instruments API
+  title: TD Ameritrade Instruments API
   termsOfService: https://developer.tdameritrade.com/legal
   contact:
     email: austin.millan@protonmail.com
@@ -280,6 +280,43 @@ components:
           example: 0
           type: number
       type: object
+    Bond:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        bondPrice:
+          example: 0
+          type: number
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        exchange:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
     Fundamental:
       properties:
         assetType:
@@ -434,43 +471,6 @@ components:
               example: 0
               type: number
           type: object
-        symbol:
-          example: string
-          type: string
-      type: object
-    AssetType:
-      enum:
-      - EQUITY
-      - OPTION
-      - FUTURE_OPTION
-      - INDICATOR
-      - FOREX
-      - MUTUAL_FUND
-      - INDEX
-      - CASH_EQUIVALENT
-      - FIXED_INCOME
-      - CURRENCY
-      - ETF
-      - BOND
-      - UNKNOWN
-      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
-      type: string
-    Bond:
-      properties:
-        assetType:
-          $ref: '#/components/schemas/AssetType'
-        bondPrice:
-          example: 0
-          type: number
-        cusip:
-          example: string
-          type: string
-        description:
-          example: string
-          type: string
-        exchange:
-          example: string
-          type: string
         symbol:
           example: string
           type: string
