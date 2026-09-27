@@ -98,99 +98,46 @@ paths:
       - Bearer: []
 components:
   schemas:
-    OptionType:
-      enum:
-      - VANILLA
-      - BINARY
-      - BARRIER
-      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
-      type: string
-    StrikePriceMap:
-      type: object
-    Underlying:
+    Option:
       properties:
-        ask:
-          example: 0
-          type: number
-        askSize:
-          example: 0
-          type: number
-        bid:
-          example: 0
-          type: number
-        bidSize:
-          example: 0
-          type: number
-        change:
-          example: 0
-          type: number
-        close:
-          example: 0
-          type: number
-        delayed:
-          type: boolean
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
         description:
           example: string
           type: string
-        exchangeName:
-          example: '''IND'' or ''ASE'' or ''NYS'' or ''NAS'' or ''NAP'' or ''PAC'' or ''OPR'' or ''BATS'''
-          type: string
-        fiftyTwoWeekHigh:
+        optionDeliverables:
+          items:
+            properties:
+              assetType:
+                $ref: '#/components/schemas/AssetType'
+              currencyType:
+                $ref: '#/components/schemas/CurrencyType'
+              deliverableUnits:
+                example: 0
+                type: number
+              symbol:
+                example: string
+                type: string
+            type: object
+          type: array
+        optionMultiplier:
           example: 0
           type: number
-        fiftyTwoWeekLow:
-          example: 0
-          type: number
-        highPrice:
-          example: 0
-          type: number
-        last:
-          example: 0
-          type: number
-        lowPrice:
-          example: 0
-          type: number
-        mark:
-          example: 0
-          type: number
-        markChange:
-          example: 0
-          type: number
-        markPercentChange:
-          example: 0
-          type: number
-        openPrice:
-          example: 0
-          type: number
-        percentChange:
-          example: 0
-          type: number
-        quoteTime:
-          example: 0
-          type: number
+        putCall:
+          $ref: '#/components/schemas/PutOrCall'
         symbol:
           example: string
           type: string
-        totalVolume:
-          example: 0
-          type: number
-        tradeTime:
-          example: 0
-          type: number
-      type: object
-    CurrencyType:
-      enum:
-      - USD
-      - CAD
-      - EUR
-      - JPY
-      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
-      type: string
-    ExpirationDate:
-      properties:
-        date:
+        type:
+          $ref: '#/components/schemas/OptionType'
+        underlyingSymbol:
           example: string
           type: string
+      type: object
+    StrikePriceMap:
       type: object
     AssetType:
       enum:
@@ -208,6 +155,56 @@ components:
       - BOND
       - UNKNOWN
       example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    OptionDeliverables:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        currencyType:
+          $ref: '#/components/schemas/CurrencyType'
+        deliverableUnits:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    Strategy:
+      enum:
+      - SINGLE
+      - ANALYTICAL
+      - COVERED
+      - VERTICAL
+      - CALENDAR
+      - STRANGLE
+      - STRADDLE
+      - BUTTERFLY
+      - CONDOR
+      - DIAGONAL
+      - COLLAR
+      - ROLL
+      example: '''SINGLE'' or ''ANALYTICAL'' or ''COVERED'' or ''VERTICAL'' or ''CALENDAR'' or ''STRANGLE'' or ''STRADDLE'' or ''BUTTERFLY'' or ''CONDOR'' or ''DIAGONAL'' or ''COLLAR'' or ''ROLL'''
+      type: string
+    ExpirationDate:
+      properties:
+        date:
+          example: string
+          type: string
+      type: object
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+    CurrencyType:
+      enum:
+      - USD
+      - CAD
+      - EUR
+      - JPY
+      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
       type: string
     OptionChain:
       properties:
@@ -315,6 +312,84 @@ components:
           example: 0
           type: number
       type: object
+    OptionType:
+      enum:
+      - VANILLA
+      - BINARY
+      - BARRIER
+      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
+      type: string
+    Underlying:
+      properties:
+        ask:
+          example: 0
+          type: number
+        askSize:
+          example: 0
+          type: number
+        bid:
+          example: 0
+          type: number
+        bidSize:
+          example: 0
+          type: number
+        change:
+          example: 0
+          type: number
+        close:
+          example: 0
+          type: number
+        delayed:
+          type: boolean
+        description:
+          example: string
+          type: string
+        exchangeName:
+          example: '''IND'' or ''ASE'' or ''NYS'' or ''NAS'' or ''NAP'' or ''PAC'' or ''OPR'' or ''BATS'''
+          type: string
+        fiftyTwoWeekHigh:
+          example: 0
+          type: number
+        fiftyTwoWeekLow:
+          example: 0
+          type: number
+        highPrice:
+          example: 0
+          type: number
+        last:
+          example: 0
+          type: number
+        lowPrice:
+          example: 0
+          type: number
+        mark:
+          example: 0
+          type: number
+        markChange:
+          example: 0
+          type: number
+        markPercentChange:
+          example: 0
+          type: number
+        openPrice:
+          example: 0
+          type: number
+        percentChange:
+          example: 0
+          type: number
+        quoteTime:
+          example: 0
+          type: number
+        symbol:
+          example: string
+          type: string
+        totalVolume:
+          example: 0
+          type: number
+        tradeTime:
+          example: 0
+          type: number
+      type: object
     OrderStatus:
       enum:
       - AWAITING_PARENT_ORDER
@@ -334,81 +409,6 @@ components:
       - EXPIRED
       example: '''AWAITING_PARENT_ORDER'' or ''AWAITING_CONDITION'' or ''AWAITING_MANUAL_REVIEW'' or ''ACCEPTED'' or ''AWAITING_UR_OUT'' or ''PENDING_ACTIVATION'' or ''QUEUED'' or ''WORKING'' or ''REJECTED'' or ''PENDING_CANCEL'' or ''CANCELED'' or ''PENDING_REPLACE'' or ''REPLACED'' or ''FILLED'' or ''EXPIRED'''
       type: string
-    Strategy:
-      enum:
-      - SINGLE
-      - ANALYTICAL
-      - COVERED
-      - VERTICAL
-      - CALENDAR
-      - STRANGLE
-      - STRADDLE
-      - BUTTERFLY
-      - CONDOR
-      - DIAGONAL
-      - COLLAR
-      - ROLL
-      example: '''SINGLE'' or ''ANALYTICAL'' or ''COVERED'' or ''VERTICAL'' or ''CALENDAR'' or ''STRANGLE'' or ''STRADDLE'' or ''BUTTERFLY'' or ''CONDOR'' or ''DIAGONAL'' or ''COLLAR'' or ''ROLL'''
-      type: string
-    Option:
-      properties:
-        assetType:
-          $ref: '#/components/schemas/AssetType'
-        cusip:
-          example: string
-          type: string
-        description:
-          example: string
-          type: string
-        optionDeliverables:
-          items:
-            properties:
-              assetType:
-                $ref: '#/components/schemas/AssetType'
-              currencyType:
-                $ref: '#/components/schemas/CurrencyType'
-              deliverableUnits:
-                example: 0
-                type: number
-              symbol:
-                example: string
-                type: string
-            type: object
-          type: array
-        optionMultiplier:
-          example: 0
-          type: number
-        putCall:
-          $ref: '#/components/schemas/PutOrCall'
-        symbol:
-          example: string
-          type: string
-        type:
-          $ref: '#/components/schemas/OptionType'
-        underlyingSymbol:
-          example: string
-          type: string
-      type: object
-    PutOrCall:
-      enum:
-      - PUT
-      - CALL
-      - ALL
-      example: '''PUT'' or ''CALL'' or ''ALL'''
-      type: string
-    OptionDeliverables:
-      properties:
-        assetType:
-          $ref: '#/components/schemas/AssetType'
-        currencyType:
-          $ref: '#/components/schemas/CurrencyType'
-        deliverableUnits:
-          example: string
-          type: string
-        symbol:
-          example: string
-          type: string
-      type: object
   securitySchemes:
     Bearer:
       type: apiKey

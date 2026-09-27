@@ -239,6 +239,98 @@ paths:
       - Bearer: []
 components:
   schemas:
+    UpdateWatchlist:
+      properties:
+        name:
+          example: string
+          type: string
+        watchlistId:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                format: int32
+                type: integer
+              commission:
+                example: 0
+                format: int32
+                type: integer
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                format: int32
+                type: integer
+              sequenceId:
+                example: 0
+                format: int32
+                type: integer
+            type: object
+          type: array
+      type: object
+    CreateWatchlist:
+      properties:
+        name:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                format: int32
+                type: integer
+              commission:
+                example: 0
+                format: int32
+                type: integer
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                format: int32
+                type: integer
+            type: object
+          type: array
+      type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
     Watchlist:
       properties:
         accountId:
@@ -285,98 +377,6 @@ components:
               status:
                 example: '''UNCHANGED'' or ''CREATED'' or ''UPDATED'' or ''DELETED'''
                 type: string
-            type: object
-          type: array
-      type: object
-    AssetType:
-      enum:
-      - EQUITY
-      - OPTION
-      - FUTURE_OPTION
-      - INDICATOR
-      - FOREX
-      - MUTUAL_FUND
-      - INDEX
-      - CASH_EQUIVALENT
-      - FIXED_INCOME
-      - CURRENCY
-      - ETF
-      - BOND
-      - UNKNOWN
-      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
-      type: string
-    CreateWatchlist:
-      properties:
-        name:
-          example: string
-          type: string
-        watchlistItems:
-          items:
-            properties:
-              averagePrice:
-                example: 0
-                format: int32
-                type: integer
-              commission:
-                example: 0
-                format: int32
-                type: integer
-              instrument:
-                properties:
-                  assetType:
-                    $ref: '#/components/schemas/AssetType'
-                  symbol:
-                    example: string
-                    type: string
-                type: object
-              purchasedDate:
-                example: DateParam
-                type: string
-              quantity:
-                example: 0
-                format: int32
-                type: integer
-            type: object
-          type: array
-      type: object
-    UpdateWatchlist:
-      properties:
-        name:
-          example: string
-          type: string
-        watchlistId:
-          example: string
-          type: string
-        watchlistItems:
-          items:
-            properties:
-              averagePrice:
-                example: 0
-                format: int32
-                type: integer
-              commission:
-                example: 0
-                format: int32
-                type: integer
-              instrument:
-                properties:
-                  assetType:
-                    $ref: '#/components/schemas/AssetType'
-                  symbol:
-                    example: string
-                    type: string
-                type: object
-              purchasedDate:
-                example: DateParam
-                type: string
-              quantity:
-                example: 0
-                format: int32
-                type: integer
-              sequenceId:
-                example: 0
-                format: int32
-                type: integer
             type: object
           type: array
       type: object

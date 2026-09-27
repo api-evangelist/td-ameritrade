@@ -155,6 +155,41 @@ paths:
       - Bearer: []
 components:
   schemas:
+    Preferences:
+      properties:
+        authTokenTimeout:
+          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
+          type: string
+        defaultAdvancedToolLaunch:
+          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
+          type: string
+        defaultEquityOrderDuration:
+          $ref: '#/components/schemas/Duration'
+        defaultEquityOrderLegInstruction:
+          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
+          type: string
+        defaultEquityOrderMarketSession:
+          $ref: '#/components/schemas/Session'
+        defaultEquityOrderPriceLinkType:
+          $ref: '#/components/schemas/EquityPriceLinkType'
+        defaultEquityOrderType:
+          $ref: '#/components/schemas/OrderType'
+        defaultEquityQuantity:
+          example: 0
+          type: number
+        directEquityRouting:
+          type: boolean
+        directOptionsRouting:
+          type: boolean
+        equityTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        expressTrading:
+          type: boolean
+        mutualFundTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        optionTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+      type: object
     UpdatePreferences:
       properties:
         authTokenTimeout:
@@ -191,6 +226,20 @@ components:
         optionTaxLotMethod:
           $ref: '#/components/schemas/TaxLotMethod'
       type: object
+    EquityPriceLinkType:
+      enum:
+      - VALUE
+      - PERCENT
+      example: '''VALUE'' or ''PERCENT'''
+      type: string
+    Session:
+      enum:
+      - NORMAL
+      - SEAMLESS
+      - AM
+      - PM
+      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      type: string
     SubscriptionKey:
       properties:
         keys:
@@ -202,48 +251,12 @@ components:
             type: object
           type: array
       type: object
-    Preferences:
-      properties:
-        authTokenTimeout:
-          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
-          type: string
-        defaultAdvancedToolLaunch:
-          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
-          type: string
-        defaultEquityOrderDuration:
-          $ref: '#/components/schemas/Duration'
-        defaultEquityOrderLegInstruction:
-          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
-          type: string
-        defaultEquityOrderMarketSession:
-          $ref: '#/components/schemas/Session'
-        defaultEquityOrderPriceLinkType:
-          $ref: '#/components/schemas/EquityPriceLinkType'
-        defaultEquityOrderType:
-          $ref: '#/components/schemas/OrderType'
-        defaultEquityQuantity:
-          example: 0
-          type: number
-        directEquityRouting:
-          type: boolean
-        directOptionsRouting:
-          type: boolean
-        equityTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-        expressTrading:
-          type: boolean
-        mutualFundTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-        optionTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-      type: object
-    Session:
+    Duration:
       enum:
-      - NORMAL
-      - SEAMLESS
-      - AM
-      - PM
-      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      - DAY
+      - GOOD_TILL_CANCEL
+      - FILL_OR_KILL
+      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
       type: string
     TaxLotMethod:
       enum:
@@ -428,19 +441,6 @@ components:
           example: string
           type: string
       type: object
-    Duration:
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      - FILL_OR_KILL
-      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
-      type: string
-    EquityPriceLinkType:
-      enum:
-      - VALUE
-      - PERCENT
-      example: '''VALUE'' or ''PERCENT'''
-      type: string
     OrderType:
       enum:
       - MARKET
