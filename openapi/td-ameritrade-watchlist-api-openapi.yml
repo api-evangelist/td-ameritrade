@@ -239,6 +239,40 @@ paths:
       - Bearer: []
 components:
   schemas:
+    CreateWatchlist:
+      properties:
+        name:
+          example: string
+          type: string
+        watchlistItems:
+          items:
+            properties:
+              averagePrice:
+                example: 0
+                format: int32
+                type: integer
+              commission:
+                example: 0
+                format: int32
+                type: integer
+              instrument:
+                properties:
+                  assetType:
+                    $ref: '#/components/schemas/AssetType'
+                  symbol:
+                    example: string
+                    type: string
+                type: object
+              purchasedDate:
+                example: DateParam
+                type: string
+              quantity:
+                example: 0
+                format: int32
+                type: integer
+            type: object
+          type: array
+      type: object
     UpdateWatchlist:
       properties:
         name:
@@ -274,40 +308,6 @@ components:
                 format: int32
                 type: integer
               sequenceId:
-                example: 0
-                format: int32
-                type: integer
-            type: object
-          type: array
-      type: object
-    CreateWatchlist:
-      properties:
-        name:
-          example: string
-          type: string
-        watchlistItems:
-          items:
-            properties:
-              averagePrice:
-                example: 0
-                format: int32
-                type: integer
-              commission:
-                example: 0
-                format: int32
-                type: integer
-              instrument:
-                properties:
-                  assetType:
-                    $ref: '#/components/schemas/AssetType'
-                  symbol:
-                    example: string
-                    type: string
-                type: object
-              purchasedDate:
-                example: DateParam
-                type: string
-              quantity:
                 example: 0
                 format: int32
                 type: integer

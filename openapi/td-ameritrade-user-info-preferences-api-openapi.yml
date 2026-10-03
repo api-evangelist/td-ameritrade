@@ -190,84 +190,6 @@ components:
         optionTaxLotMethod:
           $ref: '#/components/schemas/TaxLotMethod'
       type: object
-    UpdatePreferences:
-      properties:
-        authTokenTimeout:
-          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
-          type: string
-        defaultAdvancedToolLaunch:
-          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
-          type: string
-        defaultEquityOrderDuration:
-          $ref: '#/components/schemas/Duration'
-        defaultEquityOrderLegInstruction:
-          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
-          type: string
-        defaultEquityOrderMarketSession:
-          $ref: '#/components/schemas/Session'
-        defaultEquityOrderPriceLinkType:
-          $ref: '#/components/schemas/EquityPriceLinkType'
-        defaultEquityOrderType:
-          $ref: '#/components/schemas/OrderType'
-        defaultEquityQuantity:
-          example: 0
-          format: int32
-          type: integer
-        directEquityRouting:
-          type: boolean
-        directOptionsRouting:
-          type: boolean
-        equityTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-        expressTrading:
-          type: boolean
-        mutualFundTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-        optionTaxLotMethod:
-          $ref: '#/components/schemas/TaxLotMethod'
-      type: object
-    EquityPriceLinkType:
-      enum:
-      - VALUE
-      - PERCENT
-      example: '''VALUE'' or ''PERCENT'''
-      type: string
-    Session:
-      enum:
-      - NORMAL
-      - SEAMLESS
-      - AM
-      - PM
-      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
-      type: string
-    SubscriptionKey:
-      properties:
-        keys:
-          items:
-            properties:
-              key:
-                example: string
-                type: string
-            type: object
-          type: array
-      type: object
-    Duration:
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      - FILL_OR_KILL
-      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
-      type: string
-    TaxLotMethod:
-      enum:
-      - FIFO
-      - LIFO
-      - HIGH_COST
-      - LOW_COST
-      - AVERAGE_COST
-      - SPECIFIC_LOT
-      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
-      type: string
     UserPrincipal:
       properties:
         accessLevel:
@@ -441,6 +363,27 @@ components:
           example: string
           type: string
       type: object
+    TaxLotMethod:
+      enum:
+      - FIFO
+      - LIFO
+      - HIGH_COST
+      - LOW_COST
+      - AVERAGE_COST
+      - SPECIFIC_LOT
+      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
+      type: string
+    SubscriptionKey:
+      properties:
+        keys:
+          items:
+            properties:
+              key:
+                example: string
+                type: string
+            type: object
+          type: array
+      type: object
     OrderType:
       enum:
       - MARKET
@@ -456,6 +399,63 @@ components:
       - NET_ZERO
       example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
       type: string
+    Session:
+      enum:
+      - NORMAL
+      - SEAMLESS
+      - AM
+      - PM
+      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      type: string
+    Duration:
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      - FILL_OR_KILL
+      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
+      type: string
+    EquityPriceLinkType:
+      enum:
+      - VALUE
+      - PERCENT
+      example: '''VALUE'' or ''PERCENT'''
+      type: string
+    UpdatePreferences:
+      properties:
+        authTokenTimeout:
+          example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
+          type: string
+        defaultAdvancedToolLaunch:
+          example: '''TA'' or ''N'' or ''Y'' or ''TOS'' or ''NONE'' or ''CC2'''
+          type: string
+        defaultEquityOrderDuration:
+          $ref: '#/components/schemas/Duration'
+        defaultEquityOrderLegInstruction:
+          example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''NONE'''
+          type: string
+        defaultEquityOrderMarketSession:
+          $ref: '#/components/schemas/Session'
+        defaultEquityOrderPriceLinkType:
+          $ref: '#/components/schemas/EquityPriceLinkType'
+        defaultEquityOrderType:
+          $ref: '#/components/schemas/OrderType'
+        defaultEquityQuantity:
+          example: 0
+          format: int32
+          type: integer
+        directEquityRouting:
+          type: boolean
+        directOptionsRouting:
+          type: boolean
+        equityTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        expressTrading:
+          type: boolean
+        mutualFundTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+        optionTaxLotMethod:
+          $ref: '#/components/schemas/TaxLotMethod'
+      type: object
   securitySchemes:
     Bearer:
       type: apiKey

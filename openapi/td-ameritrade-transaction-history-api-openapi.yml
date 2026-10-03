@@ -112,42 +112,6 @@ paths:
       - Bearer: []
 components:
   schemas:
-    AssetType:
-      enum:
-      - EQUITY
-      - OPTION
-      - FUTURE_OPTION
-      - INDICATOR
-      - FOREX
-      - MUTUAL_FUND
-      - INDEX
-      - CASH_EQUIVALENT
-      - FIXED_INCOME
-      - CURRENCY
-      - ETF
-      - BOND
-      - UNKNOWN
-      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
-      type: string
-    PositionEffect:
-      enum:
-      - OPENING
-      - CLOSING
-      - AUTOMATIC
-      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
-      type: string
-    Instruction:
-      enum:
-      - BUY
-      - SELL
-      - BUY_TO_COVER
-      - BUY_TO_OPEN
-      - BUY_TO_CLOSE
-      - SELL_TO_OPEN
-      - SELL_TO_CLOSE
-      - EXCHANGE
-      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
-      type: string
     TransactionType:
       enum:
       - ALL
@@ -168,6 +132,13 @@ components:
       - CALL
       - ALL
       example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+    PositionEffect:
+      enum:
+      - OPENING
+      - CLOSING
+      - AUTOMATIC
+      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
       type: string
     Transaction:
       properties:
@@ -281,6 +252,35 @@ components:
           example: '''TRADE'' or ''RECEIVE_AND_DELIVER'' or ''DIVIDEND_OR_INTEREST'' or ''ACH_RECEIPT'' or ''ACH_DISBURSEMENT'' or ''CASH_RECEIPT'' or ''CASH_DISBURSEMENT'' or ''ELECTRONIC_FUND'' or ''WIRE_OUT'' or ''WIRE_IN'' or ''JOURNAL'' or ''MEMORANDUM'' or ''MARGIN_CALL'' or ''MONEY_MARKET'' or ''SMA_ADJUSTMENT'''
           type: string
       type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    Instruction:
+      enum:
+      - BUY
+      - SELL
+      - BUY_TO_COVER
+      - BUY_TO_OPEN
+      - BUY_TO_CLOSE
+      - SELL_TO_OPEN
+      - SELL_TO_CLOSE
+      - EXCHANGE
+      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey
