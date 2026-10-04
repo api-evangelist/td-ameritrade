@@ -112,6 +112,25 @@ paths:
       - Bearer: []
 components:
   schemas:
+    Instruction:
+      enum:
+      - BUY
+      - SELL
+      - BUY_TO_COVER
+      - BUY_TO_OPEN
+      - BUY_TO_CLOSE
+      - SELL_TO_OPEN
+      - SELL_TO_CLOSE
+      - EXCHANGE
+      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
+      type: string
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
     Transaction:
       properties:
         accruedInterest:
@@ -224,27 +243,6 @@ components:
           example: '''TRADE'' or ''RECEIVE_AND_DELIVER'' or ''DIVIDEND_OR_INTEREST'' or ''ACH_RECEIPT'' or ''ACH_DISBURSEMENT'' or ''CASH_RECEIPT'' or ''CASH_DISBURSEMENT'' or ''ELECTRONIC_FUND'' or ''WIRE_OUT'' or ''WIRE_IN'' or ''JOURNAL'' or ''MEMORANDUM'' or ''MARGIN_CALL'' or ''MONEY_MARKET'' or ''SMA_ADJUSTMENT'''
           type: string
       type: object
-    PositionEffect:
-      enum:
-      - OPENING
-      - CLOSING
-      - AUTOMATIC
-      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
-      type: string
-    TransactionType:
-      enum:
-      - ALL
-      - TRADE
-      - BUY_ONLY
-      - SELL_ONLY
-      - CASH_IN_OR_CASH_OUT
-      - CHECKING
-      - DIVIDEND
-      - INTEREST
-      - OTHER
-      - ADVISOR_FEES
-      example: '''ALL'' or ''TRADE'' or ''BUY_ONLY'' or ''SELL_ONLY'' or ''CASH_IN_OR_CASH_OUT'' or ''CHECKING'' or ''DIVIDEND'' or ''INTEREST'' or ''OTHER'' or ''ADVISOR_FEES'''
-      type: string
     AssetType:
       enum:
       - EQUITY
@@ -262,24 +260,26 @@ components:
       - UNKNOWN
       example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
       type: string
-    PutOrCall:
+    TransactionType:
       enum:
-      - PUT
-      - CALL
       - ALL
-      example: '''PUT'' or ''CALL'' or ''ALL'''
+      - TRADE
+      - BUY_ONLY
+      - SELL_ONLY
+      - CASH_IN_OR_CASH_OUT
+      - CHECKING
+      - DIVIDEND
+      - INTEREST
+      - OTHER
+      - ADVISOR_FEES
+      example: '''ALL'' or ''TRADE'' or ''BUY_ONLY'' or ''SELL_ONLY'' or ''CASH_IN_OR_CASH_OUT'' or ''CHECKING'' or ''DIVIDEND'' or ''INTEREST'' or ''OTHER'' or ''ADVISOR_FEES'''
       type: string
-    Instruction:
+    PositionEffect:
       enum:
-      - BUY
-      - SELL
-      - BUY_TO_COVER
-      - BUY_TO_OPEN
-      - BUY_TO_CLOSE
-      - SELL_TO_OPEN
-      - SELL_TO_CLOSE
-      - EXCHANGE
-      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
+      - OPENING
+      - CLOSING
+      - AUTOMATIC
+      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
       type: string
   securitySchemes:
     Bearer:
