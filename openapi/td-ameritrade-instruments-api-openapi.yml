@@ -280,23 +280,6 @@ components:
           example: string
           type: string
       type: object
-    AssetType:
-      enum:
-      - EQUITY
-      - OPTION
-      - FUTURE_OPTION
-      - INDICATOR
-      - FOREX
-      - MUTUAL_FUND
-      - INDEX
-      - CASH_EQUIVALENT
-      - FIXED_INCOME
-      - CURRENCY
-      - ETF
-      - BOND
-      - UNKNOWN
-      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
-      type: string
     FundamentalData:
       properties:
         beta:
@@ -458,6 +441,23 @@ components:
           example: string
           type: string
       type: object
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
     Instrument:
       properties:
         assetType:

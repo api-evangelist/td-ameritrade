@@ -155,7 +155,7 @@ paths:
       - Bearer: []
 components:
   schemas:
-    UpdatePreferences:
+    Preferences:
       properties:
         authTokenTimeout:
           example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
@@ -176,8 +176,7 @@ components:
           $ref: '#/components/schemas/OrderType'
         defaultEquityQuantity:
           example: 0
-          format: int32
-          type: integer
+          type: number
         directEquityRouting:
           type: boolean
         directOptionsRouting:
@@ -191,48 +190,6 @@ components:
         optionTaxLotMethod:
           $ref: '#/components/schemas/TaxLotMethod'
       type: object
-    SubscriptionKey:
-      properties:
-        keys:
-          items:
-            properties:
-              key:
-                example: string
-                type: string
-            type: object
-          type: array
-      type: object
-    TaxLotMethod:
-      enum:
-      - FIFO
-      - LIFO
-      - HIGH_COST
-      - LOW_COST
-      - AVERAGE_COST
-      - SPECIFIC_LOT
-      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
-      type: string
-    EquityPriceLinkType:
-      enum:
-      - VALUE
-      - PERCENT
-      example: '''VALUE'' or ''PERCENT'''
-      type: string
-    Session:
-      enum:
-      - NORMAL
-      - SEAMLESS
-      - AM
-      - PM
-      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
-      type: string
-    Duration:
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      - FILL_OR_KILL
-      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
-      type: string
     UserPrincipal:
       properties:
         accessLevel:
@@ -406,7 +363,64 @@ components:
           example: string
           type: string
       type: object
-    Preferences:
+    TaxLotMethod:
+      enum:
+      - FIFO
+      - LIFO
+      - HIGH_COST
+      - LOW_COST
+      - AVERAGE_COST
+      - SPECIFIC_LOT
+      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
+      type: string
+    SubscriptionKey:
+      properties:
+        keys:
+          items:
+            properties:
+              key:
+                example: string
+                type: string
+            type: object
+          type: array
+      type: object
+    OrderType:
+      enum:
+      - MARKET
+      - LIMIT
+      - STOP
+      - STOP_LIMIT
+      - TRAILING_STOP
+      - MARKET_ON_CLOSE
+      - EXERCISE
+      - TRAILING_STOP_LIMIT
+      - NET_DEBIT
+      - NET_CREDIT
+      - NET_ZERO
+      example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
+      type: string
+    Session:
+      enum:
+      - NORMAL
+      - SEAMLESS
+      - AM
+      - PM
+      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      type: string
+    Duration:
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      - FILL_OR_KILL
+      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
+      type: string
+    EquityPriceLinkType:
+      enum:
+      - VALUE
+      - PERCENT
+      example: '''VALUE'' or ''PERCENT'''
+      type: string
+    UpdatePreferences:
       properties:
         authTokenTimeout:
           example: '''FIFTY_FIVE_MINUTES'' or ''TWO_HOURS'' or ''FOUR_HOURS'' or ''EIGHT_HOURS'''
@@ -427,7 +441,8 @@ components:
           $ref: '#/components/schemas/OrderType'
         defaultEquityQuantity:
           example: 0
-          type: number
+          format: int32
+          type: integer
         directEquityRouting:
           type: boolean
         directOptionsRouting:
@@ -441,21 +456,6 @@ components:
         optionTaxLotMethod:
           $ref: '#/components/schemas/TaxLotMethod'
       type: object
-    OrderType:
-      enum:
-      - MARKET
-      - LIMIT
-      - STOP
-      - STOP_LIMIT
-      - TRAILING_STOP
-      - MARKET_ON_CLOSE
-      - EXERCISE
-      - TRAILING_STOP_LIMIT
-      - NET_DEBIT
-      - NET_CREDIT
-      - NET_ZERO
-      example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey

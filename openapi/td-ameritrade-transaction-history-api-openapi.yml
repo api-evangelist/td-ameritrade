@@ -112,17 +112,19 @@ paths:
       - Bearer: []
 components:
   schemas:
-    Instruction:
+    TransactionType:
       enum:
-      - BUY
-      - SELL
-      - BUY_TO_COVER
-      - BUY_TO_OPEN
-      - BUY_TO_CLOSE
-      - SELL_TO_OPEN
-      - SELL_TO_CLOSE
-      - EXCHANGE
-      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
+      - ALL
+      - TRADE
+      - BUY_ONLY
+      - SELL_ONLY
+      - CASH_IN_OR_CASH_OUT
+      - CHECKING
+      - DIVIDEND
+      - INTEREST
+      - OTHER
+      - ADVISOR_FEES
+      example: '''ALL'' or ''TRADE'' or ''BUY_ONLY'' or ''SELL_ONLY'' or ''CASH_IN_OR_CASH_OUT'' or ''CHECKING'' or ''DIVIDEND'' or ''INTEREST'' or ''OTHER'' or ''ADVISOR_FEES'''
       type: string
     PutOrCall:
       enum:
@@ -130,6 +132,13 @@ components:
       - CALL
       - ALL
       example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
+    PositionEffect:
+      enum:
+      - OPENING
+      - CLOSING
+      - AUTOMATIC
+      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
       type: string
     Transaction:
       properties:
@@ -260,26 +269,17 @@ components:
       - UNKNOWN
       example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
       type: string
-    TransactionType:
+    Instruction:
       enum:
-      - ALL
-      - TRADE
-      - BUY_ONLY
-      - SELL_ONLY
-      - CASH_IN_OR_CASH_OUT
-      - CHECKING
-      - DIVIDEND
-      - INTEREST
-      - OTHER
-      - ADVISOR_FEES
-      example: '''ALL'' or ''TRADE'' or ''BUY_ONLY'' or ''SELL_ONLY'' or ''CASH_IN_OR_CASH_OUT'' or ''CHECKING'' or ''DIVIDEND'' or ''INTEREST'' or ''OTHER'' or ''ADVISOR_FEES'''
-      type: string
-    PositionEffect:
-      enum:
-      - OPENING
-      - CLOSING
-      - AUTOMATIC
-      example: '''OPENING'' or ''CLOSING'' or ''AUTOMATIC'''
+      - BUY
+      - SELL
+      - BUY_TO_COVER
+      - BUY_TO_OPEN
+      - BUY_TO_CLOSE
+      - SELL_TO_OPEN
+      - SELL_TO_CLOSE
+      - EXCHANGE
+      example: '''BUY'' or ''SELL'' or ''BUY_TO_COVER'' or ''SELL_SHORT'' or ''BUY_TO_OPEN'' or ''BUY_TO_CLOSE'' or ''SELL_TO_OPEN'' or ''SELL_TO_CLOSE'' or ''EXCHANGE'''
       type: string
   securitySchemes:
     Bearer:
