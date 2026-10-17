@@ -363,57 +363,6 @@ components:
           example: string
           type: string
       type: object
-    TaxLotMethod:
-      enum:
-      - FIFO
-      - LIFO
-      - HIGH_COST
-      - LOW_COST
-      - AVERAGE_COST
-      - SPECIFIC_LOT
-      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
-      type: string
-    SubscriptionKey:
-      properties:
-        keys:
-          items:
-            properties:
-              key:
-                example: string
-                type: string
-            type: object
-          type: array
-      type: object
-    OrderType:
-      enum:
-      - MARKET
-      - LIMIT
-      - STOP
-      - STOP_LIMIT
-      - TRAILING_STOP
-      - MARKET_ON_CLOSE
-      - EXERCISE
-      - TRAILING_STOP_LIMIT
-      - NET_DEBIT
-      - NET_CREDIT
-      - NET_ZERO
-      example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
-      type: string
-    Session:
-      enum:
-      - NORMAL
-      - SEAMLESS
-      - AM
-      - PM
-      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
-      type: string
-    Duration:
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      - FILL_OR_KILL
-      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
-      type: string
     EquityPriceLinkType:
       enum:
       - VALUE
@@ -456,6 +405,57 @@ components:
         optionTaxLotMethod:
           $ref: '#/components/schemas/TaxLotMethod'
       type: object
+    SubscriptionKey:
+      properties:
+        keys:
+          items:
+            properties:
+              key:
+                example: string
+                type: string
+            type: object
+          type: array
+      type: object
+    Session:
+      enum:
+      - NORMAL
+      - SEAMLESS
+      - AM
+      - PM
+      example: '''NORMAL'' or ''AM'' or ''PM'' or ''SEAMLESS'''
+      type: string
+    OrderType:
+      enum:
+      - MARKET
+      - LIMIT
+      - STOP
+      - STOP_LIMIT
+      - TRAILING_STOP
+      - MARKET_ON_CLOSE
+      - EXERCISE
+      - TRAILING_STOP_LIMIT
+      - NET_DEBIT
+      - NET_CREDIT
+      - NET_ZERO
+      example: '''MARKET'' or ''LIMIT'' or ''STOP'' or ''STOP_LIMIT'' or ''TRAILING_STOP'' or ''MARKET_ON_CLOSE'' or ''EXERCISE'' or ''TRAILING_STOP_LIMIT'' or ''NET_DEBIT'' or ''NET_CREDIT'' or ''NET_ZERO'''
+      type: string
+    Duration:
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      - FILL_OR_KILL
+      example: '''DAY'' or ''GOOD_TILL_CANCEL'' or ''FILL_OR_KILL'''
+      type: string
+    TaxLotMethod:
+      enum:
+      - FIFO
+      - LIFO
+      - HIGH_COST
+      - LOW_COST
+      - AVERAGE_COST
+      - SPECIFIC_LOT
+      example: '''FIFO'' or ''LIFO'' or ''HIGH_COST'' or ''LOW_COST'' or ''AVERAGE_COST'' or ''SPECIFIC_LOT'''
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

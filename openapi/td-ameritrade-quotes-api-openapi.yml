@@ -130,6 +130,142 @@ paths:
       - Bearer: []
 components:
   schemas:
+    AssetType:
+      enum:
+      - EQUITY
+      - OPTION
+      - FUTURE_OPTION
+      - INDICATOR
+      - FOREX
+      - MUTUAL_FUND
+      - INDEX
+      - CASH_EQUIVALENT
+      - FIXED_INCOME
+      - CURRENCY
+      - ETF
+      - BOND
+      - UNKNOWN
+      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
+      type: string
+    MutualFund:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+        type:
+          example: '''NOT_APPLICABLE'' or ''OPEN_END_NON_TAXABLE'' or ''OPEN_END_TAXABLE'' or ''NO_LOAD_NON_TAXABLE'' or ''NO_LOAD_TAXABLE'''
+          type: string
+      type: object
+    Forex:
+      properties:
+        52WkHighInDouble:
+          example: 0
+          type: number
+        52WkLowInDouble:
+          example: 0
+          type: number
+        askPriceInDouble:
+          example: 0
+          type: number
+        bidPriceInDouble:
+          example: 0
+          type: number
+        changeInDouble:
+          example: 0
+          type: number
+        closePriceInDouble:
+          example: 0
+          type: number
+        description:
+          example: string
+          type: string
+        digits:
+          example: 0
+          type: number
+        exchange:
+          example: string
+          type: string
+        exchangeName:
+          example: string
+          type: string
+        highPriceInDouble:
+          example: 0
+          type: number
+        isTradable:
+          type: boolean
+        lastPriceInDouble:
+          example: 0
+          type: number
+        lowPriceInDouble:
+          example: 0
+          type: number
+        mark:
+          example: 0
+          type: number
+        marketMaker:
+          example: string
+          type: string
+        openPriceInDouble:
+          example: 0
+          type: number
+        percentChange:
+          example: 0
+          type: number
+        product:
+          example: string
+          type: string
+        securityStatus:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+        tick:
+          example: 0
+          type: number
+        tickAmount:
+          example: 0
+          type: number
+        tradingHours:
+          example: string
+          type: string
+      type: object
+    OptionType:
+      enum:
+      - VANILLA
+      - BINARY
+      - BARRIER
+      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
+      type: string
+    Equity:
+      properties:
+        assetType:
+          $ref: '#/components/schemas/AssetType'
+        cusip:
+          example: string
+          type: string
+        description:
+          example: string
+          type: string
+        symbol:
+          example: string
+          type: string
+      type: object
+    PutOrCall:
+      enum:
+      - PUT
+      - CALL
+      - ALL
+      example: '''PUT'' or ''CALL'' or ''ALL'''
+      type: string
     ETF:
       properties:
         52WkHigh:
@@ -242,12 +378,13 @@ components:
           example: 0
           type: number
       type: object
-    PutOrCall:
+    CurrencyType:
       enum:
-      - PUT
-      - CALL
-      - ALL
-      example: '''PUT'' or ''CALL'' or ''ALL'''
+      - USD
+      - CAD
+      - EUR
+      - JPY
+      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
       type: string
     Option:
       properties:
@@ -286,23 +423,6 @@ components:
           $ref: '#/components/schemas/OptionType'
         underlyingSymbol:
           example: string
-          type: string
-      type: object
-    MutualFund:
-      properties:
-        assetType:
-          $ref: '#/components/schemas/AssetType'
-        cusip:
-          example: string
-          type: string
-        description:
-          example: string
-          type: string
-        symbol:
-          example: string
-          type: string
-        type:
-          example: '''NOT_APPLICABLE'' or ''OPEN_END_NON_TAXABLE'' or ''OPEN_END_TAXABLE'' or ''NO_LOAD_NON_TAXABLE'' or ''NO_LOAD_TAXABLE'''
           type: string
       type: object
     FutureOptions:
@@ -414,126 +534,6 @@ components:
         volatility:
           example: 0
           type: number
-      type: object
-    CurrencyType:
-      enum:
-      - USD
-      - CAD
-      - EUR
-      - JPY
-      example: '''USD'' or ''CAD'' or ''EUR'' or ''JPY'''
-      type: string
-    Forex:
-      properties:
-        52WkHighInDouble:
-          example: 0
-          type: number
-        52WkLowInDouble:
-          example: 0
-          type: number
-        askPriceInDouble:
-          example: 0
-          type: number
-        bidPriceInDouble:
-          example: 0
-          type: number
-        changeInDouble:
-          example: 0
-          type: number
-        closePriceInDouble:
-          example: 0
-          type: number
-        description:
-          example: string
-          type: string
-        digits:
-          example: 0
-          type: number
-        exchange:
-          example: string
-          type: string
-        exchangeName:
-          example: string
-          type: string
-        highPriceInDouble:
-          example: 0
-          type: number
-        isTradable:
-          type: boolean
-        lastPriceInDouble:
-          example: 0
-          type: number
-        lowPriceInDouble:
-          example: 0
-          type: number
-        mark:
-          example: 0
-          type: number
-        marketMaker:
-          example: string
-          type: string
-        openPriceInDouble:
-          example: 0
-          type: number
-        percentChange:
-          example: 0
-          type: number
-        product:
-          example: string
-          type: string
-        securityStatus:
-          example: string
-          type: string
-        symbol:
-          example: string
-          type: string
-        tick:
-          example: 0
-          type: number
-        tickAmount:
-          example: 0
-          type: number
-        tradingHours:
-          example: string
-          type: string
-      type: object
-    AssetType:
-      enum:
-      - EQUITY
-      - OPTION
-      - FUTURE_OPTION
-      - INDICATOR
-      - FOREX
-      - MUTUAL_FUND
-      - INDEX
-      - CASH_EQUIVALENT
-      - FIXED_INCOME
-      - CURRENCY
-      - ETF
-      - BOND
-      - UNKNOWN
-      example: '''EQUITY'' or ''OPTION'' or ''INDEX'' or ''MUTUAL_FUND'' or ''CASH_EQUIVALENT'' or ''FIXED_INCOME'' or ''CURRENCY'''
-      type: string
-    OptionType:
-      enum:
-      - VANILLA
-      - BINARY
-      - BARRIER
-      example: '''VANILLA'' or ''BINARY'' or ''BARRIER'''
-      type: string
-    Equity:
-      properties:
-        assetType:
-          $ref: '#/components/schemas/AssetType'
-        cusip:
-          example: string
-          type: string
-        description:
-          example: string
-          type: string
-        symbol:
-          example: string
-          type: string
       type: object
   securitySchemes:
     Bearer:
