@@ -1,4 +1,4 @@
-# TD Ameritrade (td-ameritrade)
+# TD Ameritrade
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,145 +64,137 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 TD Ameritrade was a US retail brokerage that provided REST APIs for trading equities and options, accessing streaming market data, managing brokerage accounts, and retrieving historical and real-time market data. Following the Charles Schwab acquisition, the TD Ameritrade API was shut down on May 10, 2024. Schwab has ported much of the original functionality into the Schwab Trader API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/apis.yml)
+**Areas:** Brokerage · Trading · Finance · Stocks · Options · Market Data · Streaming · Defunct
 
-## Tags
+## TD Ameritrade on APIs.io (historical record)
 
-- Brokerage
-- Trading
-- Finance
-- Equities
-- Options
-- Market Data
-- Streaming
+Everything profiled for TD Ameritrade is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/td-ameritrade/](https://apis.io/providers/td-ameritrade/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (15)
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-06-13
+- [TD Ameritrade Market Data API](https://apis.io/apis/td-ameritrade/td-ameritrade-market-data-api/) — Provides REST endpoints for accessing real-time and historical market data. Includes current quotes for single and multiple symbols, historical price…
+- [TD Ameritrade Instruments API](https://apis.io/apis/td-ameritrade/td-ameritrade-instruments-api/) — Provides REST endpoints for searching and retrieving instrument details by symbol or CUSIP. Supports searching by symbol or description and retrieving…
+- [TD Ameritrade Authentication API](https://apis.io/apis/td-ameritrade/td-ameritrade-authentication-api/) — Implements OAuth 2.0 token-based authentication as described in RFC6749 section 1.3.1. Applications registered on the TD Ameritrade Developer Portal receive…
+- [TD Ameritrade Streaming Market Data API](https://apis.io/apis/td-ameritrade/td-ameritrade-streaming-market-data-api/) — Provides a WebSocket-based streaming API that delivers up-to-the-second market data including real-time Level 1 and Level 2 quotes, time and sales data for…
+- [TD Ameritrade Accounts and Trading API](https://apis.io/apis/td-ameritrade/td-ameritrade-accounts-and-trading-api/) — The Accounts and Trading API from TD Ameritrade — 7 operation(s) for accounts and trading.
+- [TD Ameritrade Authentication API](https://apis.io/apis/td-ameritrade/td-ameritrade-authentication-api/) — The Authentication API from TD Ameritrade — 1 operation(s) for authentication.
+- [TD Ameritrade Instruments API](https://apis.io/apis/td-ameritrade/td-ameritrade-instruments-api/) — The Instruments API from TD Ameritrade — 2 operation(s) for instruments.
+- [TD Ameritrade Market Hours API](https://apis.io/apis/td-ameritrade/td-ameritrade-market-hours-api/) — The Market Hours API from TD Ameritrade — 2 operation(s) for market hours.
+- [TD Ameritrade Movers API](https://apis.io/apis/td-ameritrade/td-ameritrade-movers-api/) — The Movers API from TD Ameritrade — 1 operation(s) for movers.
+- [TD Ameritrade Option Chains API](https://apis.io/apis/td-ameritrade/td-ameritrade-option-chains-api/) — The Option Chains API from TD Ameritrade — 1 operation(s) for option chains.
+- [TD Ameritrade Price History API](https://apis.io/apis/td-ameritrade/td-ameritrade-price-history-api/) — The Price History API from TD Ameritrade — 1 operation(s) for price history.
+- [TD Ameritrade Quotes API](https://apis.io/apis/td-ameritrade/td-ameritrade-quotes-api/) — The Quotes API from TD Ameritrade — 2 operation(s) for quotes.
+- [TD Ameritrade Transaction History API](https://apis.io/apis/td-ameritrade/td-ameritrade-transaction-history-api/) — The Transaction History API from TD Ameritrade — 2 operation(s) for transaction history.
+- [TD Ameritrade User Info & Preferences API](https://apis.io/apis/td-ameritrade/td-ameritrade-user-info-preferences-api/) — The User Info & Preferences API from TD Ameritrade — 3 operation(s) for user info & preferences.
+- [TD Ameritrade Watchlist API](https://apis.io/apis/td-ameritrade/td-ameritrade-watchlist-api/) — The Watchlist API from TD Ameritrade — 3 operation(s) for watchlist.
 
-## APIs
+### Published properties
 
-### TD Ameritrade Accounts and Trading API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Provides REST endpoints for managing TD Ameritrade brokerage accounts, including retrieving account balances, positions, and transaction history. Supports placing, modifying, replacing, and canceling orders for equities and options. Also includes saved orders, watchlists, and user preferences.
+#### GraphQL (1)
 
-- **Human URL:** [https://developer.tdameritrade.com/account-access/apis](https://developer.tdameritrade.com/account-access/apis)
-- **Base URL:** `https://api.tdameritrade.com/v1`
+GraphQL schemas.
 
-#### Tags
+- [Moved to /providers/td-ameritrade/](https://apis.io/graphqls/td-ameritrade/td-ameritrade-graphql/)
 
-- Accounts
-- Orders
-- Trading
-- Watchlists
-- Transactions
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://developer.tdameritrade.com/account-access/apis)
-- [OpenAPI](https://developer.tdameritrade.com/account-access/apis) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://developer.tdameritrade.com/authentication/apis)
-- [Graph Q L](graphql/td-ameritrade-graphql.md)
+- [Td Ameritrade Agentic Access](https://apis.io/agentic-access/td-ameritrade/td-ameritrade-agentic-access/)
 
-### TD Ameritrade Market Data API
+#### JSON Schema (1)
 
-Provides REST endpoints for accessing real-time and historical market data. Includes current quotes for single and multiple symbols, historical price history for equities and ETFs, options chains with full contract details, top movers by index, and market hours for equities, options, futures, forex, and bond markets.
+The data models the API reads and writes.
 
-- **Human URL:** [https://developer.tdameritrade.com/market-data/apis](https://developer.tdameritrade.com/market-data/apis)
-- **Base URL:** `https://api.tdameritrade.com/v1`
+- [TD Ameritrade API Schemas](https://apis.io/schemas/td-ameritrade/td-ameritrade/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Market Data
-- Quotes
-- Options Chains
-- Price History
-- Movers
-- Market Hours
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Td Ameritrade Context](https://apis.io/jsonld/td-ameritrade/td-ameritrade/)
 
-- [Documentation](https://developer.tdameritrade.com/market-data/apis)
-- [Authentication](https://developer.tdameritrade.com/authentication/apis)
+#### Examples (1)
 
-### TD Ameritrade Instruments API
+Example requests and responses.
 
-Provides REST endpoints for searching and retrieving instrument details by symbol or CUSIP. Supports searching by symbol or description and retrieving fundamental data including financial ratios, earnings, and dividend information for equities.
+- [Td Ameritrade Examples](https://apis.io/examples/td-ameritrade/td-ameritrade-examples/)
 
-- **Human URL:** [https://developer.tdameritrade.com/instruments/apis](https://developer.tdameritrade.com/instruments/apis)
-- **Base URL:** `https://api.tdameritrade.com/v1`
+#### Collections (11)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Instruments
-- Equities
-- Fundamentals
-- Securities
+- [TD Ameritrade Accounts and Trading API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-accounts-and-trading-api/)
+- [TD Ameritrade Accounts and Trading Authentication API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-authentication-api/)
+- [TD Ameritrade Accounts and Trading Instruments API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-instruments-api/)
+- [TD Ameritrade Accounts and Trading Market Hours API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-market-hours-api/)
+- [TD Ameritrade Accounts and Trading Movers API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-movers-api/)
+- [TD Ameritrade Accounts and Trading Option Chains API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-option-chains-api/)
+- [TD Ameritrade Accounts and Trading Price History API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-price-history-api/)
+- [TD Ameritrade Accounts and Trading Quotes API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-quotes-api/)
+- [TD Ameritrade Accounts and Trading Transaction History API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-transaction-history-api/)
+- [TD Ameritrade Accounts and Trading User Info & Preferences API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-user-info-preferences-api/)
+- [TD Ameritrade Accounts and Trading Watchlist API](https://apis.io/collections/td-ameritrade/open-td-ameritrade-watchlist-api/)
 
-#### Properties
+#### Governance rules (1)
 
-- [Documentation](https://developer.tdameritrade.com/instruments/apis)
-- [Authentication](https://developer.tdameritrade.com/authentication/apis)
+Spectral rulesets for the provider's contracts.
 
-### TD Ameritrade Authentication API
+- [TD Ameritrade — jsonschema rules](https://apis.io/rules/td-ameritrade/td-ameritrade-jsonschema-spectral-rules/)
 
-Implements OAuth 2.0 token-based authentication as described in RFC6749 section 1.3.1. Applications registered on the TD Ameritrade Developer Portal receive a Consumer Key (client_id). Access tokens are valid for 30 minutes; refresh tokens are valid for 90 days and may be used to generate new access and refresh tokens.
+#### Security (2)
 
-- **Human URL:** [https://developer.tdameritrade.com/authentication/apis](https://developer.tdameritrade.com/authentication/apis)
-- **Base URL:** `https://api.tdameritrade.com/v1`
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Td Ameritrade Authentication](https://apis.io/security/td-ameritrade/td-ameritrade-authentication/)
+- [Td Ameritrade Domain Security](https://apis.io/security/td-ameritrade/td-ameritrade-domain-security/)
 
-- Authentication
-- OAuth 2.0
-- Access Tokens
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://developer.tdameritrade.com/authentication/apis)
-- [Getting Started](https://developer.tdameritrade.com/content/getting-started)
-- [Authentication F A Q](https://developer.tdameritrade.com/content/authentication-faq)
+- [Plans](https://apis.io/plans/td-ameritrade/plans/)
 
-### TD Ameritrade Streaming Market Data API
+#### Rate limits (1)
 
-Provides a WebSocket-based streaming API that delivers up-to-the-second market data including real-time Level 1 and Level 2 quotes, time and sales data for equities, options, and futures, as well as order book depth data. Streaming sessions are initiated using credentials obtained from the User Principals endpoint.
+Published request limits.
 
-- **Human URL:** [https://developer.tdameritrade.com/content/streaming-data](https://developer.tdameritrade.com/content/streaming-data)
-- **Base URL:** `wss://streamer-ws.tdameritrade.com/ws`
+- [Rate Limits](https://apis.io/rate-limits/td-ameritrade/rate-limits/)
 
-#### Tags
+#### FinOps (1)
 
-- Streaming
-- WebSocket
-- Real-Time
-- Level 2
-- Market Data
+What the API costs to run, by operation.
 
-#### Properties
+- [Finops](https://apis.io/finops/td-ameritrade/finops/)
 
-- [Documentation](https://developer.tdameritrade.com/content/streaming-data)
-- [Authentication](https://developer.tdameritrade.com/authentication/apis)
+## Where to find this API
 
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Portal](https://developer.tdameritrade.com/)
-- [Getting Started](https://developer.tdameritrade.com/content/getting-started)
+- [Website](https://tdameritrade.com)
 - [Documentation](https://developer.tdameritrade.com/apis)
-- [Authentication](https://developer.tdameritrade.com/authentication/apis)
-- [Authentication F A Q](https://developer.tdameritrade.com/content/authentication-faq)
-- [Plans](https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/plans/plans.yml)
-- [Rate Limits](https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/rate-limits/rate-limits.yml)
-- [Fin Ops](https://raw.githubusercontent.com/api-evangelist/td-ameritrade/refs/heads/main/finops/finops.yml)
-- [Terms of Service](https://developer.tdameritrade.com/content/td-ameritrade-api-terms-use)
-- [Status Page](https://developer.tdameritrade.com/content/getting-started)
-- [Deprecation Notice](https://blog.pickmytrade.trade/td-ameritrade-have-api-2025/)
-- [Migration Guide](https://developer.schwab.com/)
+- [Getting started](https://developer.tdameritrade.com/content/getting-started)
+- [Terms of service](https://developer.tdameritrade.com/content/td-ameritrade-api-terms-use)
+- [Status](https://developer.tdameritrade.com/content/getting-started)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://www.apievangelist.com
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for TD Ameritrade: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/td-ameritrade/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
